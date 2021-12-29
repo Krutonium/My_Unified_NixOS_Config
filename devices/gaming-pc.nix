@@ -1,5 +1,7 @@
 { config, pkgs, ...}:
 #This is the configuration specific to my Gaming Desktop PC.
+
+#Run sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 let
     kernel = pkgs.linuxPackages_zen;
     Hostname = "Gaming-PC";
@@ -8,7 +10,13 @@ in
     imports = [
         ../bootloaders/grub.nix
         ../users/krutonium.nix
+        ../services/fancontroller.nix
+        <nixos-hardware/common/pc>
+        <nixos-hardware/common/pc/ssd>
+        <nixos-hardware/common/cpu/amd>
+        <nixos-hardware/common/gpu/amd>
     ];
+
     #Set Hostname
     networking.hostName = Hostname;
 
