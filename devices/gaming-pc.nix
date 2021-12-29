@@ -2,17 +2,12 @@
 #This is the configuration specific to my Gaming Desktop PC.
 let
     kernel = pkgs.linuxPackages_zen;
-    Username = "krutonium";
     Hostname = "Gaming-PC";
 in
 {
     imports = [
         ../bootloaders/grub.nix
         ../users/krutonium.nix
-        <nixos-hardware/common/pc>
-        <nixos-hardware/common/pc/ssd>
-        <nixos-hardware/common/gpu/amd>
-        <nixos-hardware/common/cpu/amd>
     ];
     #Set Hostname
     networking.hostName = Hostname;
