@@ -1,3 +1,4 @@
 *.iml
 .idea/
 device.nix
+hardware-configuration.nix
