@@ -1,30 +1,11 @@
 { config, pkgs, ...}:
 
 # So a bit of a README:
-# Before use, you need to create the following files:
-
-# ./hostname
-
-# ./hostname should contain the hostname for your system.
-# Very importantly, it is used for selecting the system that will be generated from this config
-# The options are:
-# uWebServer
-# GamingPC
-# LaptopPC
-#
-# uWebServer is configured for hosting various services that I use
-# GamingPC is configured as my Gaming PC, if that wasn't obvious
-# LaptopPC is configured as my Laptop PC, It has Optimus from before it was good
-
-# You also need to create ./kernel
-# ./kernel should state what kernel we want to use.
-
-# NEITHER OF THOSE FILES SHOULD BE CHECKED IN.
-
+# Before Use, you should edit device.nix to point at the config you want for this computer.
 
 let
     # Variables!
-    hostname = readFile("./hostname");
+    config_select = builtins.readFile ./config_name;
     kernel = pkgs.linuxPackages_zen;
 in
 {
@@ -33,6 +14,7 @@ in
     [
         # Import other files that are used by all associated computers
         ./hardware-configuration.nix
+        ./device.nix
     ];
 
     # Set our Kernel
@@ -47,18 +29,9 @@ in
 
     # We always want 8 GB of Swap.
     swapDevices = [{
-        devices = "/swap";
-        size = 1024 * 8;
+        device = "/swap";
+        size = 1024 * 8; #8GB
     }];
-
-    # ZFS is a pain in the ass with it's own mounting when paired with the hardware config.
-    # Disabling the service is the easiest solution.
-    systemd.services = {
-        zfs-mount = {
-             enabled = false;
-             restartIfChanged = false;
-        };
-    };
 
     time.timeZone = "America/Toronto";
 
@@ -70,7 +43,6 @@ in
     networking.interfaces.eno1.useDHCP = true;    #GamingPC
     networking.interfaces.enp0s25.useDHCP = true; #uWebServer
     networking.interfaces.enp3s0.useDHCP = true;  #Laptop
-    networking.hostName = hostname;
     networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
     networking.firewall.enable = true;
     i18n.defaultLocale = "en_US.UTF-8";
@@ -84,26 +56,17 @@ in
     systemd.enableEmergencyMode = false;
 
     #Install the Base Packages that all systems should have.
-    environment.systemPackages [
+    environment.systemPackages = [
         pkgs.nano #Editor
         pkgs.git
     ];
-    services.openssh.enable = true;
 
-    # And now for the per hostname stuff.
-    if hostname == "Gaming-PC" then (
-        imports =
-        [
-            ./gaming-pc.nix
-        ];
-    )
-    if hostname == "uWebServer" then (
-        imports =
-        [
-            ./uwebserver.nix
-        ];
-    )
-
+    #Enable SSH Securely
+    services.openssh = {
+        enable = true;
+        permitRootLogin = "no";
+        passwordAuthentication = false;
+    };
 
     system.stateVersion = "21.11";
 }
