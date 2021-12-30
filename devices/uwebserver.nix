@@ -33,5 +33,6 @@ in
          pkgs.steamcmd
          nixpkgs-unstable.plex
     ];
+    networking.hostName = "uWebServer";
     system.stateVersion = "21.11";
 }
