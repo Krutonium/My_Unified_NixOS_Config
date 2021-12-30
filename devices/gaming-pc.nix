@@ -48,6 +48,7 @@ in
               sdk_5_0
               sdk_6_0
           ])
+          pkgs.lz4
     ];
 
     # ZFS is a pain in the ass with it's own mounting when paired with the hardware config.
