@@ -7,6 +7,7 @@ in
     imports =
     [
         ./hardware-configuration.nix
+        ../bootloaders/grub.nix
         ../services/ahavi.nix
         ../services/ssh.nix
         ../services/fail2ban.nix
@@ -19,5 +20,18 @@ in
         ../users/krutonium.nix
         ../users/resin.nix
     ];
-
+    nixpkgs.config.allowUnfree = true;
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+    services.xserver.videoDrivers = [ "nvidia" ];
+    environment.systemPackages = with pkgs; [
+         wget
+         nano
+         htop
+         neofetch
+         git
+         screen
+         steamcmd
+         nixpkgs-unstable.plex
+    ];
+    system.stateVersion = "21.11";
 }

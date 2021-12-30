@@ -2,6 +2,7 @@
 let
     peerPort = 50023;
 in {
+    networking.firewall.allowedTCPPorts = [ 9091 50023 ];
     services.transmission = {
         enable = true;
         downloadDirPermissions = "777";

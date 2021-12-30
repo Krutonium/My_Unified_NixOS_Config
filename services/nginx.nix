@@ -1,5 +1,6 @@
 { config, ... }:
 {
+    services.firewall.allowedTCPPorts = [ 80 443 ];
     services.nginx.enable = true;
     security.acme.certs = {
         "krutonium.ca".email = "PFCKrutonium@gmail.com";
@@ -9,7 +10,6 @@
     };
     security.acme.email = "PFCKrutonium@gmail.com";
     security.acme.acceptTerms = true;
-    services.firewall.allowedTCPPorts = [ 80 443 ];
     services.nginx.virtualHosts = {
         "krutonium.ca" = {
             addSSL = true;

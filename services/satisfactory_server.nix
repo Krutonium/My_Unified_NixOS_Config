@@ -4,6 +4,8 @@ let
     user = "gameserver";
 in
 {
+    networking.firewall.allowedTCPPorts = [ 15777 15000 7777 ];
+    networking.firewall.allowedUDPPorts = [ 15777 15000 7777 ];
     imports = [
         ../users/gameserver.nix
     ];
@@ -26,6 +28,4 @@ in
         '';
         enable = true;
     };
-    networking.firewall.allowedTCPPorts = [ 15777 15000 7777 ];
-    networking.firewall.allowedUDPPorts = [ 15777 15000 7777 ];
 }

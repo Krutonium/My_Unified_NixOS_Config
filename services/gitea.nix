@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 {
+    # No port forwarding as NGINX is forwarding for us.
     services.gitea = {
         enable = true;
         appName = "Krutonium's Gitea Service";

@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+    networking.firewall.allowedTCPPorts = [ 445 139 ];
+    networking.firewall.allowedUDPPorts = [ 137 138 ];
     services.samba = {
         enable = true;
         securityType = "user";
