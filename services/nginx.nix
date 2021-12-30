@@ -1,6 +1,6 @@
 { config, ... }:
 {
-    services.firewall.allowedTCPPorts = [ 80 443 ];
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
     services.nginx.enable = true;
     security.acme.certs = {
         "krutonium.ca".email = "PFCKrutonium@gmail.com";
@@ -25,10 +25,6 @@
         "plex.krutonium.ca" = {
             forceSSL = true;
             enableACME = true;
-            recommendedGzipSettings = true;
-            recommendedOptimisation = true;
-            recommendedProxySettings = true;
-            recommendedTlsSettings = true;
             http2 = true;
                 extraConfig = ''
                     #Some players don't reopen a socket and playback stops totally instead of resuming after an extended pause
@@ -90,11 +86,7 @@
                 proxyPass = "http://127.0.0.1:32400/";
             };
         };
-        virtualHosts."gitea.krutonium.ca" = {                  # Gitea hostname
-            recommendedGzipSettings = true;
-            recommendedOptimisation = true;
-            recommendedProxySettings = true;
-            recommendedTlsSettings = true;
+        "gitea.krutonium.ca" = {                  # Gitea hostname
             enableACME = true;                                    # Use ACME certs
             forceSSL = true;                                      # Force SSL
             locations."/".proxyPass = "http://127.0.0.1:3001/";   # Proxy Gitea

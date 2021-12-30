@@ -6,7 +6,7 @@ in
 {
     imports =
     [
-        ./hardware-configuration.nix
+        ../hardware-configuration.nix
         ../bootloaders/grub.nix
         ../services/ahavi.nix
         ../services/ssh.nix
@@ -15,7 +15,7 @@ in
         ../services/plex.nix
         ../services/samba.nix
         ../services/satisfactory_server.nix
-        ../services/transmssion.nix
+        ../services/transmission.nix
         ../services/nginx.nix
         ../users/krutonium.nix
         ../users/resin.nix
