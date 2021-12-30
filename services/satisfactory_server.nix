@@ -4,6 +4,9 @@ let
     user = "gameserver";
 in
 {
+    imports = [
+        ../users/gameserver.nix
+    ];
     systemd.services.satisfactory = {
         description = "Satisfactory Game Server";
         serviceConfig = {

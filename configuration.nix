@@ -66,13 +66,5 @@ in
         pkgs.nano #Editor
         pkgs.git
     ];
-
-    #Enable SSH Securely
-    services.openssh = {
-        enable = true;
-        permitRootLogin = "no";
-        passwordAuthentication = false;
-    };
-
     system.stateVersion = "21.11";
 }

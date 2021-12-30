@@ -1,7 +1,7 @@
 { config, ...}:
 {
     users.users.gameserver = {
-        isNormalUser = true;
+        isNormalUser = false;
         extraGroups = [ ];
     };
 }
