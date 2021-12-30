@@ -1,4 +1,4 @@
-{ config }:
+{ config, pkgs, ... }:
 {
     systemd.services.betterfancontroller = {
         description = "Better Fan Controller";
