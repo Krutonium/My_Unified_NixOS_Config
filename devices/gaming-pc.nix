@@ -13,6 +13,7 @@ in
         ../services/fancontroller.nix
         ../services/ssh.nix
         ../desktops/gnome.nix
+        ../services/drwhowifi.nix
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/amd>
