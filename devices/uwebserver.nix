@@ -23,14 +23,14 @@ in
     nixpkgs.config.allowUnfree = true;
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
     services.xserver.videoDrivers = [ "nvidia" ];
-    environment.systemPackages = with pkgs; [
-         wget
-         nano
-         htop
-         neofetch
-         git
-         screen
-         steamcmd
+    environment.systemPackages = [
+         pkgs.wget
+         pkgs.nano
+         pkgs.htop
+         pkgs.neofetch
+         pkgs.git
+         pkgs.screen
+         pkgs.steamcmd
          nixpkgs-unstable.plex
     ];
     system.stateVersion = "21.11";
