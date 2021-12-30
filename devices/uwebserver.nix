@@ -7,7 +7,7 @@ in
     imports =
     [
         ../hardware-configuration.nix
-        ../bootloaders/grub.nix
+        ../bootloaders/grub_bios.nix
         ../services/ahavi.nix
         ../services/ssh.nix
         ../services/fail2ban.nix

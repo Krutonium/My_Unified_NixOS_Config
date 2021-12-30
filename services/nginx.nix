@@ -6,7 +6,7 @@
         "krutonium.ca".email = "PFCKrutonium@gmail.com";
         "dynmap.krutonium.ca".email = "PFCKrutonium@gmail.com";
         "plex.krutonium.ca".email = "PFCKrutonium@gmail.com";
-        "gitea.krutonium.ca".email = "PFCKrutonium@gmial.com";
+        "gitea.krutonium.ca".email = "PFCKrutonium@gmail.com";
     };
     security.acme.email = "PFCKrutonium@gmail.com";
     security.acme.acceptTerms = true;

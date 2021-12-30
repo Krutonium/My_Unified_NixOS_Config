@@ -1,8 +1,7 @@
 { config, ...}:
 {
     users.users.gameserver = {
-        isSystemUser = true;
+        isNormalUser = true;
         extraGroups = [ ];
-	group = "gameserver";
     };
 }
