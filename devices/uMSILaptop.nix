@@ -22,5 +22,6 @@ in
         <nixos-hardware/common/cpu/intel>
         #<nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
     ];
+    home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
     networking.hostName = Hostname;
 }

@@ -70,6 +70,7 @@ in
         pkgs.fish
         pkgs.oh-my-fish
         pkgs.babelfish
+	pkgs.github-desktop
     ];
     programs.git = {
         enable = true;

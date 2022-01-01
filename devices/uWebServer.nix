@@ -18,7 +18,7 @@ in
         ../services/satisfactory_server.nix
         ../services/transmission.nix
         ../services/nginx.nix
-        ../users/krutonium-nhm.nix
+        ../users/krutonium.nix
         ../users/resin.nix
     ];
     nixpkgs.config.allowUnfree = true;

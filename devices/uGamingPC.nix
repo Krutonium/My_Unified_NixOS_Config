@@ -19,6 +19,7 @@ in
         ../tweaks/zfs.nix
         ../packages/dotnet.nix
         ../packages/steam.nix
+        ../packages/qmk.nix
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/amd>
@@ -26,5 +27,6 @@ in
     ];
     #Set Hostname
     networking.hostName = Hostname;
+    home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
     system.stateVersion = "21.11";
 }

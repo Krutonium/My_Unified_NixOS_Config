@@ -8,5 +8,4 @@
     programs.fish.enable = true;
     programs.fish.useBabelfish = true;
     imports = [ ../packages/home-manager.nix ];
-    home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
 }
