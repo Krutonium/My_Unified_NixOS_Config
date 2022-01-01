@@ -1,4 +1,8 @@
 { config, pkgs, ...}:
+let
+    unstable = import (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable)
+    {config = config.nixpkgs.config;};
+in
 {
     networking.hostName = "uWebServer";
     imports =
@@ -28,6 +32,7 @@
          pkgs.git
          pkgs.screen
          pkgs.steamcmd
+         unstable.plex
     ];
     system.stateVersion = "21.11";
 }
