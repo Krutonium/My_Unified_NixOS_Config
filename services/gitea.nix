@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-    networking.firewall.allowedTCPPorts = [ 3002 ];
     services.gitea = {
         enable = true;
         appName = "Krutonium's Gitea Service";
@@ -13,7 +12,7 @@
         cookieSecure = true;
         ssh = {
             enable = true;
-            clonePort = 3002;
+            clonePort = 22;
         };
 	    disableRegistration = true;
 	};
