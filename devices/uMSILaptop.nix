@@ -11,7 +11,7 @@ in
         ../bootloaders/systemd.nix
         ../users/krutonium.nix
         ../services/ssh.nix
-        ../serivces/fail2ban.nix
+        ../services/fail2ban.nix
         ../desktops/gnome.nix
         ../tweaks/mitigations.nix
         ../packages/dotnet.nix
