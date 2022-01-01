@@ -10,5 +10,11 @@ You will also need to copy `device.nix.default` and name it `device.nix`. Inside
 
 Other than that, everything is as much as possible done via imports, to make it all as modular as possible. 
 
+## Useful Scripts:
+
+On a new install where you're replacing either a stock config or your own config with mine, run `link.sh`. If you've moved the repo and want it to update the repo location, run `relink.sh` instead.
+
+For me personally I also have `set_upstream.sh` which adds my personal gitea and github as remotes that will be pushed to at the same time.
+
 Questions? Comments? Open an Issue or contact me on Telegram [@Krutonium](t.me/Krutonium)!
 
