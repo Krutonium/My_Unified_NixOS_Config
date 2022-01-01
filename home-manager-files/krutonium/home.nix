@@ -69,6 +69,7 @@ in
         pkgs.transmission-remote-gtk
         pkgs.fish
         pkgs.oh-my-fish
+        pkgs.babelfish
     ];
     programs.fish.enable = true;
     programs.fish.useBabelfish = true;
