@@ -1,9 +1,6 @@
 { config, pkgs, ...}:
-let
-    nixpkgs-unstable = import (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable)
-    {config = config.nixpkgs.config;};
-in
 {
+    networking.hostName = "uWebServer";
     imports =
     [
         ../hardware-configuration.nix
@@ -17,7 +14,7 @@ in
         ../services/satisfactory_server.nix
         ../services/transmission.nix
         ../services/nginx.nix
-        ../users/krutonium.nix
+        ../users/krutonium-nhm.nix
         ../users/resin.nix
     ];
     nixpkgs.config.allowUnfree = true;
@@ -31,8 +28,6 @@ in
          pkgs.git
          pkgs.screen
          pkgs.steamcmd
-         nixpkgs-unstable.plex
     ];
-    networking.hostName = "uWebServer";
     system.stateVersion = "21.11";
 }

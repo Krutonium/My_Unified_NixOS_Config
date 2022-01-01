@@ -1,5 +1,6 @@
 { config, pkg, ... }:
 {
     boot.loader.systemd-boot.enable = true;
-    #unfinished. Need to find out what it needs.
+    boot.loader.systemd-boot.editor = true;
+    boot.loader.efi.efiSysMountPoint = "/boot";
 }
