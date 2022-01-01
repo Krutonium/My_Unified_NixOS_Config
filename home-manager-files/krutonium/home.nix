@@ -71,8 +71,6 @@ in
         pkgs.oh-my-fish
         pkgs.babelfish
     ];
-    programs.fish.enable = true;
-    programs.fish.useBabelfish = true;
     programs.git = {
         enable = true;
         userName = "Krutonium";
