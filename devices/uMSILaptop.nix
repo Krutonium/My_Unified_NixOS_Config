@@ -20,7 +20,7 @@ in
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/intel>
-        <nixos-hardware/common/gpu/nvidia/nvidia.nix>
+        #<nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
     ];
     networking.hostName = Hostname;
 }
