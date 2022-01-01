@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-    # No port forwarding as NGINX is forwarding for us.
+    networking.firewall.allowedTCPPorts = [ 3002 ];
     services.gitea = {
         enable = true;
         appName = "Krutonium's Gitea Service";
@@ -11,7 +11,10 @@
         rootUrl = "https://gitea.krutonium.ca/";
         httpPort = 3001;
         cookieSecure = true;
-        ssh.enable = false;
+        ssh = {
+            enable = true;
+            clonePort = 3002;
+        };
 	    disableRegistration = true;
 	};
  }
