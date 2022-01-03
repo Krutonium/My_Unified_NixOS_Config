@@ -18,6 +18,7 @@ in
         ../services/satisfactory_server.nix
         ../services/transmission.nix
         ../services/nginx.nix
+        ../services/minecraft-server.nix
         ../users/krutonium.nix
         ../users/resin.nix
     ];
