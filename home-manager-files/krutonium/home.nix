@@ -71,6 +71,7 @@ in
         pkgs.oh-my-fish
         pkgs.babelfish
 	pkgs.github-desktop
+	pkgs.godot
     ];
     programs.git = {
         enable = true;
