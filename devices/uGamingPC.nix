@@ -29,5 +29,6 @@ in
     #Set Hostname
     networking.hostName = Hostname;
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+    boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
     system.stateVersion = "21.11";
 }
