@@ -71,6 +71,7 @@ in
         pkgs.babelfish
 	pkgs.github-desktop
 	pkgs.spotify
+	unstable.python39Packages.deemix
     ];
     programs.git = {
         enable = true;
