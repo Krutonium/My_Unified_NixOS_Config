@@ -20,6 +20,7 @@ in
         ../packages/dotnet.nix
         ../packages/steam.nix
         ../packages/qmk.nix
+	../packages/wine.nix
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/amd>

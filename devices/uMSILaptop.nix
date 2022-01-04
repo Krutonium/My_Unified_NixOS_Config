@@ -17,6 +17,7 @@ in
         ../packages/dotnet.nix
         ../packages/home-manager.nix
         ../packages/steam.nix
+	../packages/wine.nix
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/intel>
