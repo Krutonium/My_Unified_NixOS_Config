@@ -50,6 +50,7 @@ in
         pkgs.neofetch
         pkgs.gnomeExtensions.appindicator
         pkgs.wine
+	pkgs.wine64
         pkgs.obs-studio
         pkgs.dropbox
         pkgs.lutris
