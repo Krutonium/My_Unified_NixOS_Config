@@ -70,7 +70,7 @@ in
         pkgs.oh-my-fish
         pkgs.babelfish
 	pkgs.github-desktop
-	pkgs.godot
+	pkgs.spotify
     ];
     programs.git = {
         enable = true;
