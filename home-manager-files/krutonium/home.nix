@@ -72,6 +72,7 @@ in
 	pkgs.github-desktop
 	pkgs.spotify
 	pkgs.notepadqq
+	unstable.gnomeExtensions.burn-my-windows
     ];
     programs.git = {
         enable = true;
