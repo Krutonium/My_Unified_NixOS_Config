@@ -7,6 +7,7 @@
         "dynmap.krutonium.ca".email = "PFCKrutonium@gmail.com";
         "plex.krutonium.ca".email = "PFCKrutonium@gmail.com";
         "gitea.krutonium.ca".email = "PFCKrutonium@gmail.com";
+	"nextcloud.krutonium.ca".email = "PFCKrutonium@gmail.com";
     };
     security.acme.email = "PFCKrutonium@gmail.com";
     security.acme.acceptTerms = true;
@@ -90,6 +91,10 @@
             enableACME = true;                                    # Use ACME certs
             forceSSL = true;                                      # Force SSL
             locations."/".proxyPass = "http://127.0.0.1:3001/";   # Proxy Gitea
+        };
+	"nextcloud.krutonium.ca" = {
+	    forceSSL = true;
+	    enableACME = true;
         };
     };
 }
