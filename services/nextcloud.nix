@@ -7,5 +7,6 @@
         enableImagemagick = true;
         package = pkgs.nextcloud23;
         hostName = "nextcloud.krutonium.ca";
+        config.adminpassFile = /nextcloudpassword.txt;
     };    
 }
