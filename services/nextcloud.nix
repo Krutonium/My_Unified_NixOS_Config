@@ -7,6 +7,6 @@
         enableImagemagick = true;
         package = pkgs.nextcloud23;
         hostName = "nextcloud.krutonium.ca";
-        config.adminpassFile = /nextcloudpassword.txt;
+        config.adminpassFile = "/etc/nixos/auth/nextcloudpassword.txt";
     };    
 }
