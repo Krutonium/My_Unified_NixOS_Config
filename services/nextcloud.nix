@@ -4,7 +4,7 @@
         enable = true;
         https = true;
         appstoreEnable = true;
-        enableImagemacgick = true;
+        enableImagemagick = true;
         package = pkgs.nextcloud23;
     };    
 }
