@@ -73,6 +73,9 @@ in
 	pkgs.spotify
 	pkgs.notepadqq
 	unstable.gnomeExtensions.burn-my-windows
+	unstable.dolphin-emu-beta
+	unstable.mgba
+	unstable.mupen64plus
     ];
     programs.git = {
         enable = true;
