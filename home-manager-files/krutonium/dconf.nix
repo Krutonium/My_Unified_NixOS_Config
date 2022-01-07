@@ -132,6 +132,15 @@ in
       welcome-dialog-last-shown-version = "40.1";
     };
 
+    "org/gnome/shell/extensions/burn-my-windows" = {
+      close-animation = "fire";
+      destroy-animation-time = "1500";
+      destroy-dialogs = true;
+      flame-3d-noise = true;
+      flame-movement-speed = 0.5;
+      flame-scale = 1;
+    };
+
     "org/gnome/shell/extensions/arcmenu" = {
       arc-menu-placement = "DTP";
       available-placement = [ false true false ];
