@@ -76,6 +76,7 @@ in
 	unstable.dolphin-emu-beta
 	unstable.mgba
 	unstable.mupen64plus
+	pkgs.nextcloud-client
     ];
     programs.git = {
         enable = true;
