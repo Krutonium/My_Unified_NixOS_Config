@@ -6,5 +6,6 @@
         appstoreEnable = true;
         enableImagemagick = true;
         package = pkgs.nextcloud23;
+        hostName = "nextcloud.krutonium.ca";
     };    
 }
