@@ -22,7 +22,7 @@ in
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/intel>
-#        <nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
+        #<nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
     ];
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
     nixpkgs.localSystem = {
@@ -33,6 +33,6 @@ in
     nix.extraOptions = ''
     extra-sandbox-paths = /nix/var/cache/ccache
     '';
-    nix.systemFeatures = [ "gccarch-haswell" ];
+    nix.systemFeatures = [ "gccarch-haswell" "big-parallel" ];
     networking.hostName = Hostname;
 }
