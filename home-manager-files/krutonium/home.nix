@@ -77,6 +77,7 @@ in
 	unstable.mgba
 	unstable.mupen64plus
 	pkgs.nextcloud-client
+	unstable.gnomeExtensions.ddterm
     ];
     programs.git = {
         enable = true;
