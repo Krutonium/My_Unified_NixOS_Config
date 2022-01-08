@@ -18,11 +18,21 @@ in
         ../packages/home-manager.nix
         ../packages/steam.nix
 	../packages/wine.nix
+	../packages/ccache.nix
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/intel>
-        #<nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
+#        <nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
     ];
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+    nixpkgs.localSystem = {
+        gcc.arch = "haswell";
+        gcc.tune = "haswell";
+        system = "x86_64-linux";
+    };
+    nix.extraOptions = ''
+    extra-sandbox-paths = /nix/var/cache/ccache
+    '';
+    nix.systemFeatures = [ "gccarch-haswell" ];
     networking.hostName = Hostname;
 }
