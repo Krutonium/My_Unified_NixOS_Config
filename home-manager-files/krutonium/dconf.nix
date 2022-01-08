@@ -223,6 +223,12 @@ in
       window-position = mkTuple [ 3431 39 ];
       window-size = mkTuple [ 1203 925 ];
     };
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-opacity = 100;
+      picture-options = "zoom";
+      picture-uri = "file:///etc/nixos/home-manager-files/wallpaper.png";
+    };
 
   };
 }
