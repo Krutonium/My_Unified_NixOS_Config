@@ -1,4 +1,7 @@
 { config, pkgs, ...}:
+let
+    kernel = pkgs.linuxPackages_zen;	
+in
 {
     environment.systemPackages = [
         pkgs.zenpower
