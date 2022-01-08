@@ -26,6 +26,12 @@ in
         <nixos-hardware/common/cpu/amd>
         <nixos-hardware/common/gpu/amd>
     ];
+    nixpkgs.localSystem = {
+        gcc.arch = "znver1";
+        gcc.tune = "znver1";
+        system = "x86_64-linux";
+    };
+    nix.systemFeatures = [ "gccarch-znver1" ];
     #Set Hostname
     networking.hostName = Hostname;
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
