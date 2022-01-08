@@ -25,11 +25,14 @@ in
         #<nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
     ];
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
-    nixpkgs.localSystem = {
-        gcc.arch = "haswell";
-        gcc.tune = "haswell";
-        system = "x86_64-linux";
-    };
+    #nixpkgs.localSystem = {
+    #    gcc.arch = "haswell";
+    #    gcc.tune = "haswell";
+    #    system = "x86_64-linux";
+    #};
+
+	# not enough ram to build from source
+
     nix.extraOptions = ''
     extra-sandbox-paths = /nix/var/cache/ccache
     '';
