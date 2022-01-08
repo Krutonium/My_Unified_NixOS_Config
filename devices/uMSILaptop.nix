@@ -24,5 +24,10 @@ in
         #<nixos-hardware/common/gpu/nvidia> #This doesn't work for some reason
     ];
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+    nixpkgs.localSystem = {
+        gcc.arch = "haswell";
+        gcc.tune = "haswell";
+        system = "x86_64-linux";
+   };
     networking.hostName = Hostname;
 }
