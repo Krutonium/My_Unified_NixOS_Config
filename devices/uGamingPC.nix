@@ -32,7 +32,7 @@ in
         gcc.tune = "znver1";
         system = "x86_64-linux";
     };
-    nix.systemFeatures = [ "gccarch-znver1" ];
+    nix.systemFeatures = [ "gccarch-znver1" "big-parallel" ];
     #Set Hostname
     networking.hostName = Hostname;
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
