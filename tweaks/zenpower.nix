@@ -1,10 +1,10 @@
 { config, pkgs, ...}:
 let
-    kernel = pkgs.linuxPackages_zen;	
+    kernel = pkgs.linuxPackages_zen;
 in
 {
     environment.systemPackages = [
-        pkgs.zenpower
+        kernel.zenpower
     ];
     boot.extraModulePackages = [ kernel.zenpower ];
     boot.blacklistedKernelModules =  [ "k10temp" ];
