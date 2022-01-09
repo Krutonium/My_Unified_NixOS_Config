@@ -1,14 +1,10 @@
-{ config, pkgs, ...}:
-#This is the configuration specific to my Gaming Desktop PC.
-
-#Run sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
+{ config, pkgs, ... }:
 let
-    kernel = pkgs.linuxPackages_zen;
-    Hostname = "uMsiLaptop";
+    Hostname = "uHPLaptop";
 in
 {
     imports = [
-        ../bootloaders/systemd.nix
+        ../bootloaders/grub_bios.nix
         ../users/krutonium.nix
         ../services/ssh.nix
         ../services/fail2ban.nix
