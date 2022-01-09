@@ -19,7 +19,7 @@ in
 
     # Set our Kernel
     boot.kernelPackages = kernel;
-    boot.tmpOnTmpfs = true;     
+    #boot.tmpOnTmpfs = true;     
     # Misc Settings - Optimize for Size, Compatible with Windows time, Enable unfree packages.
     nix.autoOptimiseStore = true;
     nix.gc.automatic = true;

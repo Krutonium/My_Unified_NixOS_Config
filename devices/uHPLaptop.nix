@@ -19,6 +19,9 @@ in
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/intel>
     ];
-    home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+    #home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
     networking.hostName = Hostname;
+
+    # One could argue this should be a tweak, but honestly it's very hardware specific.
+    boot.kernelParams = [ "acpi_backlight=native" ];
 }
