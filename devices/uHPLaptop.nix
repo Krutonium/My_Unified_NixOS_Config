@@ -13,8 +13,8 @@ in
         ../packages/dotnet.nix
         ../packages/home-manager.nix
         ../packages/steam.nix
-	    ../packages/wine.nix
-	    ../packages/ccache.nix
+        ../packages/wine.nix
+        ../packages/ccache.nix
         <nixos-hardware/common/pc>
         <nixos-hardware/common/pc/ssd>
         <nixos-hardware/common/cpu/intel>
