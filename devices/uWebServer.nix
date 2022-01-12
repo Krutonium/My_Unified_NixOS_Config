@@ -15,10 +15,10 @@ in
         ../services/gitea.nix
         ../services/plex.nix
         ../services/samba.nix
-        ../services/satisfactory_server.nix
+        #../services/satisfactory_server.nix
         ../services/transmission.nix
         ../services/nginx.nix
-        ../services/minecraft_server.nix
+        #../services/minecraft_server.nix
         ../services/nextcloud.nix
         ../users/krutonium.nix
         ../users/resin.nix
