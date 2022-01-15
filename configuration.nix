@@ -66,6 +66,7 @@ in
     environment.systemPackages = [
         pkgs.nano #Editor
         pkgs.git
+	pkgs.tldr #Replace man
     ];
     system.stateVersion = "21.11";
 }
