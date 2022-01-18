@@ -17,15 +17,15 @@ in
         ../tweaks/VL805.nix
         ../tweaks/mitigations.nix
         ../tweaks/zfs.nix
-	../tweaks/zenpower.nix
+        ../tweaks/zenpower.nix
         ../packages/dotnet.nix
         ../packages/steam.nix
         ../packages/qmk.nix
-	../packages/wine.nix
-        <nixos-hardware/common/pc>
-        <nixos-hardware/common/pc/ssd>
-        <nixos-hardware/common/cpu/amd>
-        <nixos-hardware/common/gpu/amd>
+        ../packages/wine.nix
+#        <nixos-hardware/common/pc>
+#        <nixos-hardware/common/pc/ssd>
+#        <nixos-hardware/common/cpu/amd>
+#        <nixos-hardware/common/gpu/amd>
     ];
     #nixpkgs.localSystem = {
     #    gcc.arch = "znver1";
@@ -38,7 +38,6 @@ in
     nix.systemFeatures = [ "gccarch-znver1" "big-parallel" ];
     #Set Hostname
     networking.hostName = Hostname;
-    home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
     boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
     system.stateVersion = "21.11";
 }

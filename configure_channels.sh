@@ -8,7 +8,7 @@ fi
 # Configure channels
 echo "Configuring channels..."
 nix-channel --add https://nixos.org/channels/nixos-21.11 nixos
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
 nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 nix-channel --update
 echo "Done"

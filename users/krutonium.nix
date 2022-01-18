@@ -8,5 +8,4 @@
     };
     programs.fish.enable = true;
     programs.fish.useBabelfish = true;
-    imports = [ ../packages/home-manager.nix ];
 }

@@ -4,8 +4,6 @@
 # Before Use, you should edit device.nix to point at the config you want for this computer.
 
 let
-    # Variables!
-    config_select = builtins.readFile ./config_name;
     kernel = pkgs.linuxPackages_zen;
 in
 {
@@ -13,8 +11,8 @@ in
     imports =
     [
         # Import other files that are used by all associated computers
-        ./hardware-configuration.nix
-        ./device.nix
+        #./hardware-configuration.nix
+        #./device.nix
     ];
 
     # Set our Kernel
@@ -68,5 +66,11 @@ in
         pkgs.git
 	pkgs.tldr #Replace man
     ];
+
+    nix.package = pkgs.nixUnstable;
+    nix.extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+
     system.stateVersion = "21.11";
 }

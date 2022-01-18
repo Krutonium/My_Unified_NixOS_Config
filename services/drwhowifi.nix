@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-    ssid = "Bad Wolf";
+    ssid = "ᒣᒥப߹/ΔП";
     password = "nottherealpassword";
 in
 {

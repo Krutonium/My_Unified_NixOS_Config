@@ -2,18 +2,6 @@
 #To configure Fish:
 #curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 #omf install agnoster
-
-let
-    unstable = import (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable)
-    {
-        config = config.nixpkgs.config;
-    };
-  
-    nur = import (builtins.fetchTarball https://github.com/nix-community/NUR/tarball/master)
-    {
-        config = config.nixpkgs.config;
-    };
-in
 {
     imports = [
         ./dconf.nix
