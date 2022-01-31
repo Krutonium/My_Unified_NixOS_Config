@@ -1,8 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }: # we add another parameter here
 #To configure Fish:
 #curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 #omf install agnoster
-{
+
+let
+  unstable = pkgs-unstable; # TODO: fix that properly in the rest of the file
+
+in {
     imports = [
         ./dconf.nix
     ];
@@ -43,6 +47,9 @@
         unstable.mangohud
         (pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
         pkgs.openjdk17
+	pkgs.openjdk10
+	pkgs.openjdk8
+	pkgs.openjdk7
         unstable.goverlay
         unstable.openrct2
         pkgs.vlc

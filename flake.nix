@@ -25,5 +25,26 @@
                 common-gpu-amd
            ]);
         };
+        nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [
+                ./common.nix
+                ./hardware-configurations/uMSILaptop.nix
+                ./devices/uMsiLaptop.nix
+            ] ++ (with nixos-hardware.nixosModules; [
+                common-pc
+                common-pc-ssd
+                common-cpu-intel
+                common-gpu-intel
+            ]);
+        };
+        nixosConfigurations.uWebServer = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [
+                ./common.nix
+                ./hardware-configurations/uWebServer.nix
+                ./devices/uWebServer.nix
+            ];
+        };
     };
 }
