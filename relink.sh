@@ -8,5 +8,5 @@ fi
 
 rm /etc/nixos
 ln -s $(pwd) /etc/nixos
-nixos-generate-config
+# nixos-generate-config
 

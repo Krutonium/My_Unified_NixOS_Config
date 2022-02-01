@@ -8,4 +8,4 @@ fi
 
 mv /etc/nixos/ /etc/nixos.bak/ || true
 ln -s $(pwd) /etc/nixos
-nixos-generate-config
+# nixos-generate-config
