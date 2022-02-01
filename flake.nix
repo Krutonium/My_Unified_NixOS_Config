@@ -12,6 +12,8 @@
       (system: deployLib: deployLib.deployChecks self.deploy)
       deploy-rs.lib;
 
+    inherit (deploy-rs) apps;
+
     deploy.nodes.uMsiLaptop = {
       hostname = "uMsiLaptop";
 

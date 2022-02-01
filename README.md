@@ -2,7 +2,14 @@
 
 Hey, Welcome to the repo. Heres' what you need to know:
 
-TBD
+System Definitions go in /devices/
+Hardware Definitions for those systems go in /hardware-configurations/ and should named after the device
+Define the systems to manage in flake.nix, you can use the existing definitions as guidance
+And finally, to update all the things:
+
+`nix run .#deploy-rs`
+
+Go forth and Enjoy!
 
 ## Useful Scripts:
 
