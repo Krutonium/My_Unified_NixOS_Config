@@ -16,7 +16,6 @@
 
     deploy.nodes.uMsiLaptop = {
       hostname = "uMsiLaptop";
-
       profiles.system = {
         sshUser = "root";
         user = "root";
@@ -24,6 +23,28 @@
         path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uMsiLaptop;
       };
     };
+
+    deploy.nodes.uGamingPC = {
+      hostname = "uGamingPC";
+      profiles.system = {
+        sshUser = "root";
+        user = "root";
+        fastConnection = true;
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uGamingPC;
+      };
+    };
+
+    deploy.nodes.uWebServer = {
+      hostname = "uWebServer";
+      profiles.system = {
+        sshUser = "root";
+        user = "root";
+        fastConnection = true;
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uWebServer;
+      };
+    };
+
+   
 
     nixosConfigurations.uGamingPC = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
