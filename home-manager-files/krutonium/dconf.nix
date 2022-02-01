@@ -227,8 +227,7 @@ in
       color-shading-type = "solid";
       picture-opacity = 100;
       picture-options = "zoom";
-      picture-uri = "file:///etc/nixos/home-manager-files/krutonium/wallpaper.png";
+      picture-uri = "file://#{./wallpaper.png}";
     };
-
   };
 }
