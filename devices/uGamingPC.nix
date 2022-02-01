@@ -11,6 +11,7 @@ in
         ../bootloaders/grub.nix
         ../users/krutonium.nix
 	../users/root.nix
+	../users/notkea.nix
         ../services/fancontroller.nix
         ../services/ssh.nix
         ../desktops/gnome.nix

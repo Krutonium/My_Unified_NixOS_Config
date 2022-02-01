@@ -7,7 +7,7 @@ in
     networking.hostName = "uWebServer";
     imports =
     [
-        ../hardware-configuration.nix
+        ../common.nix
         ../bootloaders/grub_bios.nix
         ../services/ahavi.nix
         ../services/ssh.nix
