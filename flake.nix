@@ -49,8 +49,14 @@
                 common-cpu-intel
             ]);
         };
-        nixosConfigurations.uWebServer = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.uWebServer = nixpkgs.lib.nixosSystem rec {
             system = "x86_64-linux";
+	    specialArgs = {
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+	    };
             modules = [
                 ./common.nix
                 ./hardware-configurations/uWebServer.nix

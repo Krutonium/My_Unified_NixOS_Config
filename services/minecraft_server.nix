@@ -3,7 +3,7 @@
     services.minecraft-server = {
         enable = true;
         openFirewall = true;
-        dataDir = /srv/Minecraft;
+        dataDir = "/srv/Minecraft";
         eula = true;
     };
 }

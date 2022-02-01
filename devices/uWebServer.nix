@@ -1,7 +1,6 @@
-{ config, pkgs, ...}:
+{ config, pkgs, pkgs-unstable, ...}:
 let
-    unstable = import (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixpkgs-unstable)
-    {config = config.nixpkgs.config;};
+    unstable = pkgs-unstable;
 in
 {
     networking.hostName = "uWebServer";
