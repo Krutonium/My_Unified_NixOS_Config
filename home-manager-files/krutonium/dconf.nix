@@ -227,7 +227,7 @@ in
       color-shading-type = "solid";
       picture-opacity = 100;
       picture-options = "zoom";
-      picture-uri = "file://${./background.png}";
+      picture-uri = "file://${./wallpaper.png}";
     };
   };
 }
