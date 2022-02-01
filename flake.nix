@@ -18,7 +18,6 @@
       hostname = "uMsiLaptop";
       profiles.system = {
         sshUser = "root";
-        user = "root";
         fastConnection = true; # if local network is faster than WAN
         path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uMsiLaptop;
       };
@@ -28,7 +27,6 @@
       hostname = "uGamingPC";
       profiles.system = {
         sshUser = "root";
-        user = "root";
         fastConnection = true;
         path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uGamingPC;
       };
@@ -38,7 +36,6 @@
       hostname = "uWebServer";
       profiles.system = {
         sshUser = "root";
-        user = "root";
         fastConnection = true;
         path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uWebServer;
       };
