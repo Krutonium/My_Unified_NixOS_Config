@@ -4,9 +4,25 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    deploy-rs.url = "github:serokell/deploy-rs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixos-hardware }: {
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixos-hardware, deploy-rs }: {
+    checks = builtins.mapAttrs
+      (system: deployLib: deployLib.deployChecks self.deploy)
+      deploy-rs.lib;
+
+    deploy.nodes.uMsiLaptop = {
+      hostname = "uMsiLaptop";
+
+      profiles.system = {
+        sshUser = "root";
+        user = "root";
+        fastConnection = true; # if local network is faster than WAN
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.uMsiLaptop;
+      };
+    };
+
     nixosConfigurations.uGamingPC = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
