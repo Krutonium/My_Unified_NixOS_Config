@@ -2,7 +2,7 @@
 { lib, ... }:
 
 with lib.hm.gvariant;
-let 
+let
   userTheme = "Sweet-Dark";      #Shell Theme
   mainTheme = "Sweet-Dark"; #Application Theme
   mainFont = "Ubuntu 11";
@@ -126,7 +126,7 @@ in
 
     "org/gnome/shell" = {
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "burn-my-windows@schneegans.github.com" "ddterm@amezin.github.com"];
+      enabled-extensions = [ "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "burn-my-windows@schneegans.github.com" "ddterm@amezin.github.com" ];
       favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "discord.desktop" "telegramdesktop.desktop" ];
       remember-mount-password = false;
       welcome-dialog-last-shown-version = "40.1";

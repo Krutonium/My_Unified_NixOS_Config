@@ -1,4 +1,4 @@
-{ config, ...}:
+{ config, ... }:
 {
-    boot.kernelParams = [ "mitigations=off" ];
+  boot.kernelParams = [ "mitigations=off" ];
 }

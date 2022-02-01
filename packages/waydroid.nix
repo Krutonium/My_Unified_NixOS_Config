@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
-    virtualisation.waydroid.enable = true;
-        environment.systemPackages = [
-        pkgs.waydroid
-   ];
+  virtualisation.waydroid.enable = true;
+  environment.systemPackages = [
+    pkgs.waydroid
+  ];
 }
