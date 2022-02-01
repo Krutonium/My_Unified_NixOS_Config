@@ -10,6 +10,7 @@ in
     imports = [
         ../bootloaders/systemd.nix
         ../users/krutonium.nix
+	../users/root.nix
         ../services/ssh.nix
         ../services/fail2ban.nix
         ../desktops/gnome.nix

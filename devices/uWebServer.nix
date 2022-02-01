@@ -22,6 +22,7 @@ in
         ../services/nextcloud.nix
         ../users/krutonium.nix
         ../users/resin.nix
+	../users/root.nix
     ];
     nixpkgs.config.allowUnfree = true;
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;

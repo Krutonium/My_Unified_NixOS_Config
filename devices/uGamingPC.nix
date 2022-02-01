@@ -10,6 +10,7 @@ in
     imports = [
         ../bootloaders/grub.nix
         ../users/krutonium.nix
+	../users/root.nix
         ../services/fancontroller.nix
         ../services/ssh.nix
         ../desktops/gnome.nix

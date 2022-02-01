@@ -22,7 +22,10 @@ in {
     home.sessionVariables.VISUAL = "nano";
     home.sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
     #Install our Packages
-    home.packages = [
+    home.packages = let
+        openjdk17-low = pkgs.openjdk17.overrideAttrs(oldAttrs: { meta.priority = 10; });
+    in
+	[
         unstable.tdesktop
         pkgs.discord
         pkgs.firefox
@@ -46,7 +49,7 @@ in {
         pkgs.lutris
         unstable.mangohud
         (pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
-        pkgs.openjdk17
+        openjdk17-low
 	pkgs.openjdk8
         unstable.goverlay
         unstable.openrct2
