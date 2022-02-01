@@ -25,17 +25,28 @@
                 common-gpu-amd
            ]);
         };
-        nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem rec {
             system = "x86_64-linux";
+            specialArgs = {
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
             modules = [
                 ./common.nix
-                ./hardware-configurations/uMSILaptop.nix
+                ./hardware-configurations/uMsiLaptop.nix
                 ./devices/uMsiLaptop.nix
+                home-manager.nixosModules.home-manager
+                {
+                    home-manager.useGlobalPkgs = false;
+                    home-manager.useUserPackages = true;
+                    home-manager.extraSpecialArgs = specialArgs;
+                }
             ] ++ (with nixos-hardware.nixosModules; [
                 common-pc
                 common-pc-ssd
                 common-cpu-intel
-                common-gpu-intel
             ]);
         };
         nixosConfigurations.uWebServer = nixpkgs.lib.nixosSystem {

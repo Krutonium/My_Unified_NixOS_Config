@@ -15,14 +15,10 @@ in
         ../desktops/gnome.nix
         ../tweaks/mitigations.nix
         ../packages/dotnet.nix
-        ../packages/home-manager.nix
         ../packages/steam.nix
-	../packages/wine.nix
-	../packages/ccache.nix
-	../packages/waydroid.nix
-        <nixos-hardware/common/pc>
-        <nixos-hardware/common/pc/ssd>
-        <nixos-hardware/common/cpu/intel>
+        ../packages/wine.nix
+        ../packages/ccache.nix
+        ../packages/waydroid.nix
     ];
     home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
     networking.hostName = Hostname;

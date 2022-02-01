@@ -47,9 +47,7 @@ in {
         unstable.mangohud
         (pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
         pkgs.openjdk17
-	pkgs.openjdk10
 	pkgs.openjdk8
-	pkgs.openjdk7
         unstable.goverlay
         unstable.openrct2
         pkgs.vlc
