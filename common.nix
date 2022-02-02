@@ -21,8 +21,8 @@ in
   boot.cleanTmpDir = true;
   # Misc Settings - Optimize for Size, Compatible with Windows time, Enable unfree packages.
   nix.autoOptimiseStore = true;
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 3d";
+  #nix.gc.automatic = true;
+  #nix.gc.options = "--delete-older-than 3d";
   time.hardwareClockInLocalTime = true;
   nixpkgs.config.allowUnfree = true;
 
