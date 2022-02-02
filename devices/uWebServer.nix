@@ -4,6 +4,7 @@ let
 in
 {
   networking.hostName = "uWebServer";
+  networking.firewall.allowedTCPPorts = [ 25565 ]; #Somtimes Minecraft Servers are run without being explicitly enabled for testing purposes.
   imports =
     [
       ../common.nix
