@@ -65,6 +65,8 @@ in
     pkgs.nano #Editor
     pkgs.git
     pkgs.tldr #Replace man
+    pkgs.colmena
+    pkgs.tmux
   ];
 
   nix.package = pkgs.nixUnstable;
