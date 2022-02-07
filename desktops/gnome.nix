@@ -17,4 +17,7 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  services.xserver.displayManager.gdm.autoSuspend = false;
+  services.xserver.displayManager.gdm.autoLogin.user = "krutonium";
+  services.xserver.displayManager.gdm.autoLogin.enable = true;
 }
