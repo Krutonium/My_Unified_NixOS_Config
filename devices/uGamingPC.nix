@@ -24,18 +24,7 @@ in
     ../packages/steam.nix
     ../packages/qmk.nix
     ../packages/wine.nix
-    #        <nixos-hardware/common/pc>
-    #        <nixos-hardware/common/pc/ssd>
-    #        <nixos-hardware/common/cpu/amd>
-    #        <nixos-hardware/common/gpu/amd>
   ];
-  #nixpkgs.localSystem = {
-  #    gcc.arch = "znver1";
-  #    gcc.tune = "znver1";
-  #    system = "x86_64-linux";
-  #};
-
-  #not enough ram to build from source
 
   nix.systemFeatures = [ "gccarch-znver1" "big-parallel" ];
   #Set Hostname
