@@ -18,6 +18,6 @@
     jack.enable = true;
   };
   services.xserver.displayManager.gdm.autoSuspend = false;
-  services.xserver.displayManager.gdm.autoLogin.user = "krutonium";
-  services.xserver.displayManager.gdm.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "krutonium";
+  services.xserver.displayManager.autoLogin.enable = true;
 }
