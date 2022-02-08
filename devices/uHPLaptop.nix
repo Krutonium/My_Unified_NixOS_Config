@@ -6,6 +6,7 @@ in
   imports = [
     ../bootloaders/grub_bios.nix
     ../users/krutonium.nix
+    ../users/root.nix
     ../services/ssh.nix
     ../services/fail2ban.nix
     ../services/fprintd.nix
