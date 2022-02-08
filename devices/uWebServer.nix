@@ -25,6 +25,7 @@ in
       ../users/resin.nix
       ../users/root.nix
       ../users/gameserver.nix
+      ../services/synapse.nix
     ];
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;

@@ -24,6 +24,7 @@ in
     ../packages/steam.nix
     ../packages/qmk.nix
     ../packages/wine.nix
+    ../packages/plymouth.nix
   ];
 
   nix.systemFeatures = [ "gccarch-znver1" "big-parallel" ];
