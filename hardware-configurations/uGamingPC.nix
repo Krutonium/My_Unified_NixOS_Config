@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
@@ -14,17 +15,20 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/64aef0ca-3624-47b1-b5fc-a09fe319c734";
+    {
+      device = "/dev/disk/by-uuid/64aef0ca-3624-47b1-b5fc-a09fe319c734";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/86CF-6F1C";
+    {
+      device = "/dev/disk/by-uuid/86CF-6F1C";
       fsType = "vfat";
     };
 
   fileSystems."/home/krutonium/steam" =
-    { device = "games";
+    {
+      device = "games";
       fsType = "zfs";
     };
 

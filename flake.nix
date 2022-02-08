@@ -96,6 +96,43 @@
         ]
         );
       };
+      #uHPLaptop
+      uHPLaptop = { name, nodes, pkgs, ... }: {
+        deployment = {
+          targetHost = "uHPLaptop"; # well that could just be the name…
+          tags = [ "workstations" ]; # this is nice to separate deployment groups
+        };
+
+        imports = [
+          {
+            _module.args = {
+              pkgs-unstable = import nixpkgs-unstable {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
+            };
+          }
+          ./common.nix
+          ./hardware-configurations/uHPLaptop.nix
+          ./devices/uHPLaptop.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = false;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {
+              pkgs-unstable = import nixpkgs-unstable {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
+            };
+          }
+        ] ++ (with nixos-hardware.nixosModules; [
+          common-pc
+          common-pc-ssd
+          common-cpu-intel
+        ]
+        );
+      };
       # uWebServer
       uWebServer = { name, nodes, pkgs, ... }: {
         deployment = {

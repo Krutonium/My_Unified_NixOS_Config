@@ -17,28 +17,30 @@
       enableACME = true;
       root = "/var/www/home/";
       serverAliases = [ "www.krutonium.ca" ];
-      
+
       locations."= /.well-known/matrix/server".extraConfig =
         let
           # use 443 instead of the default 8448 port to unite
           # the client-server and server-server port for simplicity
           server = { "m.server" = "synapse.krutonium.ca:443"; };
-        in ''
+        in
+        ''
           add_header Content-Type application/json;
           return 200 '${builtins.toJSON server}';
         '';
-        locations."= /.well-known/matrix/client".extraConfig =
-          let
-            client = {
-            "m.server" =  { "base_url" = "https://synapse.krutonium.ca"; };
-            "m.identity_server" =  { "base_url" = "https://vector.im"; };
+      locations."= /.well-known/matrix/client".extraConfig =
+        let
+          client = {
+            "m.server" = { "base_url" = "https://synapse.krutonium.ca"; };
+            "m.identity_server" = { "base_url" = "https://vector.im"; };
           };
           # ACAO required to allow element-web on any URL to request this json file
-          in ''
-            add_header Content-Type application/json;
-            add_header Access-Control-Allow-Origin *;
-            return 200 '${builtins.toJSON client}';
-          '';
+        in
+        ''
+          add_header Content-Type application/json;
+          add_header Access-Control-Allow-Origin *;
+          return 200 '${builtins.toJSON client}';
+        '';
     };
     "dynmap.krutonium.ca" = {
       forceSSL = true;

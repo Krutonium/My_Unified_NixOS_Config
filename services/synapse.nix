@@ -13,10 +13,10 @@
       resources = [{
         names = [ "client" "federation" ]; #idk what this means
         compress = false;
+      }];
     }];
-  }];
-};
-services.postgresql = {
+  };
+  services.postgresql = {
     enable = true;
     initialScript = pkgs.writeText "synapse-init.sql" ''
       CREATE ROLE "matrix-synapse" WITH LOGIN PASSWORD 'synapse';
