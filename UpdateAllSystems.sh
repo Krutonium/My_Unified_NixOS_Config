@@ -2,4 +2,4 @@
 git pull
 nix flake update --commit-lock-file
 colmena apply switch
-colmena exec -- reboot
+# colmena exec -- reboot TODO: Reliable?
