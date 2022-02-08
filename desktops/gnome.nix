@@ -9,7 +9,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   hardware.pulseaudio.enable = false;
-  security.pam.services.gdm.enableGnomeKeyring = false;
+  #security.pam.services.gdm.enableGnomeKeyring = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -19,6 +19,6 @@
     jack.enable = true;
   };
   services.xserver.displayManager.gdm.autoSuspend = false;
-  services.xserver.displayManager.autoLogin.user = "krutonium";
-  services.xserver.displayManager.autoLogin.enable = true;
+  #services.xserver.displayManager.autoLogin.user = "krutonium";
+  #services.xserver.displayManager.autoLogin.enable = true;
 }
