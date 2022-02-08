@@ -7,11 +7,12 @@
     enable_registration = false;
     listeners = [{
       port = 8008;
-      bind_address = "0.0.0.0";
+      bind_address = "127.0.0.1"; # only local, handled by nginx reverse-proxy
       type = "http";
       tls = false;
+      x_forwarded = true;
       resources = [{
-        names = [ "client" "federation" ]; #idk what this means
+        names = [ "client" "federation" ];
         compress = false;
       }];
     }];

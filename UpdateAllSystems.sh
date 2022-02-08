@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 git pull
 nix flake update --commit-lock-file
-colmena apply switch
-# colmena exec -- reboot TODO: Reliable?
+colmena apply switch --no-substitutes

@@ -2,6 +2,10 @@
 {
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.nginx.enable = true;
+  services.nginx.recommendedTlsSettings = true;
+  services.nginx.recommendedOptimisation = true;
+  services.nginx.recommendedGzipSettings = true;
+  services.nginx.recommendedProxySettings = true;
   security.acme.certs = {
     "krutonium.ca".email = "PFCKrutonium@gmail.com";
     "dynmap.krutonium.ca".email = "PFCKrutonium@gmail.com";
@@ -131,3 +135,4 @@
     };
   };
 }
+
