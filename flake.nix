@@ -27,6 +27,7 @@
         deployment = {
           targetHost = "uMsiLaptop"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
+          allowLocalDeployment = true;
         };
 
         imports = [
@@ -64,6 +65,7 @@
         deployment = {
           targetHost = "uGamingPC"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
+          allowLocalDeployment = true;
         };
         imports = [
           {
@@ -101,6 +103,7 @@
         deployment = {
           targetHost = "uHPLaptop"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
+          allowLocalDeployment = true;
         };
 
         imports = [
@@ -138,6 +141,7 @@
         deployment = {
           targetHost = "uWebServer"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
+          allowLocalDeployment = true;
         };
         imports = [
           {
