@@ -7,7 +7,8 @@ Hardware Definitions for those systems go in /hardware-configurations/ and shoul
 Define the systems to manage in flake.nix, you can use the existing definitions as guidance
 And finally, to update all the things:
 
-`nix run .#deploy-rs`
+`nix flake update --commit-lock-file` to update the flake inputs and commit that change to the repo.
+`colmena apply switch` to apply the config
 
 Go forth and Enjoy!
 
