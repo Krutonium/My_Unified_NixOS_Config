@@ -15,7 +15,7 @@ in
     ../packages/dotnet.nix
     ../packages/steam.nix
     ../packages/wine.nix
-    ../packages/ccache.nix
+    ../packages/plymouth.nix
   ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
