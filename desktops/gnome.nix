@@ -9,6 +9,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   hardware.pulseaudio.enable = false;
+  security.pam.services.gdm.enableGnomeKeyring = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
