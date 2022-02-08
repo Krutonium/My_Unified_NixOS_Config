@@ -96,29 +96,29 @@
         ]
         );
       };
-        # uWebServer
-        uWebServer = { name, nodes, pkgs, ... }: {
-          deployment = {
-            targetHost = "uWebServer"; # well that could just be the name…
-            tags = [ "workstations" ]; # this is nice to separate deployment groups
-          };
-          imports = [
-            {
-              _module.args = {
-                pkgs-unstable = import nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config.allowUnfree = true;
-                };
-              };
-            }
-            ./common.nix
-            ./hardware-configurations/uWebServer.nix
-            ./devices/uWebServer.nix
-          ] ++ (with nixos-hardware.nixosModules; [
-            common-pc
-            common-cpu-intel
-          ]);
+      # uWebServer
+      uWebServer = { name, nodes, pkgs, ... }: {
+        deployment = {
+          targetHost = "uWebServer"; # well that could just be the name…
+          tags = [ "workstations" ]; # this is nice to separate deployment groups
         };
+        imports = [
+          {
+            _module.args = {
+              pkgs-unstable = import nixpkgs-unstable {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
+            };
+          }
+          ./common.nix
+          ./hardware-configurations/uWebServer.nix
+          ./devices/uWebServer.nix
+        ] ++ (with nixos-hardware.nixosModules; [
+          common-pc
+          common-cpu-intel
+        ]);
       };
     };
+  };
 }
