@@ -76,7 +76,7 @@ in
       unstable.mupen64plus
       pkgs.nextcloud-client
       unstable.gnomeExtensions.ddterm
-      pkgs.element-desktop-wayland
+      pkgs.element-desktop
     ];
   programs.git = {
     enable = true;
