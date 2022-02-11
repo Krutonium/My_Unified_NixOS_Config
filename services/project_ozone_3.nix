@@ -5,7 +5,7 @@ let
 in
 {
   networking.firewall.allowedTCPPorts = [ 25565 ];
-  systemd.services.stoneblock = {
+  systemd.services.po3 = {
     description = "ProjectOzone Game Server";
     serviceConfig = {
       Type = "simple";
