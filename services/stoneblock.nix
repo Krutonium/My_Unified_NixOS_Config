@@ -20,6 +20,6 @@ in
     script = ''
       steam-run screen -DmS stoneblock ${workingdir}/LaunchServer.sh
     '';
-    enable = false;
+    enable = true;
   };
 }
