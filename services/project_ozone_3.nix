@@ -1,12 +1,12 @@
 { config, pkgs, lib, ... }:
 let
-  workingdir = "/srv/StoneBlock";
+  workingdir = "/srv/ProjectOzone3";
   user = "gameserver";
 in
 {
   networking.firewall.allowedTCPPorts = [ 25565 ];
   systemd.services.stoneblock = {
-    description = "Stoneblock Game Server";
+    description = "ProjectOzone Game Server";
     serviceConfig = {
       Type = "simple";
       WorkingDirectory = workingdir;
