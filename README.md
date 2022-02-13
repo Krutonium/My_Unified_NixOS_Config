@@ -12,6 +12,19 @@ And finally, to update all the things:
 
 Go forth and Enjoy!
 
+## Useful Commands:
+
+I've converted a bunch of my scripts so that they're available on the system anywhere.
+
+Specifically:
+`update` updates the local system
+`updateAll` updates all computers on the LAN
+`resetConfig` deletes the repo and then redownloads and configures it
+`pushConfig` pushes the current config to the repo
+`rebootEverything` reboots all computers on the LAN, useful after big updates
+`rebootCancel` cancels reboots on all computers on the LAN.
+
+
 ## Useful Scripts:
 
 On a new install where you're replacing either a stock config or your own config with mine, run `link.sh`. If you've moved the repo and want it to update the repo location, run `relink.sh` instead.
