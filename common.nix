@@ -13,6 +13,7 @@ in
       # Import other files that are used by all associated computers
       #./hardware-configuration.nix
       #./device.nix
+      ./packages/scripts.nix
     ];
 
   # Set our Kernel
