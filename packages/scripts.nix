@@ -28,19 +28,19 @@ let
     git push
   '';
   rebootEverything = pkgs.writeShellScriptBin "rebootEverything" ''
-    ssh root@uwebserver 'shutdown -r 10s' &
-    ssh root@umsilaptop 'shutdown -r 10s' &
-    ssh root@uhplaptop 'shutdown -r 10s' &
-    ssh root@ugamingpc 'shutdown -r 10s'
+    ssh root@uwebserver 'shutdown -r 1'
+    ssh root@umsilaptop 'shutdown -r 1'
+    ssh root@uhplaptop 'shutdown -r 1'
+    ssh root@ugamingpc 'shutdown -r 1'
     echo "Done"
   '';
   rebootCancel = pkgs.writeShellScriptBin "rebootCancel" ''
-    ssh root@uwebserver 'shutdown -c' &
-    ssh root@umsilaptop 'shutdown -c' &
-    ssh root@uhplaptop 'shutdown -c' &
+    ssh root@uwebserver 'shutdown -c'
+    ssh root@umsilaptop 'shutdown -c'
+    ssh root@uhplaptop 'shutdown -c'
     ssh root@ugamingpc 'shutdown -c'
     echo "Done"
   '';
 in {
-  environment.systemPackages = [ update updateAll resetConfig pushConfig rebootEverything rebootCancel ];
+  environment.systemPackages = [ update updateAll resetConfig pushConfig rebootEverything rebootCancel];
 }
