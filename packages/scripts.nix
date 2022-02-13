@@ -14,7 +14,7 @@ let
   '';
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
     rm -rf /home/krutonium/My_Unified_NixOS_Config
-    git clone gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git
+    git clone gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git /home/krutonium/My_Unified_NixOS_Config
     cd /home/krutonium/My_Unified_NixOS_Config/scripts
     ./relink.sh
     ./set_upstream.sh
