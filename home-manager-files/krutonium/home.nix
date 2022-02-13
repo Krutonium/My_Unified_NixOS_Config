@@ -4,14 +4,13 @@
 #omf install agnoster
 
 let
-  unstable = pkgs-unstable; # TODO: fix that properly in the rest of the file
-
+  unstable = pkgs-unstable; # TODO: fix that properly in the rest of the fil
 in
 {
   imports = [
     ./dconf.nix
     ./git.nix
-    ./config/config.nix
+    ./config.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
