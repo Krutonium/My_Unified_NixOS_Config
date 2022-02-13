@@ -45,9 +45,9 @@
           add_header Access-Control-Allow-Origin *;
           return 200 '${builtins.toJSON client}';
         '';
-        locations."/_matrix" = {
-          proxyPass = "http://127.0.0.1:8008"; # without a trailing /
-        };
+      locations."/_matrix" = {
+        proxyPass = "http://127.0.0.1:8008"; # without a trailing /
+      };
     };
     "dynmap.krutonium.ca" = {
       forceSSL = true;

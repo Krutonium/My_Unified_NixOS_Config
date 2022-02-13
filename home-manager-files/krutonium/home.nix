@@ -10,6 +10,8 @@ in
 {
   imports = [
     ./dconf.nix
+    ./git.nix
+    ./config/config.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -28,19 +30,15 @@ in
       openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
     in
     [
-      unstable.tdesktop
       pkgs.discord
       pkgs.firefox
       pkgs.wget
       pkgs.gnome.gnome-tweaks
       pkgs.gnomeExtensions.dash-to-panel
-      unstable.gnomeExtensions.arcmenu
       pkgs.arc-theme
       pkgs.yaru-theme
       pkgs.sweet
       pkgs.ubuntu_font_family
-      unstable.jetbrains.rider
-      unstable.jetbrains.idea-ultimate
       pkgs.github-desktop
       pkgs.mono
       pkgs.htop
@@ -49,12 +47,9 @@ in
       pkgs.obs-studio
       pkgs.dropbox
       pkgs.lutris
-      unstable.mangohud
       (pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
       openjdk17-low
       pkgs.openjdk8
-      unstable.goverlay
-      unstable.openrct2
       pkgs.vlc
       pkgs.nanorc
       pkgs.openrgb
@@ -69,21 +64,22 @@ in
       pkgs.babelfish
       pkgs.github-desktop
       pkgs.spotify
-      pkgs.notepadqq
+      pkgs.nextcloud-client
+      pkgs.element-desktop
+
+      #Unstable Packages
+      unstable.tdesktop
+      unstable.gnomeExtensions.arcmenu
+      unstable.jetbrains.rider
+      unstable.jetbrains.idea-ultimate
+      unstable.mangohud
+      unstable.goverlay
+      unstable.openrct2
       unstable.gnomeExtensions.burn-my-windows
       unstable.dolphin-emu-beta
       unstable.mgba
-      unstable.mupen64plus
-      pkgs.nextcloud-client
       unstable.gnomeExtensions.ddterm
-      pkgs.element-desktop
     ];
-  programs.git = {
-    enable = true;
-    userName = "Krutonium";
-    userEmail = "PFCKrutonium@gmail.com";
-  };
-
   #What version of Home Manager this config file was created at.
   home.stateVersion = "21.05";
 }
