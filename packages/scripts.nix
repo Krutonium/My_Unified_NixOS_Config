@@ -27,14 +27,14 @@ let
     git commit -m "Update"
     git push
   '';
-  rebootEverything = pkgss.writeShellScriptBin "rebootEverything" ''
+  rebootEverything = pkgs.writeShellScriptBin "rebootEverything" ''
     ssh root@uwebserver 'shutdown -r 10s' &
     ssh root@umsilaptop 'shutdown -r 10s' &
     ssh root@uhplaptop 'shutdown -r 10s' &
     ssh root@ugamingpc 'shutdown -r 10s'
     echo "Done"
   '';
-  rebootCancel = pkgss.writeShellScriptBin "rebootCancel" ''
+  rebootCancel = pkgs.writeShellScriptBin "rebootCancel" ''
     ssh root@uwebserver 'shutdown -c' &
     ssh root@umsilaptop 'shutdown -c' &
     ssh root@uhplaptop 'shutdown -c' &
