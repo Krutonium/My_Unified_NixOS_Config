@@ -7,6 +7,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 rm /etc/nixos
+cd ../
 ln -s $(pwd) /etc/nixos
 # nixos-generate-config
 

@@ -7,5 +7,5 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 mv /etc/nixos/ /etc/nixos.bak/ || true
+cd ../
 ln -s $(pwd) /etc/nixos
-# nixos-generate-config
