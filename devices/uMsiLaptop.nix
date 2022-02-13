@@ -4,6 +4,8 @@ let
   Hostname = "uMsiLaptop";
 in
 {
+  # Set our Kernel
+  boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/systemd.nix
     ../users/krutonium.nix

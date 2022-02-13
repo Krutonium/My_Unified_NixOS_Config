@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
 let
   Hostname = "uHPLaptop";
+  kernel = pkgs.linuxPackages_zen;
 in
 {
+  # Set our Kernel
+  boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/grub_bios.nix
     ../users/krutonium.nix
@@ -16,6 +19,7 @@ in
     ../packages/steam.nix
     ../packages/wine.nix
     ../packages/plymouth.nix
+    ../services/ahavi.nix
   ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;

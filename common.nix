@@ -4,7 +4,7 @@
 # Before Use, you should edit device.nix to point at the config you want for this computer.
 
 let
-  kernel = pkgs.linuxPackages_zen;
+
 in
 {
   # First, everything that applies to all machines:
@@ -16,8 +16,7 @@ in
       ./packages/scripts.nix
     ];
 
-  # Set our Kernel
-  boot.kernelPackages = kernel;
+
   #boot.tmpOnTmpfs = true;
   boot.cleanTmpDir = true;
   # Misc Settings - Optimize for Size, Compatible with Windows time, Enable unfree packages.

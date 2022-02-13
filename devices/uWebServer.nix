@@ -1,8 +1,11 @@
 { config, pkgs, pkgs-unstable, ... }:
 let
   unstable = pkgs-unstable;
+  kernel = pkgs.linuxPackages-rt;
 in
 {
+  # Set our Kernel
+  boot.kernelPackages = kernel;
   networking.hostName = "uWebServer";
   networking.firewall.allowedTCPPorts = [ 25565 26666 ]; #Somtimes Minecraft Servers are run without being explicitly enabled for testing purposes.
   imports =

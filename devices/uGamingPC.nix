@@ -7,6 +7,8 @@ let
   Hostname = "uGamingPC";
 in
 {
+  # Set our Kernel
+  boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/grub.nix
     ../users/krutonium.nix
