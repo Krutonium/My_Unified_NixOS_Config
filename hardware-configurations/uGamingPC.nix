@@ -26,11 +26,11 @@
       fsType = "vfat";
     };
 
-  #fileSystems."/home/krutonium/steam" =
-  #  {
-  #    device = "games";
-  #    fsType = "zfs";
-  #  };
+  fileSystems."/home/krutonium/steam" =
+    {
+      device = "games";
+      fsType = "zfs";
+    };
 
   swapDevices = [ ];
 

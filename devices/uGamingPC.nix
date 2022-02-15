@@ -3,7 +3,7 @@
 
 #Run sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 let
-  kernel = pkgs.linuxPackages_latest;
+  kernel = pkgs.linuxPackages_zen;
   Hostname = "uGamingPC";
 in
 {
@@ -21,7 +21,7 @@ in
     ../services/drwhowifi.nix
     ../tweaks/VL805.nix
     ../tweaks/mitigations.nix
-    #../tweaks/zfs.nix
+    ../tweaks/zfs.nix
     ../tweaks/zenpower.nix
     ../packages/dotnet.nix
     ../packages/steam.nix
