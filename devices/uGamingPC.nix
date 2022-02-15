@@ -3,7 +3,7 @@
 
 #Run sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 let
-  kernel = pkgs.linuxPackages_zen;
+  kernel = pkgs.linuxPackages;
   Hostname = "uGamingPC";
 in
 {
