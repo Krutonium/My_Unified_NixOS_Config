@@ -30,6 +30,7 @@ in
     ../packages/plymouth.nix
   ];
   #Set Hostname
+  home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
