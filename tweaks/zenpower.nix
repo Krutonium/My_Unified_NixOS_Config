@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  kernel = pkgs.linuxPackages_zen;
+  kernel = config.boot.kernelPackages;
 in
 {
   environment.systemPackages = [
