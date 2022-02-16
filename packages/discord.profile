@@ -1,1 +1,1 @@
-blacklist /var/video*
+blacklist /dev/video*

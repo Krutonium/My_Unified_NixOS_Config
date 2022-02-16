@@ -1,23 +1,30 @@
 # Specifically to prevent Discord from accessing my Webcams, causing my screen to flash.
 {pkgs, config, lib, ...}:
 let
-    discordScript = pkgs.writeScriptBin "discordWrapper"
+    discordScript = pkgs.writeScriptBin "Discord"
       ''
         #!${pkgs.bash}/bin/bash
-        firejail discord
+        firejail --profile="${./discord.profile}" ${pkgs.discord}/bin/discord "$@"
       '';
+     #This makes sure that the script replaces the default symlink in Discord.
+     discord-low = pkgs.discord.overrideAttrs (oldAttrs: { meta.priority = 10; });
+
 in
 {
     environment.systemPackages = [
-        pkgs.discord
+        discord-low
         pkgs.firejail
         discordScript
     ];
     programs.firejail.enable = true;
-    programs.firejail.wrappedBinaries = {
-      discord = {
-          executable = "${pkgs.discord}/bin/discord";
-          profile = ./discord.profile;
-      };
-    };
+
+    #This produces a broken script - It puts a random `--` in the middle of the script which firejail
+    #more or less goes "wtf" at. Above script works fine.
+
+    #programs.firejail.wrappedBinaries = {
+    #  Discord = {
+    #     executable = "${pkgs.discord}/bin/discord";
+    #      profile = ./discord.profile;
+    #  };
+    #};
 }
