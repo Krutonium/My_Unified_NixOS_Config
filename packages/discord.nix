@@ -1,9 +1,8 @@
 # Specifically to prevent Discord from accessing my Webcams, causing my screen to flash.
 {pkgs, config, lib, ...}:
 let
-    discordScript = pkgs.writeScriptBin "Discord"
+    discordScript = pkgs.writeShellScriptBin "Discord"
       ''
-        #!${pkgs.bash}/bin/bash
         firejail --profile="${./discord.profile}" ${pkgs.discord}/bin/discord "$@"
       '';
      #This makes sure that the script replaces the default symlink in Discord.
