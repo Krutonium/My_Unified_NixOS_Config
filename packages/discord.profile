@@ -1,0 +1,1 @@
+blacklist /var/video*
