@@ -65,7 +65,8 @@ in
       pkgs.spotify
       pkgs.nextcloud-client
       pkgs.element-desktop
-
+      pkgs.firejail
+      
       #Unstable Packages
       unstable.tdesktop
       unstable.gnomeExtensions.arcmenu
