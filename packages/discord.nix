@@ -1,9 +1,17 @@
 # Specifically to prevent Discord from accessing my Webcams, causing my screen to flash.
 {pkgs, config, lib, ...}:
 let
+    discordProfile = pkgs.writeTextFile {
+      name = "discordProfile";
+      text =
+      ''
+        blacklist /dev/video*
+      '';
+
+    };
     discordScript = pkgs.writeShellScriptBin "Discord"
       ''
-        firejail --profile="${./discord.profile}" ${pkgs.discord}/bin/discord "$@"
+        firejail --profile="${discordProfile}" ${pkgs.discord}/bin/discord "$@"
       '';
      #This makes sure that the script replaces the default symlink in Discord.
      discord-low = pkgs.discord.overrideAttrs (oldAttrs: { meta.priority = 10; });
