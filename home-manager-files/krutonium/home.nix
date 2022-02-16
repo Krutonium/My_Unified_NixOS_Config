@@ -79,6 +79,7 @@ in
       unstable.mgba
       unstable.gnomeExtensions.ddterm
     ];
+  programs.firejail.enable = true;
   #What version of Home Manager this config file was created at.
   home.stateVersion = "21.05";
 }

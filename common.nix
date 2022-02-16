@@ -67,6 +67,7 @@ in
     pkgs.tldr #Replace man
     pkgs.colmena
     pkgs.tmux
+    pkgs.file
   ];
 
   nix.package = pkgs.nixUnstable;
