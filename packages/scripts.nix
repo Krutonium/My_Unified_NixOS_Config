@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 let
   update = pkgs.writeShellScriptBin "update" ''
     cd /etc/nixos/
@@ -41,6 +41,7 @@ let
     ssh root@ugamingpc 'shutdown -c'
     echo "Done"
   '';
-in {
-  environment.systemPackages = [ update updateAll resetConfig pushConfig rebootEverything rebootCancel];
+in
+{
+  environment.systemPackages = [ update updateAll resetConfig pushConfig rebootEverything rebootCancel ];
 }
