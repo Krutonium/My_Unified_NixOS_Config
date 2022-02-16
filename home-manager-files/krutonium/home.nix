@@ -65,8 +65,7 @@ in
       pkgs.spotify
       pkgs.nextcloud-client
       pkgs.element-desktop
-      pkgs.firejail
-      
+
       #Unstable Packages
       unstable.tdesktop
       unstable.gnomeExtensions.arcmenu
@@ -80,7 +79,7 @@ in
       unstable.mgba
       unstable.gnomeExtensions.ddterm
     ];
-  programs.firejail.enable = true;
+
   #What version of Home Manager this config file was created at.
   home.stateVersion = "21.05";
 }
