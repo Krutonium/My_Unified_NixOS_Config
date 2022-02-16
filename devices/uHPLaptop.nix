@@ -19,7 +19,7 @@ in
     ../packages/steam.nix
     ../packages/wine.nix
     ../packages/plymouth.nix
-    ../services/ahavi.nix
+    ../services/avahi.nix
     ../packages/discord.nix
   ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;

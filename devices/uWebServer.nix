@@ -12,7 +12,7 @@ in
     [
       ../common.nix
       ../bootloaders/grub_bios.nix
-      ../services/ahavi.nix
+      ../services/avahi.nix
       ../services/ssh.nix
       ../services/fail2ban.nix
       ../services/gitea.nix

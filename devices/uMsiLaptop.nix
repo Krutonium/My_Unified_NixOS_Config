@@ -20,6 +20,7 @@ in
     ../packages/ccache.nix
     ../packages/waydroid.nix
     ../packages/plymouth.nix
+    ../services/avahi.nix
   ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
