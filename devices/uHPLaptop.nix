@@ -20,6 +20,7 @@ in
     ../packages/wine.nix
     ../packages/plymouth.nix
     ../services/ahavi.nix
+    ../packages/discord.nix
   ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;

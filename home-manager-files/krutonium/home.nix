@@ -29,7 +29,6 @@ in
       openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
     in
     [
-      pkgs.discord
       pkgs.firefox
       pkgs.wget
       pkgs.gnome.gnome-tweaks
