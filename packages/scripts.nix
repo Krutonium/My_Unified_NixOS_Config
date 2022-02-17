@@ -34,7 +34,7 @@ let
   '';
   comma = pkgs.writeShellScriptBin "," ''
     echo "Loading..."
-    nix shell -p $@
+    nix-shell -p $@
   '';
 in
 {
