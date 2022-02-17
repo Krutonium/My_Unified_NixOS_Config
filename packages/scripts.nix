@@ -4,7 +4,7 @@ let
     echo Updating Local System
     updatePackages
     cd /etc/nixos/
-    colmena apply switch --apply-local
+    sudo colmena apply-local switch
   '';
   updatePackages = pkgs.writeShellScriptBin "updateConfig"''
     echo Updating Commit File...
