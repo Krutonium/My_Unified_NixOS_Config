@@ -13,7 +13,7 @@ let
   '';
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
-    updatePackages
+    updateConfig
     cd /etc/nixos/
     colmena apply switch --no-substitutes
   '';
@@ -32,7 +32,11 @@ let
     git commit -m "Update"
     git push
   '';
+  comma = pkgs.writeShellScriptBin "," ''
+    echo "Loading..."
+    nix shell nixpkgs#$@
+    '';
 in
 {
-  environment.systemPackages = [ update updatePackages updateAll resetConfig pushConfig ];
+  environment.systemPackages = [ update updatePackages updateAll resetConfig pushConfig comma ];
 }
