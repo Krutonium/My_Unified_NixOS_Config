@@ -29,6 +29,7 @@ in
     ../packages/wine.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
+    ../packages/discord.nix
   ];
   #Set Hostname
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
