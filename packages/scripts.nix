@@ -2,7 +2,7 @@
 let
   update = pkgs.writeShellScriptBin "update" ''
     echo Updating Local System
-    updatePackages
+    updateConfig
     cd /etc/nixos/
     sudo colmena apply-local switch
   '';
