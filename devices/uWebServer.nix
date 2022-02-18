@@ -33,6 +33,19 @@ in
     ];
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+
+  #Headless Stuff
+  hardware.nvidia.nvidiaPersistenced = true;
+  boot.vesa = false;
+  systemd.services."serial-getty@ttyS0".enable = lib.mkDefault false;
+  systemd.services."serial-getty@hvc0".enable = false;
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@".enable = false;
+  boot.kernelParams = [ "panic=1" "boot.panic_on_fail" ];
+  systemd.enableEmergencyMode = false;
+  boot.loader.grub.splashImage = null;
+
+
   services.xserver.videoDrivers = [ "nvidia" ];
   environment.systemPackages = [
     pkgs.wget
