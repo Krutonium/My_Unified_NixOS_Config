@@ -34,9 +34,13 @@ let
   '';
   comma = pkgs.writeShellScriptBin "," ''
     echo "Loading..."
+    nix shell nixpkgs#$@
+  '';
+  dualcomma = pkgs.writeShellScriptBin ",," ''
+    echo "Loading..."
     nix-shell -p $@
   '';
 in
 {
-  environment.systemPackages = [ update updatePackages updateAll resetConfig pushConfig comma ];
+  environment.systemPackages = [ update updatePackages updateAll resetConfig pushConfig comma dualcomma ];
 }
