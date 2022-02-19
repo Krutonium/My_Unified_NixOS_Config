@@ -4,9 +4,11 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    betterfancontroller.url = "github:Krutonium/BetterFanController";
+    betterfancontroller.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixos-hardware }: {
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nixos-hardware, betterfancontroller }: {
 
     # colmena stuff
 
@@ -67,6 +69,9 @@
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
+        nixpkgs.overlays = [ (self: super: {
+          BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
+        }) ];
         imports = [
           {
             _module.args = {
@@ -105,7 +110,6 @@
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
-
         imports = [
           {
             _module.args = {
