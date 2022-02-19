@@ -17,7 +17,9 @@
       meta.nodeNixpkgs = {
         #someMachine = import nixpkgs { system = arm or something };
       };
-
+      nixpkgs.overlays = [ (self: super: {
+        BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
+      }) ];
       defaults = { pkgs, ... }: {
         # default stuff shared for all nodes IIRC
         imports = [
@@ -69,9 +71,6 @@
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
-        nixpkgs.overlays = [ (self: super: {
-          BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
-        }) ];
         imports = [
           {
             _module.args = {
