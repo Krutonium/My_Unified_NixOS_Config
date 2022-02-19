@@ -11,7 +11,7 @@
       User = "root";
       Restart = "always";
     };
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = [ "basic.target" ];
     script = ''
       /run/current-system/sw/bin/BetterFanController
     '';
