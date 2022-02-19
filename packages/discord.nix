@@ -24,7 +24,7 @@ in
     discordScript
   ];
   programs.firejail.enable = true;
-
+  nixpkgs.overlays = [(self: super: { discord = super.discord.overrideAttrs (_: { src = builtins.fetchTarball https://discord.com/api/download?platform=linux&format=tar.gz; })];
   #This produces a broken script - It puts a random `--` in the middle of the script which firejail
   #more or less goes "wtf" at. Above script works fine.
 

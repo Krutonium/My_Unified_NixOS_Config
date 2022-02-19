@@ -1,8 +1,4 @@
 { config, pkgs, ... }:
-
-# So a bit of a README:
-# Before Use, you should edit device.nix to point at the config you want for this computer.
-
 let
 
 in
@@ -15,8 +11,6 @@ in
       #./device.nix
       ./packages/scripts.nix
     ];
-
-
   #boot.tmpOnTmpfs = true;
   boot.cleanTmpDir = true;
   # Misc Settings - Optimize for Size, Compatible with Windows time, Enable unfree packages.
