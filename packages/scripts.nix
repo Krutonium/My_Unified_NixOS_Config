@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  RepoPath = "/home/krutonium/My_Unified_NixOS_Config";
+  RepoPath = "/home/krutonium/NixOS";
   RepoURL = "gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git";
 
   update = pkgs.writeShellScriptBin "update" ''
