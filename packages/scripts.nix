@@ -8,6 +8,7 @@ let
     pullConfig
     cd ${RepoPath}
     sudo colmena apply-local switch
+    rm flake.lock
   '';
   updatePackages = pkgs.writeShellScriptBin "pullConfig"''
     echo Updating Commit File...
@@ -20,6 +21,7 @@ let
     pullConfig
     cd ${RepoPath}
     colmena apply switch --no-substitutes
+    rm flake.lock
   '';
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
     cd ~
