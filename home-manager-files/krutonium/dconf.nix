@@ -55,7 +55,12 @@ in
     "osrg/gnome/desktop/wm/keybindings" = {
       panel-main-menu = [ "<Alt>F1" ];
     };
-
+    "/org/gnome/desktop/wm/preferences/" = {
+      num-workspaces = 2;
+      visual-bell = true;
+      visual-bell-type = "frame-flash";
+      audible-bell = false;
+    };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
       titlebar-font = mainFont;
@@ -111,7 +116,7 @@ in
 
     "org/gnome/mutter" = {
       attach-modal-dialogs = true;
-      dynamic-workspaces = true;
+      dynamic-workspaces = false;
       edge-tiling = true;
       focus-change-on-pointer-rest = true;
       overlay-key = "Super_L";
