@@ -1,34 +1,51 @@
 { config, pkgs, ... }:
 let
+  RepoPath = "/home/krutonium/My_Unified_NixOS_Config";
+  RepoURL = "gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git";
+
   update = pkgs.writeShellScriptBin "update" ''
     echo Updating Local System
     pullConfig
-    cd /etc/nixos/
+    cd ${RepoPath}
     sudo colmena apply-local switch
   '';
   updatePackages = pkgs.writeShellScriptBin "pullConfig"''
     echo Updating Commit File...
-    cd /etc/nixos/
+    cd ${RepoPath}
     git pull
     nix flake update
   '';
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
     pullConfig
-    cd /etc/nixos/
+    cd ${RepoPath}
     colmena apply switch --no-substitutes
   '';
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
     cd ~
-    rm -rf /home/krutonium/My_Unified_NixOS_Config
-    git clone gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git /home/krutonium/My_Unified_NixOS_Config
-    cd /home/krutonium/My_Unified_NixOS_Config/scripts
-    ./relink.sh
-    ./set_upstream.sh
+    rm -rf ${RepoPath}
+    git clone ${RepoURL} ${RepoPath}
+    cd ${RepoPath}
+    linkRepo
+    setUpstream
     echo "Done"
   '';
+  linkRepo = pkgs.writeShellScriptBin "linkRepo" ''
+    if [ "$(id -u)" != "0" ]; then
+        echo "This script must be run as root" 1>&2
+        exec sudo "$0" "$@"
+    fi
+    rm /etc/nixos
+    cd ${RepoPath}
+    ln -s ${RepoPath} /etc/nixos
+  '';
+  setUpstream = pkgs.writeShellScriptBin "setUpstream" ''
+    cd ${RepoPath}
+    git remote set-url --add --push origin git@github.com:Krutonium/My_Unified_NixOS_Config.git
+    git remote set-url --add --push origin gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git
+  '';
   pushConfig = pkgs.writeShellScriptBin "pushConfig" ''
-    cd /home/krutonium/My_Unified_NixOS_Config/
+    cd ${RepoPath}
     git add .
     git commit
     git push
@@ -43,5 +60,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ update updatePackages updateAll resetConfig pushConfig comma dualcomma ];
+  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma ];
 }
