@@ -46,7 +46,7 @@ in
       pkgs.dropbox
       pkgs.lutris
       #(pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
-      pkgs.polymc
+      # Replaced with PolyMC, see Unstable section (not available in main repos yet)
       openjdk17-low
       pkgs.openjdk8
       pkgs.vlc
@@ -67,6 +67,7 @@ in
       pkgs.element-desktop
 
       #Unstable Packages
+      unstable.polymc
       unstable.tdesktop
       unstable.gnomeExtensions.arcmenu
       unstable.jetbrains.rider
