@@ -2,18 +2,19 @@
 let
   update = pkgs.writeShellScriptBin "update" ''
     echo Updating Local System
-    updateConfig
+    pullConfig
     cd /etc/nixos/
     sudo colmena apply-local switch
   '';
-  updatePackages = pkgs.writeShellScriptBin "updateConfig"''
+  updatePackages = pkgs.writeShellScriptBin "pullConfig"''
     echo Updating Commit File...
     cd /etc/nixos/
-    nix flake update --commit-lock-file
+    git pull
+    nix flake update
   '';
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
-    updateConfig
+    pullConfig
     cd /etc/nixos/
     colmena apply switch --no-substitutes
   '';
@@ -29,7 +30,7 @@ let
   pushConfig = pkgs.writeShellScriptBin "pushConfig" ''
     cd /home/krutonium/My_Unified_NixOS_Config/
     git add .
-    git commit -m "Update"
+    git commit
     git push
   '';
   comma = pkgs.writeShellScriptBin "," ''
