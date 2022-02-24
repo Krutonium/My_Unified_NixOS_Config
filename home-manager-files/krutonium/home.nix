@@ -45,7 +45,8 @@ in
       pkgs.obs-studio
       pkgs.dropbox
       pkgs.lutris
-      (pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
+      #(pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
+      pkgs.polymc
       openjdk17-low
       pkgs.openjdk8
       pkgs.vlc
