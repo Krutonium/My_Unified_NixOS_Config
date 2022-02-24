@@ -55,12 +55,14 @@ in
     "osrg/gnome/desktop/wm/keybindings" = {
       panel-main-menu = [ "<Alt>F1" ];
     };
-    "/org/gnome/desktop/wm/preferences/" = {
+
+    "/org/gnome/desktop/wm/preferences" = {
       num-workspaces = 2;
       visual-bell = true;
       visual-bell-type = "frame-flash";
       audible-bell = false;
     };
+    
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
       titlebar-font = mainFont;
