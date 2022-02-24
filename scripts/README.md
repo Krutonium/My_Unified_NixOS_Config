@@ -2,6 +2,8 @@
 
 This is a collection of scripts that I've found quite useful over time, written myself.
 
+# DEPRECIATED; SEE ../packages/scripts.nix!!
+
 ## link.sh and relink.sh
 
 These scripts symlink ../ to /etc/nixos/ - This is less useful since I've switched to flakes.
