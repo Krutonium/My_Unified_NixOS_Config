@@ -5,6 +5,7 @@
     database_type = "psycopg2";
     server_name = "krutonium.ca";
     enable_registration = false;
+    max_upload_size = "1G";
     listeners = [{
       port = 8008;
       bind_address = "127.0.0.1"; # only local, handled by nginx reverse-proxy
