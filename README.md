@@ -14,9 +14,6 @@ Go forth and Enjoy!
 
 ## Useful Commands:
 
-I've converted a bunch of my scripts so that they're available on the system anywhere.
-
-Specifically:
 `update` updates the local system
 `updateAll` updates all computers on the LAN
 `resetConfig` deletes the repo and then redownloads and configures it
@@ -24,13 +21,5 @@ Specifically:
 `rebootEverything` reboots all computers on the LAN, useful after big updates
 `rebootCancel` cancels reboots on all computers on the LAN.
 
-
-## Useful Scripts:
-
-On a new install where you're replacing either a stock config or your own config with mine, run `link.sh`. If you've moved the repo and want it to update the repo location, run `relink.sh` instead.
-
-For me personally I also have `set_upstream.sh` which adds my personal gitea and github as remotes that will be pushed to at the same time.
-
-Also `UpdateAllSystems.sh` will update all the things as well, nice and automatic.
 
 Questions? Comments? Open an Issue or contact me on Telegram [@Krutonium](t.me/Krutonium)!
