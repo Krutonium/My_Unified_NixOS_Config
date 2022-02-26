@@ -16,9 +16,9 @@
         "SKIP_HOST_UPDATE: false",
         "WINDOW_BOUNDS": {
           "x": 307,
-          "y" = 127,
-          "width" = 1280,
-          "height" = 725
+          "y": 127,
+          "width": 1280,
+          "height": 725
         }
       }
     '';
