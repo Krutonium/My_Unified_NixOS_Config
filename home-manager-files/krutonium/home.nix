@@ -65,6 +65,7 @@ in
       pkgs.spotify
       pkgs.nextcloud-client
       pkgs.element-desktop
+      pkgs.catimg
 
       #Unstable Packages
       unstable.polymc
