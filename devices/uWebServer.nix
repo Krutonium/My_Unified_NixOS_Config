@@ -55,7 +55,6 @@ in
     pkgs.git
     pkgs.screen
     pkgs.steamcmd
-    pkgs.hashcat
     unstable.plex
   ];
   system.stateVersion = "21.11";
