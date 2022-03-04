@@ -60,7 +60,13 @@ let
     echo "Loading..."
     nix-shell -p $@
   '';
+  steamos = pkgs.writeShellScriptBin "steamos" ''
+    steam -steamos3 -steamdeck -gamepadui
+  '';
+  steamos-update = pkgs.writeShellScriptBin "steamos-update" ''
+    echo stub
+  '';
 in
 {
-  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma ];
+  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma steamos steamos-update];
 }
