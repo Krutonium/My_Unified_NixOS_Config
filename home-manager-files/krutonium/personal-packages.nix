@@ -61,6 +61,7 @@ in
       pkgs.babelfish
       pkgs.powerline-fonts
       pkgs.unzip
+      pkgs.youtube-dl
 
       # Wine/Windows Shit
       pkgs.lutris
