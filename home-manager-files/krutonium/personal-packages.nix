@@ -1,8 +1,11 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, fetchurl, ... }:
 let
   unstable = pkgs-unstable;
+  # For cleanliness.
+  ndi = builtins.fetchurl https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz;
 in
 {
+  home.file.".ndi/InstallNDISDK_v4_Linux.tar.gz".source = ndi; #Just so it's in the store
   home.packages =
     let
       openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
@@ -39,6 +42,7 @@ in
       pkgs.spotify
       pkgs.obs-studio
       pkgs.obs-studio-plugins.obs-ndi
+      # Need to sort out importing NDI into the store
 
       # Random Stuff
       pkgs.htop
