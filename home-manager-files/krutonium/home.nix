@@ -1,11 +1,7 @@
-{ config, pkgs, pkgs-unstable, ... }: # we add another parameter here
+{ config, pkgs, ... }: # we add another parameter here
 #To configure Fish:
 #curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 #omf install agnoster
-
-let
-  #unstable = pkgs-unstable; # TODO: fix that properly in the rest of the fil
-in
 {
   imports = [
     ./dconf.nix
