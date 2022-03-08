@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  unstable = pkgs-unstable;
+in
 {
   home.packages =
     let
@@ -19,17 +22,17 @@
       pkgs.bibata-extra-cursors
       pkgs.gnomeExtensions.appindicator
       pkgs.gnome.dconf-editor
-      pkgs-unstable.gnomeExtensions.arcmenu
-      pkgs-unstable.gnomeExtensions.burn-my-windows
-      pkgs-unstable.gnomeExtensions.ddterm
+      unstable.gnomeExtensions.arcmenu
+      unstable.gnomeExtensions.burn-my-windows
+      unstable.gnomeExtensions.ddterm
 
       # Development
       openjdk17-low
       pkgs.openjdk8
       pkgs.github-desktop
       pkgs.mono
-      pkgs-unstable.jetbrains.rider
-      pkgs-unstable.jetbrains.idea-ultimate
+      unstable.jetbrains.rider
+      unstable.jetbrains.idea-ultimate
 
       # Media
       pkgs.vlc
@@ -59,12 +62,12 @@
 
       # Gaming
       # Steam is already installed at the system level because it has special requirements
-      pkgs-unstable.openrct2
+      unstable.openrct2
       pkgs.jstest-gtk
-      pkgs-unstable.polymc
-      pkgs-unstable.mangohud
-      pkgs-unstable.goverlay
-      pkgs-unstable.dolphin-emu-beta
+      unstable.polymc
+      unstable.mangohud
+      unstable.goverlay
+      unstable.dolphin-emu-beta
 
       # File Sync
       pkgs.dropbox
@@ -72,8 +75,8 @@
       pkgs.transmission-remote-gtk
 
       # Communications
-      pkgs-unstable.tdesktop
-      pkgs-unstable.discord
+      unstable.tdesktop
+      unstable.discord
 
     ];
 }
