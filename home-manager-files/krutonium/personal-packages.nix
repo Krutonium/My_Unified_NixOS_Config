@@ -83,6 +83,6 @@ in
       # Communications
       unstable.tdesktop
       unstable.discord
-
+      unstable.element-desktop
     ];
 }
