@@ -7,7 +7,7 @@ let
     echo Updating Local System
     pullConfig
     cd ${RepoPath}
-    sudo colmena apply-local switch
+    colmena apply --on $(hostname)
     rm flake.lock
   '';
   updatePackages = pkgs.writeShellScriptBin "pullConfig" ''
