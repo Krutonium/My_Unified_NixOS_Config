@@ -10,7 +10,7 @@ let
     sudo colmena apply-local switch
     rm flake.lock
   '';
-  updatePackages = pkgs.writeShellScriptBin "pullConfig"''
+  updatePackages = pkgs.writeShellScriptBin "pullConfig" ''
     echo Updating Commit File...
     cd ${RepoPath}
     git pull
@@ -68,5 +68,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma steamos steamos-update];
+  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma steamos steamos-update ];
 }

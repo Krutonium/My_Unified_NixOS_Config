@@ -68,9 +68,11 @@
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
-        nixpkgs.overlays = [ (self: super: {
-          BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
-        }) ];
+        nixpkgs.overlays = [
+          (self: super: {
+            BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
+          })
+        ];
         imports = [
           {
             _module.args = {
