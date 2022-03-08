@@ -62,6 +62,7 @@ in
     pkgs.colmena
     pkgs.tmux
     pkgs.file
+    pkgs.wget
   ];
 
   nix.package = pkgs.nixUnstable;

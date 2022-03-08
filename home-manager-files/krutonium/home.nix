@@ -11,6 +11,7 @@ in
     ./dconf.nix
     ./git.nix
     ./config.nix
+    ./personal-packages.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -23,64 +24,6 @@ in
   home.sessionVariables.EDITOR = "nano";
   home.sessionVariables.VISUAL = "nano";
   home.sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
-  #Install our Packages
-  home.packages =
-    let
-      openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
-    in
-    [
-      pkgs.firefox
-      pkgs.wget
-      pkgs.gnome.gnome-tweaks
-      pkgs.gnomeExtensions.dash-to-panel
-      pkgs.arc-theme
-      pkgs.yaru-theme
-      pkgs.sweet
-      pkgs.ubuntu_font_family
-      pkgs.github-desktop
-      pkgs.mono
-      pkgs.htop
-      pkgs.neofetch
-      pkgs.gnomeExtensions.appindicator
-      pkgs.obs-studio
-      pkgs.dropbox
-      pkgs.lutris
-      #(pkgs.multimc.override { msaClientID = "81a207c0-a53c-46a3-be07-57d2b28c1643"; })
-      # Replaced with PolyMC, see Unstable section (not available in main repos yet)
-      openjdk17-low
-      pkgs.openjdk8
-      pkgs.vlc
-      pkgs.nanorc
-      pkgs.openrgb
-      pkgs.iconpack-obsidian
-      pkgs.bibata-extra-cursors
-      pkgs.gnome.dconf-editor
-      pkgs.jstest-gtk
-      pkgs.quassel
-      pkgs.transmission-remote-gtk
-      pkgs.fish
-      pkgs.oh-my-fish
-      pkgs.babelfish
-      pkgs.github-desktop
-      pkgs.spotify
-      pkgs.nextcloud-client
-      pkgs.element-desktop
-      pkgs.catimg
-
-      #Unstable Packages
-      unstable.polymc
-      unstable.tdesktop
-      unstable.gnomeExtensions.arcmenu
-      unstable.jetbrains.rider
-      unstable.jetbrains.idea-ultimate
-      unstable.mangohud
-      unstable.goverlay
-      unstable.openrct2
-      unstable.gnomeExtensions.burn-my-windows
-      unstable.dolphin-emu-beta
-      unstable.mgba
-      unstable.gnomeExtensions.ddterm
-    ];
 
   #What version of Home Manager this config file was created at.
   home.stateVersion = "21.05";
