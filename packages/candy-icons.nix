@@ -11,7 +11,6 @@ let
       unzip $src -d $outDir
       mv $outDir/candy-icons-master $outDir/candy-icons
       cp $iconDir/minecraft.svg $iconDir/org.polymc.PolyMC.svg
-      touch $iconDir/thisone
     '';
   };
 in

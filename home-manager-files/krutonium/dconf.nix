@@ -8,7 +8,7 @@ let
   mainFont = "Ubuntu 11";
   monoFont = "Ubuntu Mono 13";
   cursorTheme = "Bibata-Modern-DodgerBlue";
-  iconTheme = "Candy-icons-master";
+  iconTheme = "candy-icons";
   soundTheme = "Yaru";
   superMenuLogo = "${./supermenu.png}";
 in
@@ -155,6 +155,7 @@ in
       custom-hot-corner-cmd = "sh -c 'notify-send \"$(date)\"'";
       custom-menu-button-icon-size = 35;
       custom-menu-button-icon = superMenuLogo;
+      menu-button-icon = "Custom_Icon";
       hot-corners = "Disabled";
       menu-hotkey = "Super_L";
       override-hot-corners = true;

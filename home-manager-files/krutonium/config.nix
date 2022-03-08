@@ -36,10 +36,9 @@
         info "Resolution" resolution
         info "Shell" shell
         info "Local IP" local_ip
-        prin "Weather" "$(curl wttr.in/?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF) " ("a")"} /,/ {a=$0}')"
+        #prin "Weather" "$(curl wttr.in/?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF) " ("a")"} /,/ {a=$0}')"
         info cols
       }
-      title_fqdn = "on"
       kernel_shorthand="on"
       distro_shorthand="on"
       os_arch="on"
@@ -81,7 +80,7 @@
       bar_color_total="distro"
       memory_display="on"
       image_backend="catimg"
-      image_source="" #LINK TO IMAGE
+      image_source="${./supermenu.png}" #LINK TO IMAGE
       catimg_size="2"
       image_size="auto"
     '';
