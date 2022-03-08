@@ -8,8 +8,9 @@ let
   mainFont = "Ubuntu 11";
   monoFont = "Ubuntu Mono 13";
   cursorTheme = "Bibata-Modern-DodgerBlue";
-  iconTheme = "Obsidian-Purple";
+  iconTheme = "Candy-icons-master";
   soundTheme = "Yaru";
+  superMenuLogo = "${./supermenu.png}";
 in
 {
   dconf.settings = {
@@ -152,6 +153,8 @@ in
       arc-menu-placement = "DTP";
       available-placement = [ false true false ];
       custom-hot-corner-cmd = "sh -c 'notify-send \"$(date)\"'";
+      custom-menu-button-icon-size = 35;
+      custom-menu-button-icon = superMenuLogo;
       hot-corners = "Disabled";
       menu-hotkey = "Super_L";
       override-hot-corners = true;

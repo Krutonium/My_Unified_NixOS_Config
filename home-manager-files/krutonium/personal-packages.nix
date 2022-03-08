@@ -60,6 +60,7 @@ in
       pkgs.oh-my-fish
       pkgs.babelfish
       pkgs.powerline-fonts
+      pkgs.unzip
 
       # Wine/Windows Shit
       pkgs.lutris
