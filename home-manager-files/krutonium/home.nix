@@ -4,7 +4,7 @@
 #omf install agnoster
 
 let
-  unstable = pkgs-unstable; # TODO: fix that properly in the rest of the fil
+  #unstable = pkgs-unstable; # TODO: fix that properly in the rest of the fil
 in
 {
   imports = [

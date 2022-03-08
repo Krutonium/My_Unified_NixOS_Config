@@ -49,6 +49,7 @@ in
       pkgs.gparted
       pkgs.ffmpeg-full
       pkgs.openrgb
+      pkgs.calibre
 
       # Terminal
       pkgs.fish
