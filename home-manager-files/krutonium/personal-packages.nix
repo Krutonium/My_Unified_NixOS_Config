@@ -1,14 +1,20 @@
-{ config, pkgs, pkgs-unstable, fetchurl, ... }:
+{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, ... }:
 let
   unstable = pkgs-unstable;
-  # For cleanliness.
-  ndi = builtins.fetchurl https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz;
+  ndi = pkgs.ndi.override ({requireFile = lib.const(builtins.fetchurl https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz);});
+
 in
 {
-  home.file.".ndi/InstallNDISDK_v4_Linux.tar.gz".source = ndi; #Just so it's in the store
   home.packages =
     let
       openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
+      obs = (wrapOBS {
+        plugins = [
+          pkgs.obs-studio-plugins.obs-multi-rtmp
+          pkgs.obs-studio-plugins.obs-gstreamer
+          pkgs.obs-studio-plugins.obs-ndi
+        ];
+      });
     in
     [
       # Browser
@@ -40,9 +46,7 @@ in
       # Media
       pkgs.vlc
       pkgs.spotify
-      pkgs.obs-studio
-      pkgs.obs-studio-plugins.obs-ndi
-      # Need to sort out importing NDI into the store
+      obs
 
       # Random Stuff
       pkgs.htop
