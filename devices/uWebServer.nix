@@ -30,6 +30,7 @@ in
       ../users/root.nix
       ../users/gameserver.nix
       ../services/synapse.nix
+      ../services/invidious.nix
     ];
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;

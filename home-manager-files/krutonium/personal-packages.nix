@@ -10,8 +10,8 @@ in
       openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
       obs = (unstable.wrapOBS {
         plugins = [
-          pkgs.obs-studio-plugins.obs-gstreamer
           pkgs.obs-studio-plugins.obs-ndi
+          pkgs.obs-studio-plugins.obs-websocket
           ndi
         ];
       });
