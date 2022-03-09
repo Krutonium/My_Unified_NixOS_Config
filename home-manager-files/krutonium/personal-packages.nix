@@ -8,11 +8,11 @@ in
   home.packages =
     let
       openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
-      obs = (wrapOBS {
+      obs = (unstable.wrapOBS {
         plugins = [
-          pkgs.obs-studio-plugins.obs-multi-rtmp
           pkgs.obs-studio-plugins.obs-gstreamer
           pkgs.obs-studio-plugins.obs-ndi
+          ndi
         ];
       });
     in
