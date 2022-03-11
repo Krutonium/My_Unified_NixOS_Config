@@ -8,29 +8,31 @@ let
     pullConfig
     cd ${RepoPath}
     colmena apply --on $(hostname)
-    rm flake.lock
   '';
   updatePackages = pkgs.writeShellScriptBin "pullConfig" ''
     echo Updating Commit File...
     cd ${RepoPath}
     git pull
-    nix flake update
+    nix flake update --commit-lock-file
   '';
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
     pullConfig
     cd ${RepoPath}
     colmena apply switch --no-substitutes
-    rm flake.lock
   '';
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
-    cd ~
-    rm -rf ${RepoPath}
-    git clone ${RepoURL} ${RepoPath}
-    cd ${RepoPath}
-    linkRepo
-    setUpstream
-    echo "Done"
+    if [ "$HOSTNAME" = uWebServer ]; then
+      cd ~
+      rm -rf ${RepoPath}
+      git clone ${RepoURL} ${RepoPath}
+      cd ${RepoPath}
+      linkRepo
+      setUpstream
+      echo "Done"
+    else
+      echo Wrong Host!
+    fi
   '';
   linkRepo = pkgs.writeShellScriptBin "linkRepo" ''
     if [ "$(id -u)" != "0" ]; then
