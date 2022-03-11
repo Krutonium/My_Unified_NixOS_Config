@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  networking.firewall.allowedTCPPorts = [ 25566 ];
   services.minecraft-server = {
     enable = true;
     openFirewall = true;

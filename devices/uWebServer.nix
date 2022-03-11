@@ -20,7 +20,7 @@ in
       ../services/samba.nix
       ../services/transmission.nix
       ../services/nginx.nix
-      #../services/minecraft_server.nix
+      ../services/minecraft_server.nix
       #../services/stoneblock.nix
       #../services/satisfactory_server.nix
       #../services/project_ozone_3.nix
