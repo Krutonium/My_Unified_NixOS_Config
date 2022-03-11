@@ -63,6 +63,7 @@ in
     pkgs.tmux
     pkgs.file
     pkgs.wget
+    pkgs.sshfs
   ];
 
   nix.package = pkgs.nixUnstable;
