@@ -24,7 +24,7 @@
     };
 
   fileSystems."/home/krutonium/NixOS" =
-    { device = "krutonium@192.168.0.10:/home/krutonium/NixOS/";
+    { device = "krutonium@krutonium.ca:/home/krutonium/NixOS/";
       fsType = "fuse.sshfs";
       options = ["allow_other,IdentityFile=/home/krutonium/.ssh/id_rsa"];
     };
