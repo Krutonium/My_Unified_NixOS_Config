@@ -14,6 +14,7 @@ let
     cd ${RepoPath}
     git pull
     nix flake update --commit-lock-file
+    git push
   '';
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
