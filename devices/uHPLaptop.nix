@@ -23,7 +23,6 @@ in
     ../packages/discord.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
-    ../packages/mcreator.nix
   ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
