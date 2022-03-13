@@ -24,17 +24,13 @@ let
     colmena apply switch --no-substitutes
   '';
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
-    if [ "$HOSTNAME" = uWebServer ]; then
-      cd ~
-      rm -rf ${RepoPath}
-      git clone ${RepoURL} ${RepoPath}
-      cd ${RepoPath}
-      linkRepo
-      setUpstream
-      echo "Done"
-    else
-      echo Wrong Host!
-    fi
+    cd ~
+    rm -rf ${RepoPath}
+    git clone ${RepoURL} ${RepoPath}
+    cd ${RepoPath}
+    linkRepo
+    setUpstream
+    echo "Done"
   '';
   linkRepo = pkgs.writeShellScriptBin "linkRepo" ''
     if [ "$(id -u)" != "0" ]; then
