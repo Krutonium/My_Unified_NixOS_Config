@@ -41,7 +41,7 @@
             };
           }
           ./common.nix
-          ./hardware-configurations/uMsiLaptop.nix
+          ./devices/hardware-configurations/uMsiLaptop.nix
           ./devices/uMsiLaptop.nix
           home-manager.nixosModules.home-manager
           {
@@ -83,7 +83,7 @@
             };
           }
           ./common.nix
-          ./hardware-configurations/uGamingPC.nix
+          ./devices/hardware-configurations/uGamingPC.nix
           ./devices/uGamingPC.nix
           home-manager.nixosModules.home-manager
           {
@@ -121,7 +121,7 @@
             };
           }
           ./common.nix
-          ./hardware-configurations/uHPLaptop.nix
+          ./devices/hardware-configurations/uHPLaptop.nix
           ./devices/uHPLaptop.nix
           home-manager.nixosModules.home-manager
           {
@@ -158,7 +158,7 @@
             };
           }
           ./common.nix
-          ./hardware-configurations/uWebServer.nix
+          ./devices/hardware-configurations/uWebServer.nix
           ./devices/uWebServer.nix
         ] ++ (with nixos-hardware.nixosModules; [
           common-pc
