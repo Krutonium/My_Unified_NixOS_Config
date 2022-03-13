@@ -19,6 +19,7 @@ let
   '';
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
+    pushConfig
     pullConfig
     cd ${RepoPath}
     colmena apply switch --no-substitutes
