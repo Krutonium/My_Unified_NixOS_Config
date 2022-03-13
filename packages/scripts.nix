@@ -5,6 +5,7 @@ let
 
   update = pkgs.writeShellScriptBin "update" ''
     echo Updating Local System
+    pushConfig
     pullConfig
     cd ${RepoPath}
     colmena apply --on $(hostname)

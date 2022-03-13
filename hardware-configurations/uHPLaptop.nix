@@ -23,11 +23,11 @@
       fsType = "vfat";
     };
 
-  fileSystems."/home/krutonium/NixOS" =
-    { device = "krutonium@krutonium.ca:/home/krutonium/NixOS/";
-      fsType = "fuse.sshfs";
-      options = ["allow_other,IdentityFile=/home/krutonium/.ssh/id_rsa"];
-    };
+  #fileSystems."/home/krutonium/NixOS" =
+  #  { device = "krutonium@krutonium.ca:/home/krutonium/NixOS/";
+  #    fsType = "fuse.sshfs";
+  #    options = ["allow_other,IdentityFile=/home/krutonium/.ssh/id_rsa"];
+  #  };
 
   swapDevices = [ ];
 
