@@ -17,6 +17,15 @@ let
     nix flake update --commit-lock-file
     git push
   '';
+
+  updateSpecific = pkgs.writeShellScriptBin "updateSpecific" ''
+    echo Updating Specific System
+    pushConfig
+    pullConfig
+    cd ${RepoPath}
+    colmena apply --on $@
+  '';
+
   updateAll = pkgs.writeShellScriptBin "updateAll" ''
     echo Updating All Systems
     pushConfig
@@ -69,5 +78,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma steamos steamos-update ];
+  environment.systemPackages = [ update updatePackages updateAll resetConfig linkRepo setUpstream pushConfig comma dualcomma steamos steamos-update updateSpecific ];
 }
