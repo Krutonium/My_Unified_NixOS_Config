@@ -7,7 +7,7 @@ let
 
   aperture-plymouth = pkgs.stdenv.mkDerivation {
     name = "aperture-plymouth";
-    buildInputs = [pkgs.unzip pkgs.sponge];
+    buildInputs = [pkgs.unzip pkgs.moreutils];
     src = aperture_files;
     buildCommand = ''
       outDir="$out/share/plymouth/themes/"
