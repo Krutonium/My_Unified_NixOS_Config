@@ -7,16 +7,16 @@ let
 
   aperture-plymouth = pkgs.stdenv.mkDerivation {
     name = "aperture-plymouth";
-    buildInputs = [pkgs.unzip];
+    buildInputs = [pkgs.unzip pkgs.sponge];
     src = aperture_files;
     buildCommand = ''
       outDir="$out/share/plymouth/themes/"
       mkdir -p $outDir
       unzip $src -d $outDir
       mv $outDir/plymouth-theme-aperture-master $outDir/aperture
-      cat $outDir/aperture/aperture.plymouth | sed "s%/usr/share%$outdir%g" > $outDir/aperture/aperture.plymouth
+      sed "s%/usr/share%$outdir%g" $outDir/aperture/aperture.plymouth | sponge $outDir/aperture/aperture.plymouth
       cat $outDir/aperture/aperture.plymouth
-      
+
     '';
   };
 in
