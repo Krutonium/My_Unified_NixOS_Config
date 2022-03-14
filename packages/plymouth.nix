@@ -14,7 +14,7 @@ let
       mkdir -p $outDir
       unzip $src -d $outDir
       mv $outDir/plymouth-theme-aperture-master $outDir/aperture
-      sed "s%/usr/share%$outDir%g" $outDir/aperture/aperture.plymouth | sponge $outDir/aperture/aperture.plymouth
+      sed "s%/usr/share/plymouth/themes/%$outDir%g" $outDir/aperture/aperture.plymouth | sponge $outDir/aperture/aperture.plymouth
       # Apparently using cat and sed breaks? I don't know why. So we summon an eldritch force to do it for us.
     '';
   };
