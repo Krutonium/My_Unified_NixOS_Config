@@ -46,6 +46,7 @@ in
   systemd.enableEmergencyMode = false;
   boot.loader.grub.splashImage = null;
 
+  networking.tempAddresses = "disabled";
 
   services.xserver.videoDrivers = [ "nvidia" ];
   environment.systemPackages = [
