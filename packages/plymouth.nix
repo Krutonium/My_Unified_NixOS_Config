@@ -28,7 +28,7 @@ let
       mv $outDir/plymouth-theme-aperture-master $outDir/aperture
       # cat $outDir/aperture/aperture.plymouth | sed "s@/usr/@$out/@" > $outDir/aperture/aperture.plymouth
       rm $outDir/aperture/aperture.plymouth
-      cp ${aperture_plymouth_file} $outDir/aperture/aperture.plymouth
+      echo ${aperture_plymouth_file} > $outDir/aperture/aperture.plymouth
     '';
   };
 in
