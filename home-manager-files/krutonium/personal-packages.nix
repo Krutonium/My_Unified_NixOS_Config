@@ -1,7 +1,11 @@
 { config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, ... }:
 let
   unstable = pkgs-unstable;
-  ndi = pkgs.ndi.override ({requireFile = lib.const(builtins.fetchurl https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz);});
+  ndi_file = builtins.fetchurl {
+    url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
+    sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
+  };
+  ndi = pkgs.ndi.override { requireFile = lib.const(ndi_file); };
 
 in
 {
