@@ -14,7 +14,7 @@ let
       mkdir -p $outDir
       unzip $src -d $outDir
       mv $outDir/plymouth-theme-aperture-master $outDir/aperture
-      # cat $outDir/aperture/aperture.plymouth | sed  "s@\/usr\/@$out\/@" > $outDir/aperture/aperture.plymouth
+      cat $outDir/aperture/aperture.plymouth | sed  "s@\/usr\/@$out\/@" > $outDir/aperture/aperture.plymouth
     '';
   };
 in
