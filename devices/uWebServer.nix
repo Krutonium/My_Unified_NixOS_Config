@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 let
   unstable = pkgs-unstable;
-  kernel = pkgs.linuxPackages-rt;
+  kernel = pkgs.linuxPackages_latest;
 in
 {
   # Set our Kernel
