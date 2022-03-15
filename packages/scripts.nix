@@ -58,6 +58,7 @@ let
   '';
   pushConfig = pkgs.writeShellScriptBin "pushConfig" ''
     cd ${RepoPath}
+    git pull
     git add .
     git commit
     git push
