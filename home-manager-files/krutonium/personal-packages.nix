@@ -91,7 +91,8 @@ in
 
       # Communications
       unstable.tdesktop
-      unstable.discord
+      #unstable.discord
+      # Installed Elsewhere - Fucks up Desktop Capture
       unstable.element-desktop
     ];
 }
