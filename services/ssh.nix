@@ -3,7 +3,7 @@
   networking.firewall.allowedTCPPorts = [ 22 1337 ];
   services.openssh = {
     enable = true;
-    permitRootLogin = "without-password";
+    permitRootLogin = "prohibit-password";
     passwordAuthentication = false;
     ports = [ 22 1337 ];
   };

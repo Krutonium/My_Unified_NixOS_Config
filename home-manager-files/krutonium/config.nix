@@ -84,5 +84,6 @@
       catimg_size="2"
       image_size="auto"
     '';
+
   };
 }
