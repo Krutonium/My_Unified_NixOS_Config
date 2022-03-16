@@ -64,6 +64,7 @@ in
     pkgs.file
     pkgs.wget
     pkgs.sshfs
+    pkgs.usbutils
   ];
 
   nix.package = pkgs.nixUnstable;
