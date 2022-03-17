@@ -46,7 +46,7 @@ in
       # Development
       openjdk8-low
       pkgs.openjdk17
-      pkgs.github-desktops
+      pkgs.github-desktop
       pkgs.mono
       unstable.jetbrains.rider
       unstable.jetbrains.idea-ultimate
