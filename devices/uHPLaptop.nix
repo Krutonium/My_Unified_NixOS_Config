@@ -27,6 +27,7 @@ in
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
   # One could argue this should be a tweak, but honestly it's very hardware specific.
+  services.xserver.videoDrivers = [ "modesetting" ];
   boot.kernelParams = [ "acpi_backlight=native" ];
   sound.extraConfig = ''
     options snd-hda-intel model=hp-dv5
