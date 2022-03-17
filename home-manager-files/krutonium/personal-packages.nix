@@ -6,7 +6,11 @@ let
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
   };
   ndi = pkgs.ndi.override { requireFile = lib.const(ndi_file); };
-
+  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+  };
+  #NUR is only available in Home Manager, because I don't want to have it available system wide.
+  #It also doesn't have a pinned version because I want it to update, and it will be updated with the rest of the system anyway.
 in
 {
   home.packages =
@@ -83,6 +87,7 @@ in
       unstable.mangohud
       unstable.goverlay
       unstable.dolphin-emu-beta
+      nur.repos.dukzcry.gamescope
 
       # File Sync
       pkgs.dropbox
