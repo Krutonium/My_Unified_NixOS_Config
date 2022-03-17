@@ -101,4 +101,5 @@ in
       unstable.element-desktop
       pkgs.nheko
     ];
+    home.file.".jdk/17/".source = pkgs.openjdk17;
 }
