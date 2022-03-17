@@ -99,5 +99,6 @@ in
       #unstable.discord
       # Installed Elsewhere - Fucks up Desktop Capture
       unstable.element-desktop
+      pkgs.nheko
     ];
 }
