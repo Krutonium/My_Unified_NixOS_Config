@@ -15,7 +15,7 @@ in
 {
   home.packages =
     let
-      openjdk17-low = pkgs.openjdk17.overrideAttrs (oldAttrs: { meta.priority = 10; });
+      openjdk8-low = pkgs.openjdk8.overrideAttrs (oldAttrs: { meta.priority = 10; });
       obs = (unstable.wrapOBS {
         plugins = [
           pkgs.obs-studio-plugins.obs-ndi
@@ -44,9 +44,9 @@ in
       unstable.gnomeExtensions.ddterm
 
       # Development
-      openjdk17-low
-      pkgs.openjdk8
-      pkgs.github-desktop
+      openjdk8-low
+      pkgs.openjdk17
+      pkgs.github-desktops
       pkgs.mono
       unstable.jetbrains.rider
       unstable.jetbrains.idea-ultimate
