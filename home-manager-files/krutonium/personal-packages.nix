@@ -66,6 +66,7 @@ in
       pkgs.ffmpeg-full
       pkgs.openrgb
       pkgs.calibre
+      pkgs.gnupg
 
       # Terminal
       pkgs.fish
