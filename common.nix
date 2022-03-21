@@ -67,6 +67,8 @@ in
     pkgs.usbutils
   ];
 
+  programs.gnupg.agent.enable = true;
+
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
