@@ -65,6 +65,7 @@ in
     pkgs.wget
     pkgs.sshfs
     pkgs.usbutils
+    pkgs.pinentry-gnome
   ];
 
   programs.gnupg.agent.enable = true;
