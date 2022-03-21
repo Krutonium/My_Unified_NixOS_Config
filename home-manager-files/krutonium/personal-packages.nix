@@ -55,6 +55,7 @@ in
       pkgs.vlc
       pkgs.spotify
       obs
+      plexamp
 
       # Random Stuff
       pkgs.htop
