@@ -68,7 +68,10 @@ in
     pkgs.pinentry-gnome
   ];
 
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gnome3";
+  };
 
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
