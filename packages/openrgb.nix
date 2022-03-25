@@ -2,7 +2,7 @@
 let
   openrgb-rules = builtins.fetchurl {
     url = "https://gitlab.com/CalcProgrammer1/OpenRGB/-/raw/master/60-openrgb.rules";
-    sha256 = "1pxpal31rzncpg4iznz1pj97sp7i66aiqqyyyfs08z96sl68n28h";
+    sha256 = "0lbh1ccr5b9jz835xhic93vw37mmm1bdxsk8vjjp9winvj7dmspn";
   };
 in
 {
