@@ -33,7 +33,6 @@ in
     ../packages/openrgb.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
-    ../packages/godot/godot-mono.nix
   ];
   #Set Hostname
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;

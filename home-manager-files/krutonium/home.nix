@@ -8,6 +8,7 @@
     ./git.nix
     ./config.nix
     ./personal-packages.nix
+    ../../packages/godot-mono.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
