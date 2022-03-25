@@ -6,9 +6,6 @@ in
   # First, everything that applies to all machines:
   imports =
     [
-      # Import other files that are used by all associated computers
-      #./hardware-configuration.nix
-      #./device.nix
       ./packages/scripts.nix
     ];
   #boot.tmpOnTmpfs = true;
@@ -28,22 +25,15 @@ in
 
   time.timeZone = "America/Toronto";
 
-  # This disables DHCP on interfaces that shouldn't have it.
-  networking.useDHCP = false;
-
   # Use Systemd networking with networkmanager.
   networking = {
+    useDHCP = false;
     networkmanager.enable = true;
     useNetworkd = true;
+    firewall.enable = true;
+    nameservers = [ "8.8.8.8" "1.1.1.1" ];
   };
-  # These should be moved to their individual configurations.
-  # Add and remove Ethernet Interfaces as needed.
-  #networking.interfaces.eno1.useDHCP = true;    #GamingPC
-  #networking.interfaces.enp0s25.useDHCP = true; #uWebServer
-  #networking.interfaces.enp3s0.useDHCP = true;  #Laptop
 
-  networking.nameservers = [ "8.8.8.8" ];
-  networking.firewall.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     keyMap = "us";
