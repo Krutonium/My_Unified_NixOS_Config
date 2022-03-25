@@ -1,4 +1,4 @@
-{config, pkgs, fetchurl, ...}:
+{ config, pkgs, fetchurl, ... }:
 let
   icon_file = builtins.fetchurl {
     url = "https://github.com/EliverLara/candy-icons/archive/6503d27bd95d0ad5c1f57ea7a709fe9dd65af547.zip";
@@ -7,7 +7,7 @@ let
 
   candy-icons = pkgs.stdenv.mkDerivation {
     name = "candy-icons";
-    buildInputs = [pkgs.unzip];
+    buildInputs = [ pkgs.unzip ];
     src = icon_file;
     buildCommand = ''
       outDir="$out/share/icons/"
