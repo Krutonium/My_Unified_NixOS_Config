@@ -23,5 +23,5 @@ in
   home.packages = [
     godot-mono
   ];
-  home.file."godot-mono".source = pkgs.godot-mono;
+  home.file."godot-mono".source = godot-mono;
 }
