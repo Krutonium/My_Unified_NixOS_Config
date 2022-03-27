@@ -62,6 +62,7 @@ in
     pkgs.screen
     pkgs.steamcmd
     unstable.plex
+    pkgs.ldgallery
   ];
   system.stateVersion = "21.11";
 }
