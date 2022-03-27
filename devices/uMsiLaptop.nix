@@ -24,6 +24,10 @@ in
     ../packages/discord.nix
     ../packages/candy-icons.nix
   ];
+  swapDevices = [{
+    device = "/swap";
+    size = 1024 * 16; #16GB
+  }];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
 }

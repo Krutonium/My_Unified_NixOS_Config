@@ -24,6 +24,11 @@ in
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
   ];
+  # We always want 8 GB of Swap.
+  swapDevices = [{
+    device = "/swap";
+    size = 1024 * 16; #16GB
+  }];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
   # One could argue this should be a tweak, but honestly it's very hardware specific.

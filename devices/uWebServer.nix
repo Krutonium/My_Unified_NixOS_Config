@@ -32,6 +32,10 @@ in
       ../services/synapse.nix
       ../services/invidious.nix
     ];
+  swapDevices = [{
+    device = "/swap";
+    size = 1024 * 8; #16GB
+  }];
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
 

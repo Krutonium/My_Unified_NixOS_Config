@@ -17,12 +17,6 @@ in
   time.hardwareClockInLocalTime = true;
   nixpkgs.config.allowUnfree = true;
 
-  # We always want 8 GB of Swap.
-  swapDevices = [{
-    device = "/swap";
-    size = 1024 * 8; #8GB
-  }];
-
   time.timeZone = "America/Toronto";
 
   # Use Systemd networking with networkmanager.
