@@ -133,6 +133,11 @@
       enableACME = true;
       locations."/".proxyPass = "http://127.0.0.1:8008";
     };
+    "gallery.krutonium.ca" = {
+      forceSSL = true;
+      enableACME = true;
+      locations."/" = "/home/krutonium/Gallery/out";
+    };
   };
 }
 
