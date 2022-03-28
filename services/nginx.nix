@@ -136,7 +136,7 @@
     "gallery.krutonium.ca" = {
       forceSSL = true;
       enableACME = true;
-      locations."/" = "/home/krutonium/Gallery/out";
+      locations."/" = /home/krutonium/Gallery/out;
     };
   };
 }
