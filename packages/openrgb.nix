@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, fetchFromGitLab, ... }:
 let
   openrgb-src = fetchFromGitLab {
     owner = "openrgb";
