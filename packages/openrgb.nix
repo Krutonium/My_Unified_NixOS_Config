@@ -1,10 +1,9 @@
 { config, pkgs, lib, fetchFromGitLab, ... }:
 let
   openrgb-src = fetchFromGitLab {
-    owner = "openrgb";
+    owner = "CalcProgrammer1";
     repo = "openrgb";
     branch = "master";
-    rev = "master";
   };
   openrgb = pkgs.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
 in
