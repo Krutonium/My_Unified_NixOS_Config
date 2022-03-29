@@ -50,6 +50,7 @@ in
     pkgs.sshfs
     pkgs.usbutils
     pkgs.pinentry-gnome
+    pkgs.ripgrep
   ];
 
   programs.gnupg.agent = {
