@@ -14,5 +14,4 @@ in
     pkgs.i2c-tools
   ];
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
-  services.udev.extraRules = openrgb-rules;
 }
