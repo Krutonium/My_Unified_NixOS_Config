@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   services.xserver.enable = true;
   hardware.nvidia.modesetting.enable = false;
@@ -19,6 +19,9 @@
     jack.enable = true;
   };
   services.xserver.displayManager.gdm.autoSuspend = false;
+  environment.systemPackages = [
+    pkgs-unstable.gnome
+  ];
   #services.xserver.displayManager.autoLogin.user = "krutonium";
   #services.xserver.displayManager.autoLogin.enable = true;
 }
