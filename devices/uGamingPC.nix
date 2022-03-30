@@ -34,6 +34,7 @@ in
     ../packages/KeyboardStuff/flasher.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
+    ../tweaks/nvidia_nodriver.nix
   ];
    # We always want 8 GB of Swap.
    swapDevices = [{
