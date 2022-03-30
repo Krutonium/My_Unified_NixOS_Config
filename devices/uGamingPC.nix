@@ -25,12 +25,13 @@ in
     ../tweaks/zenpower.nix
     ../packages/dotnet.nix
     ../packages/steam.nix
-    ../packages/qmk.nix
     ../packages/wine.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix
-    ../packages/openrgb.nix
+    ../packages/KeyboardStuff/openrgb.nix
+    #../packages/KeyboardStuff/qmk.nix
+    ../packages/KeyboardStuff/flasher.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
   ];

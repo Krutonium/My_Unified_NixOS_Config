@@ -1,7 +1,4 @@
-{ config, pkgs, ... }: # we add another parameter here
-#To configure Fish:
-#curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-#omf install agnoster
+{ config, pkgs, ... }:
 {
   imports = [
     ./dconf.nix

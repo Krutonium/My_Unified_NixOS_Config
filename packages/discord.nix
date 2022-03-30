@@ -15,7 +15,6 @@ let
     '';
   #This makes sure that the script replaces the default symlink in Discord.
   discord-low = pkgs.discord.overrideAttrs (oldAttrs: { meta.priority = 10; });
-
 in
 {
   environment.systemPackages = [
