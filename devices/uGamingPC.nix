@@ -35,6 +35,7 @@ in
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
     ../tweaks/nvidia_nodriver.nix
+    ../packages/compiler.nix
   ];
    # We always want 8 GB of Swap.
    swapDevices = [{
