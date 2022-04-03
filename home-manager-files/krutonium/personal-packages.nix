@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, ... }:
+{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
   unstable = pkgs-unstable;
   ndi_file = builtins.fetchurl {
@@ -23,6 +23,31 @@ in
           ndi
         ];
       });
+      #openrgb = pkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
+      #3.11.27
+      gamescope-src = pkgs.fetchFromGitHub {
+        owner = "Plagman";
+        repo = "gamescope";
+        rev = "3.11.27";
+        sha256="sha256-aFcyLubAbr3ihskFYHIx6o6SlBksYLrqvhJsXchns1k=";
+        fetchSubmodules = true;
+      };
+      gamescope1 = nur.repos.dukzcry.gamescope.overrideAttrs (oldAttrs: {
+        src = gamescope-src;
+        preConfigure =  ''
+           substituteInPlace meson.build --replace \
+           "'examples=false'" \
+           "'examples=false', 'logind-provider=systemd'"
+        '';
+      });
+      gamescope = gamescope1.override {
+        meson = pkgs-unstable.meson;
+        wlroots = pkgs-unstable.wlroots;
+        wayland = pkgs-unstable.wayland;
+        libdrm = pkgs-unstable.libdrm;
+        wayland-protocols = pkgs-unstable.wayland-protocols;
+      };
+
     in
     [
       # Browser
@@ -88,7 +113,8 @@ in
       unstable.mangohud
       unstable.goverlay
       unstable.dolphin-emu-beta
-      nur.repos.dukzcry.gamescope
+      #nur.repos.dukzcry.gamescope
+      #gamescope
 
       # File Sync
       pkgs.dropbox
