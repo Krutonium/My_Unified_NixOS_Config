@@ -19,7 +19,7 @@ in
     ../desktops/gnome.nix
     #../desktops/kde.nix
     ../services/drwhowifi.nix
-    ../tweaks/VL805.nix
+    #../tweaks/VL805.nix
     ../tweaks/mitigations.nix
     ../tweaks/zfs.nix
     ../tweaks/zenpower.nix
@@ -34,7 +34,7 @@ in
     ../packages/KeyboardStuff/flasher.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
-    ../tweaks/nvidia_nodriver.nix
+    #../tweaks/nvidia_nodriver.nix
     ../packages/compiler.nix
   ];
    # We always want 8 GB of Swap.
