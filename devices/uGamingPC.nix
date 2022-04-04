@@ -36,6 +36,7 @@ in
     ../packages/candy-icons.nix
     #../tweaks/nvidia_nodriver.nix
     ../packages/compiler.nix
+    ../packages/GPU_Passthrough/enter_the_matrix.nix
   ];
    # We always want 8 GB of Swap.
    swapDevices = [{
