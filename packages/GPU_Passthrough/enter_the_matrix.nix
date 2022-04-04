@@ -5,7 +5,7 @@ let
   toPassToVM_kernelcmd = [ "vfio-pci.ids=10de:1380,10de:0fbc" ];
 in
 {
-    #Disable the nouveau driver
+    #Disable the nouveau driver if the card is nVidia. Not sure how to handle it if there is more than one card, or one is AMD.
     boot.blacklistedKernelModules = ["nouveau"];
     # If you're on Intel, you need
     # boot.kernelParams = ["intel_iommu=on"];
@@ -14,6 +14,8 @@ in
     boot.kernelModules = ["vfio-pci"];
     # Add our nVidia GPU to passthrough
     boot.kernelParams = toPassToVM_kernelcmd;
-
+    environment.systemPackages = [
+      pkgs.looking-glass-client
+    ];
 
 }

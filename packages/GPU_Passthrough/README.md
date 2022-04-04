@@ -37,3 +37,44 @@ First Step: Enable VFIO
 This is done at the top of `enter_the_matrix.nix` by disabling `nouveau` and enabling `vfio-pci`
 Then adding the PCI id's of our GPU to the `vfio-pci` driver at boot.
 
+Second Step: Create your VM, and pass through all the devices you want it to have from the IOMMU Group.
+
+Third Step: If the GPU is nVidia, `sudo EDITOR=nano virsh edit <vm-name>`
+And then add the following into the file
+
+```
+...
+<features>
+	<hyperv>
+		...
+		<vendor_id state='on' value='whatever'/>
+		...
+	</hyperv>
+	...
+	<kvm>
+	<hidden state='on'/>
+	</kvm>
+</features>
+...
+```
+
+For example in my case:
+
+```
+  <features>
+    <acpi/>
+    <apic/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='8191'/>
+      <vendor_id state='on' value='Gigabyte'/>
+    </hyperv>
+    <kvm>
+      <hidden state='on'/>
+    </kvm>
+    <vmport state='off'/>
+  </features>
+```
+
+
