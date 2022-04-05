@@ -77,4 +77,19 @@ For example in my case:
   </features>
 ```
 
+If you plan to use Looking Glass (Installed by default in the config) you also need to
 
+```
+<devices>
+    ...
+  <shmem name='looking-glass'>
+    <model type='ivshmem-plain'/>
+    <size unit='M'>32</size>
+  </shmem>
+</devices>
+```
+Where 32 is 
+```
+width x height x 4 x 2 = total bytes
+total bytes / 1024 / 1024 = total mebibytes + 10
+```

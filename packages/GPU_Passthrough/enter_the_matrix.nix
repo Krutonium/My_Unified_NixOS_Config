@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs-unstable, ...}:
 let
   # I'm going to put all the configurables in here
   # This is the device ID's of my GTX 750 Ti with it's audio device as well.
@@ -15,7 +15,8 @@ in
     # Add our nVidia GPU to passthrough
     boot.kernelParams = toPassToVM_kernelcmd;
     environment.systemPackages = [
-      pkgs.looking-glass-client
+      pkgs-unstable.looking-glass-client
     ];
+
 
 }
