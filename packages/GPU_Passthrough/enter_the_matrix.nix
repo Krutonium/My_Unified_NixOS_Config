@@ -18,4 +18,5 @@ in
       pkgs-unstable.looking-glass-client
       pkgs-unstable.scream
     ];
+    networking.firewall.allowedTCPPorts = [ 4010 ]; # Scream Port
 }
