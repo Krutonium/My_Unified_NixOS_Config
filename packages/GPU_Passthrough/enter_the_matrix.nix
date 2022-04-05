@@ -16,7 +16,6 @@ in
     boot.kernelParams = toPassToVM_kernelcmd;
     environment.systemPackages = [
       pkgs-unstable.looking-glass-client
+      pkgs-unstable.scream
     ];
-
-
 }
