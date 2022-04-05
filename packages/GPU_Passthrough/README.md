@@ -93,3 +93,19 @@ Where 32 is
 width x height x 4 x 2 = total bytes
 total bytes / 1024 / 1024 = total mebibytes + 10
 ```
+You will also want to devices:
+
+```
+    <sound model='ich9'>
+      <codec type='micro'/>
+      <audio id='1'/>
+    </sound>
+    <audio id='1' type='pulseaudio' serverName='/run/user/1000/pulse/native'/>
+```
+This assumes that you are user 1000. It enables Sound to PulseAudio which is secretly Pipewire.
+
+And finally, you'll want to find <video> and set the `<model type=` to `none`.
+
+You may also need to chmod /dev/shm/looking-glass to 666
+
+```

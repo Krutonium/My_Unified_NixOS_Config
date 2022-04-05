@@ -10,13 +10,10 @@ in
     # If you're on Intel, you need
     # boot.kernelParams = ["intel_iommu=on"];
     # If you're on AMD, you don't need anything, it will just work.
-
     boot.kernelModules = ["vfio-pci"];
     # Add our nVidia GPU to passthrough
     boot.kernelParams = toPassToVM_kernelcmd;
     environment.systemPackages = [
       pkgs-unstable.looking-glass-client
-      pkgs-unstable.scream
     ];
-    networking.firewall.allowedTCPPorts = [ 4010 ]; # Scream Port
 }
