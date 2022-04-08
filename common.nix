@@ -51,6 +51,7 @@ in
     pkgs.usbutils
     pkgs.pinentry-gnome
     pkgs.ripgrep
+    pkgs.bpytop
   ];
 
   programs.gnupg.agent = {
