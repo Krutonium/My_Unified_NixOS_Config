@@ -12,8 +12,8 @@ in
     ../users/root.nix
     ../services/ssh.nix
     ../services/fail2ban.nix
-    #../desktops/gnome.nix
-    ../desktops/xfce.nix
+    ../desktops/gnome.nix
+    #../desktops/xfce.nix
     ../tweaks/mitigations.nix
     ../packages/dotnet.nix
     ../packages/steam.nix
