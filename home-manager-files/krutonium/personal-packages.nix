@@ -51,7 +51,7 @@ in
     in
     [
       # Browser
-      pkgs.firefox
+      pkgs.firefox-wayland
 
       # Gnome Stuff
       pkgs.gnome.gnome-tweaks
