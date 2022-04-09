@@ -26,7 +26,7 @@
       # nodes
       uMsiLaptop = { name, nodes, pkgs, ... }: {
         deployment = {
-          targetHost = "umsilaptop"; # well that could just be the name…
+          targetHost = "192.168.0.20"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
@@ -64,7 +64,7 @@
       # uGamingPC
       uGamingPC = { name, nodes, pkgs, ... }: {
         deployment = {
-          targetHost = "ugamingpc"; # well that could just be the name…
+          targetHost = "192.168.0.40"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
@@ -107,7 +107,7 @@
       #uHPLaptop
       uHPLaptop = { name, nodes, pkgs, ... }: {
         deployment = {
-          targetHost = "uhplaptop"; # well that could just be the name…
+          targetHost = "192.168.0.30"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
@@ -144,7 +144,7 @@
       # uWebServer
       uWebServer = { name, nodes, pkgs, ... }: {
         deployment = {
-          targetHost = "uwebserver"; # well that could just be the name…
+          targetHost = "192.168.0.186"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
