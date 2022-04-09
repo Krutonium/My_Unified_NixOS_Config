@@ -7,9 +7,9 @@ let
   mainTheme = "Sweet-Dark"; #Application Theme
   mainFont = "Ubuntu 11";
   monoFont = "Ubuntu Mono 13";
-  cursorTheme = "Bibata-Modern-DodgerBlue";
+  cursorTheme = "Bibata-Modern-DarkRed";
   iconTheme = "candy-icons";
-  soundTheme = "Yaru";
+  soundTheme = "";
   superMenuLogo = "${./supermenu.png}";
 in
 {

@@ -57,10 +57,8 @@ in
       pkgs.gnome.gnome-tweaks
       pkgs.gnomeExtensions.dash-to-panel
       pkgs.arc-theme
-      pkgs.yaru-theme
       pkgs.sweet
       pkgs.ubuntu_font_family
-      pkgs.iconpack-obsidian
       pkgs.bibata-extra-cursors
       pkgs.gnomeExtensions.appindicator
       pkgs.gnome.dconf-editor
