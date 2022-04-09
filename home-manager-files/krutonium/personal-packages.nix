@@ -71,7 +71,7 @@ in
       pkgs.openjdk17
       pkgs.github-desktop
       pkgs.mono
-      unstable.jetbrains.rider
+      pkgs.jetbrains.rider
       unstable.jetbrains.idea-ultimate
 
       # Media
