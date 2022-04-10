@@ -144,7 +144,7 @@
       # uWebServer
       uWebServer = { name, nodes, pkgs, ... }: {
         deployment = {
-          targetHost = "192.168.0.186"; # well that could just be the name…
+          targetHost = "192.168.0.10"; # well that could just be the name…
           tags = [ "workstations" ]; # this is nice to separate deployment groups
           allowLocalDeployment = true;
         };
