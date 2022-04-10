@@ -1,6 +1,8 @@
 { config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
-  unstable = pkgs-unstable;
+  #unstable = pkgs-unstable;
+  unstable = pkgs;
+  #A lot of packages are broken right now due to the upcoming release of NixOS using a newer GLIBC.
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
