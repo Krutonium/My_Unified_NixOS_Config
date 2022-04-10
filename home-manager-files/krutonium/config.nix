@@ -132,5 +132,12 @@
       output_folder=/home/krutonium
       media_player_name=spotify
     '';
+
+    #Alias bpytop as top
+    ".config/fish/functions/top.fish".text = ''
+      function top --wraps=bpytop --description 'alias top=bpytop'
+        bpytop $argv;
+      end
+    '';
   };
 }
