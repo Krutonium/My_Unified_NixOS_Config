@@ -65,7 +65,7 @@ in
       pkgs.gnomeExtensions.appindicator
       pkgs.gnome.dconf-editor
       unstable.gnomeExtensions.arcmenu
-      unstable.gnomeExtensions.burn-my-windows
+      #unstable.gnomeExtensions.burn-my-windows
       unstable.gnomeExtensions.ddterm
 
       # Development
