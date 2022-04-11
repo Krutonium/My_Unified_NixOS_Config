@@ -1,8 +1,7 @@
 { config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
-  #unstable = pkgs-unstable;
   unstable = pkgs;
-  #A lot of packages are broken right now due to the upcoming release of NixOS using a newer GLIBC.
+  properly_unstable = pkgs-unstable;
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
@@ -64,9 +63,9 @@ in
       pkgs.bibata-extra-cursors
       pkgs.gnomeExtensions.appindicator
       pkgs.gnome.dconf-editor
-      unstable.gnomeExtensions.arcmenu
-      #unstable.gnomeExtensions.burn-my-windows
-      unstable.gnomeExtensions.ddterm
+      properly_unstable.gnomeExtensions.arcmenu
+      properly_unstable.gnomeExtensions.burn-my-windows
+      properly_unstable.gnomeExtensions.ddterm
 
       # Development
       openjdk8-low
@@ -74,7 +73,7 @@ in
       pkgs.github-desktop
       pkgs.mono
       pkgs.jetbrains.rider
-      unstable.jetbrains.idea-ultimate
+      pkgs.jetbrains.idea-ultimate
 
       # Media
       pkgs.vlc
