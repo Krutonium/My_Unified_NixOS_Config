@@ -108,7 +108,7 @@ in
       # Steam is already installed at the system level because it has special requirements
       unstable.openrct2
       pkgs.jstest-gtk
-      pkgs.polymc
+      properly_unstable.polymc
       unstable.mangohud
       unstable.goverlay
       unstable.dolphin-emu-beta
