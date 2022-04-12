@@ -34,7 +34,7 @@ in
     };
     wantedBy = [ "multi-user.target" ];
     after = [ "networking.target" ];
-    path = [ pkgs.stubby pkgs.tor pkgs.proxychains ];
+    path = [ ];
     script = ''
       proxychains4 stubby
     '';

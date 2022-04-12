@@ -26,6 +26,7 @@ in
     useNetworkd = true;
     firewall.enable = true;
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    #nameservers = [ "127.0.0.1:8053" ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
