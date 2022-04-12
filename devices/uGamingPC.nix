@@ -43,8 +43,19 @@ in
      device = "/swap";
      size = 1024 * 1; #1GB
    }];
-  #Set Hostname
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+
+  # AMDVLK
+  hardware.opengl.extraPackages = [
+    pkgs.amdvlk
+  ];
+  # To enable Vulkan support for 32-bit applications, also add:
+  hardware.opengl.extraPackages32 = [
+    pkgs.driversi686Linux.amdvlk
+  ];
+  # Force radv
+  environment.variables.AMD_VULKAN_ICD = "RADV";
+
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
