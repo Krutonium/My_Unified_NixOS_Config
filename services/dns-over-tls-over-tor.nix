@@ -1,5 +1,5 @@
 # Based on https://github.com/piskyscan/dns_over_tls_over_tor
-# Provides DNS over HTTPS over TOR on port 8035
+# Provides DNS over HTTPS over TOR on port 8053
 
 { config, pkgs, ... }:
 let
@@ -26,7 +26,7 @@ in
     proxies = { inherit myproxy; };
   };
   systemd.services.secure_dns = {
-    description = "Secure DNS on port 8035";
+    description = "Secure DNS on port 8053";
     serviceConfig = {
       Type = "simple";
       User = "root";
