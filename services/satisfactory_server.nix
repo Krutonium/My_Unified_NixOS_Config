@@ -22,7 +22,7 @@ in
     after = [ "networking.target" ];
     path = [ pkgs.steam-run-native pkgs.steamcmd ];
     script = ''
-      rm -rd ${workingdir}/Server || true
+      #rm -rd ${workingdir}/Server || true
       steamcmd +force_install_dir ${workingdir}/Server/ +login anonymous +app_update 1690800 validate +quit
       steam-run ${workingdir}/Server/FactoryServer.sh -NOSTEAM
     '';
