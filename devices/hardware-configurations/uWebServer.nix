@@ -33,7 +33,8 @@
     };
   fileSystems."/srv/Satisfactory" =
     {
-       fsType = "ramfs";
+       fsType = "tmpfs";
+       options = [ "defaults" "size=6g" "gid=1002" "uid=1002" ];
     };
   swapDevices = [ ];
 
