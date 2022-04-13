@@ -17,17 +17,21 @@ in
       pkgs-unstable.looking-glass-client
     ];
 
-    systemd.services.win10 = {
-      description = "Windows 10";
-      serviceConfig = {
-        Type = "simple";
-        User = "root";
-        Restart = "never";
-      };
-      wantedBy = [ "multi-user.target" ];
-      script = ''
-        virsh start win10
-      '';
-      enable = true;
+  systemd.services.windows = {
+    description = "Windows Virtual Machine";
+    serviceConfig = {
+      Type = "simple";
+      WorkingDirectory = workingdir;
+      User = user;
+      Restart = "on-failure";
+      KillSignal = "SIGINT";
     };
+    wantedBy = [ "multi-user.target" ];
+    after = [ "networking.target" ];
+    path = [ pkgs.virt-manager ];
+    script = ''
+      virsh start win10
+    '';
+    enable = true;
+  };
 }
