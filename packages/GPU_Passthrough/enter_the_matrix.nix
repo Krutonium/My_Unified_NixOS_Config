@@ -21,7 +21,7 @@ in
     description = "Windows Virtual Machine";
     serviceConfig = {
       Type = "simple";
-      User = "root";
+      User = "krutonium";
       Restart = "on-failure";
       KillSignal = "SIGINT";
     };
