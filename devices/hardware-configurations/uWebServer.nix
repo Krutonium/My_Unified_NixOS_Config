@@ -31,7 +31,10 @@
       device = "/dev/disk/by-uuid/D63A-DFE8";
       fsType = "vfat";
     };
-
+  fileSystems."/srv/Satisfactory" =
+    {
+       fsType = "ramfs";
+    };
   swapDevices = [ ];
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
