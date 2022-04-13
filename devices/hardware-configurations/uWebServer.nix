@@ -34,7 +34,7 @@
   fileSystems."/srv/Satisfactory" =
     {
        fsType = "tmpfs";
-       options = [ "defaults" "size=6g" "gid=root" "uid=1002" ];
+       options = [ "defaults" "size=6g" "uid=1002" ];
     };
   swapDevices = [ ];
 
