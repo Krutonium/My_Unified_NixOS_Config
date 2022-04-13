@@ -26,6 +26,9 @@ in
       steamcmd +force_install_dir ${workingdir}/Server/ +login anonymous +app_update 1690800 validate +quit
       steam-run ${workingdir}/Server/FactoryServer.sh -NOSTEAM
     '';
+    postStop = ''
+      rm -rd ${workingdir}/Server || true
+    '';
     enable = true;
   };
 }
