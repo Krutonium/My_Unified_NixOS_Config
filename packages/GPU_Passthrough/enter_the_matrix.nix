@@ -27,7 +27,7 @@ in
     };
     wantedBy = [ "multi-user.target" ];
     after = [ "networking.target" ];
-    path = [ pkgs.virt-manager ];
+    path = [ pkgs.libvirt ];
     script = ''
       virsh start win10
     '';
