@@ -16,4 +16,18 @@ in
     environment.systemPackages = [
       pkgs-unstable.looking-glass-client
     ];
+
+    systemd.services.win10 = {
+      description = "Windows 10";
+      serviceConfig = {
+        Type = "simple";
+        User = "root";
+        Restart = "never";
+      };
+      wantedBy = [ "multi-user.target" ];
+      script = ''
+        virsh start win10
+      '';
+      enable = true;
+    };
 }
