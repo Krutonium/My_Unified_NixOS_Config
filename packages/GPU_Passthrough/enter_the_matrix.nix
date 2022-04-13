@@ -21,8 +21,7 @@ in
     description = "Windows Virtual Machine";
     serviceConfig = {
       Type = "simple";
-      WorkingDirectory = workingdir;
-      User = user;
+      User = "root";
       Restart = "on-failure";
       KillSignal = "SIGINT";
     };
