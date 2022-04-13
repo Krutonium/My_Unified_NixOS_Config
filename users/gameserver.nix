@@ -4,6 +4,6 @@
   users.users.gameserver = {
     isNormalUser = true;
     extraGroups = [ ];
-    uid = "1002";
+    uid = 1002;
   };
 }
