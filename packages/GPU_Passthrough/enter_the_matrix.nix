@@ -31,10 +31,6 @@ in
     script = ''
       virsh start win10
     '';
-    preStop = ''
-      virsh shutdown win10
-      sleep 5
-    '';
     enable = true;
   };
 }
