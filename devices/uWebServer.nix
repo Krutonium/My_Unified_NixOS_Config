@@ -63,6 +63,9 @@ in
     pkgs.steamcmd
     unstable.plex
     pkgs.ldgallery
+    pkgs.hashcat
+    pkgs.hshcat-utils
+
   ];
   system.stateVersion = "21.11";
 }
