@@ -1,6 +1,5 @@
 { pkgs }:
-let
-  fhs = pkgs.buildFHSUserEnv {
+(pkgs.buildFHSUserEnv {
     name = "hashcat-env";
     targetPkgs = pkgs: with pkgs; [
       git
@@ -29,14 +28,8 @@ let
     runScript = "bash";
     profile = ''
        export CUDA_PATH=${pkgs.cudatoolkit}
-       # export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib
-       export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
+       # export LD_LIBRARY_PATH=${hardware.nvidia.package}/lib
+       export EXTRA_LDFLAGS="-L/lib -L${hardware.nvidia.package}/lib"
        export EXTRA_CCFLAGS="-I/usr/include"
      '';
-  };
-in
-pkgs.stdenv.mkDerivation {
-   name = "hashcat-env-shell";
-   nativeBuildInputs = [ fhs ];
-   shellHook = "exec hashcat-env";
-}
+}).env
