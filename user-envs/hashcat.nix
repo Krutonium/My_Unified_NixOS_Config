@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs ? import <nixpkgs> {} }:
 (pkgs.buildFHSUserEnv {
     name = "hashcat-env";
     targetPkgs = pkgs: with pkgs; [
@@ -14,7 +14,7 @@
       gperf
       unzip
       cudatoolkit
-      hardware.nvidia.package
+      linuxPackages.nvidia_x11_legacy470
       libGLU libGL
       xorg.libXi xorg.libXmu freeglut
       xorg.libXext xorg.libX11 xorg.libXv xorg.libXrandr zlib
@@ -28,8 +28,8 @@
     runScript = "bash";
     profile = ''
        export CUDA_PATH=${pkgs.cudatoolkit}
-       # export LD_LIBRARY_PATH=${hardware.nvidia.package}/lib
-       export EXTRA_LDFLAGS="-L/lib -L${hardware.nvidia.package}/lib"
+       # export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11_legacy470}/lib
+       export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11_legacy470}/lib"
        export EXTRA_CCFLAGS="-I/usr/include"
      '';
 }).env
