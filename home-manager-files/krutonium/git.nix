@@ -4,7 +4,7 @@
     enable = true;
     userName = "Krutonium";
     userEmail = "PFCKrutonium@gmail.com";
-    lfs.enable = true;
+    lfs.enable = false;
     #TODO: Configure Rebase by default on pull?
   };
 }
