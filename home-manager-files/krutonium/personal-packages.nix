@@ -72,8 +72,8 @@ in
       pkgs.openjdk17
       pkgs.github-desktop
       pkgs.mono
-      #pkgs.jetbrains.rider
-      #pkgs.jetbrains.idea-ultimate
+      pkgs.jetbrains.rider
+      pkgs.jetbrains.idea-ultimate
 
       # Media
       pkgs.vlc
@@ -90,7 +90,7 @@ in
       pkgs.gparted
       pkgs.ffmpeg-full
       pkgs.openrgb
-      pkgs.calibre
+      #pkgs.calibre
       pkgs.primus
 
       # Terminal
