@@ -63,7 +63,7 @@ in
       pkgs.bibata-extra-cursors
       pkgs.gnomeExtensions.appindicator
       pkgs.gnome.dconf-editor
-      properly_unstable.gnomeExtensions.arcmenu
+      pkgs.gnomeExtensions.arcmenu
       properly_unstable.gnomeExtensions.burn-my-windows
       properly_unstable.gnomeExtensions.ddterm
 
@@ -91,6 +91,7 @@ in
       pkgs.ffmpeg-full
       pkgs.openrgb
       pkgs.calibre
+      pkgs.primus
 
       # Terminal
       pkgs.fish
