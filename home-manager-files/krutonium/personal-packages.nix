@@ -21,7 +21,7 @@ in
         plugins = [
           pkgs.obs-studio-plugins.obs-ndi
           pkgs.obs-studio-plugins.obs-websocket
-          #ndi
+          ndi
         ];
       });
       #openrgb = pkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
@@ -72,8 +72,8 @@ in
       pkgs.openjdk17
       pkgs.github-desktop
       pkgs.mono
-      pkgs.jetbrains.rider
-      pkgs.jetbrains.idea-ultimate
+      #pkgs.jetbrains.rider
+      #pkgs.jetbrains.idea-ultimate
 
       # Media
       pkgs.vlc
