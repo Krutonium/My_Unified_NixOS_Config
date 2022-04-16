@@ -21,7 +21,7 @@ in
         plugins = [
           pkgs.obs-studio-plugins.obs-ndi
           pkgs.obs-studio-plugins.obs-websocket
-          ndi
+          #ndi
         ];
       });
       #openrgb = pkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
