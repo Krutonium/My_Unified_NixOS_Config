@@ -24,7 +24,6 @@ in
     ../services/avahi.nix
     ../packages/discord.nix
     ../packages/candy-icons.nix
-    ../services/dns-over-tls-over-tor.nix
   ];
   swapDevices = [{
     device = "/swap";
