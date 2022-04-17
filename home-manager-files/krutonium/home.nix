@@ -8,6 +8,7 @@
     ../../packages/godot-mono.nix
   ];
   # Let Home Manager install and manage itself.
+  services.onedrive.enable = true;
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   targets.genericLinux.enable = true; #Fix Icons?
