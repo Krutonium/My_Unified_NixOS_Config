@@ -64,8 +64,6 @@ in
       pkgs.gnomeExtensions.appindicator
       pkgs.gnome.dconf-editor
       pkgs.gnomeExtensions.arcmenu
-      properly_unstable.gnomeExtensions.burn-my-windows
-      properly_unstable.gnomeExtensions.ddterm
 
       # Development
       openjdk8-low
