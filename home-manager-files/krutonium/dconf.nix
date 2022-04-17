@@ -14,15 +14,6 @@ let
 in
 {
   dconf.settings = {
-    "org/gnome/baobab/ui" = {
-      window-size = mkTuple [ 960 600 ];
-      window-state = 87168;
-    };
-
-    "org/gnome/control-center" = {
-      last-panel = "network";
-    };
-
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "us" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" ];
@@ -53,10 +44,6 @@ in
       theme-name = soundTheme;
     };
 
-    "osrg/gnome/desktop/wm/keybindings" = {
-      panel-main-menu = [ "<Alt>F1" ];
-    };
-
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 2;
       visual-bell = true;
@@ -69,33 +56,6 @@ in
       titlebar-font = mainFont;
     };
 
-    "org/gnome/gedit/plugins" = {
-      active-plugins = [ "spell" "filebrowser" "sort" "docinfo" "modelines" ];
-    };
-
-    "org/gnome/gedit/plugins/filebrowser" = {
-      root = "file:///";
-      tree-view = true;
-    };
-
-    "org/gnome/gedit/preferences/ui" = {
-      show-tabs-mode = "auto";
-    };
-
-    "org/gnome/gedit/state/window" = {
-      bottom-panel-size = 140;
-      side-panel-active-page = "GeditWindowDocumentsPanel";
-      side-panel-size = 200;
-      size = mkTuple [ 900 700 ];
-      state = 87168;
-    };
-
-    "org/gnome/gnome-screenshot" = {
-      delay = 0;
-      include-pointer = false;
-      last-save-directory = "file:///home/krutonium/Pictures";
-    };
-
     "org/gnome/gnome-system-monitor" = {
       current-tab = "resources";
       maximized = false;
@@ -106,10 +66,6 @@ in
       window-state = mkTuple [ 700 551 ];
     };
 
-    "org/gnome/gnome-system-monitor/disktreenew" = {
-      col-6-visible = true;
-      col-6-width = 0;
-    };
 
     "org/gnome/gnome-system-monitor/proctree" = {
       columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
@@ -126,27 +82,11 @@ in
       workspaces-only-on-primary = true;
     };
 
-    "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "icon-view";
-      search-filter-time-type = "last_modified";
-      search-view = "list-view";
-    };
-
     "org/gnome/shell" = {
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "burn-my-windows@schneegans.github.com" "ddterm@amezin.github.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "element-desktop.desktop" "discord.desktop" "telegramdesktop.desktop" "org.polymc.PolyMC.desktop" "com.obsproject.Studio.desktop" "idea-ultimate.desktop" ];
-      remember-mount-password = false;
-      welcome-dialog-last-shown-version = "40.1";
-    };
-
-    "org/gnome/shell/extensions/burn-my-windows" = {
-      close-animation = "fire";
-      destroy-animation-time = "1500";
-      destroy-dialogs = true;
-      flame-3d-noise = true;
-      flame-movement-speed = 0.5;
-      flame-scale = 1;
+      enabled-extensions = [ "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+      favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "element-desktop.desktop" "discord.desktop" "telegramdesktop.desktop" "org.polymc.PolyMC.desktop" "com.obsproject.Studio.desktop" "idea-ultimate.desktop" "rider.desktop" ];
+      remember-mount-password = true;
     };
 
     "org/gnome/shell/extensions/arcmenu" = {
@@ -205,35 +145,6 @@ in
       show-extensions-notice = false;
     };
 
-    "org/gtk/gtk4/settings/file-chooser" = {
-      date-format = "regular";
-      location-mode = "path-bar";
-      show-hidden = false;
-      show-size-column = true;
-      show-type-column = true;
-      sidebar-width = 171;
-      sort-column = "name";
-      sort-directories-first = false;
-      sort-order = "ascending";
-      type-format = "category";
-      window-size = mkTuple [ 850 328 ];
-    };
-
-    "org/gtk/settings/file-chooser" = {
-      clock-format = "12h";
-      date-format = "regular";
-      location-mode = "path-bar";
-      show-hidden = false;
-      show-size-column = true;
-      show-type-column = true;
-      sidebar-width = 179;
-      sort-column = "name";
-      sort-directories-first = false;
-      sort-order = "ascending";
-      type-format = "category";
-      window-position = mkTuple [ 3431 39 ];
-      window-size = mkTuple [ 1203 925 ];
-    };
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-opacity = 100;
