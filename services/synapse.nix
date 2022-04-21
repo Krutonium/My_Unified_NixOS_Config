@@ -2,11 +2,11 @@
 {
   services.matrix-synapse = {
     enable = true;
-    database_type = "psycopg2";
-    server_name = "krutonium.ca";
-    enable_registration = false;
-    max_upload_size = "50M";
-    listeners = [{
+    settings.database_name = "psycopg2";
+    settings.server_name = "krutonium.ca";
+    settings.enable_registration = false;
+    settings.max_upload_size = "50M";
+    settings.listeners = [{
       port = 8008;
       bind_address = "127.0.0.1"; # only local, handled by nginx reverse-proxy
       type = "http";
