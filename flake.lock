@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1645296658,
-        "narHash": "sha256-Zsf38IE/wUgcRpcot7S5fJItj2H41MgtM2MLp8Mol9E=",
+        "lastModified": 1650533810,
+        "narHash": "sha256-T/igkG/gc2fkyN4kXedFF8bhcbmvk0cisZ/IHo1uOVc=",
         "owner": "Krutonium",
         "repo": "BetterFanController",
-        "rev": "feff78a5215297ceae712a61cab6a6ee2ad1c9f0",
+        "rev": "6ad9f64aa07d10cb1a3601621e3431f1e888dcc0",
         "type": "github"
       },
       "original": {
