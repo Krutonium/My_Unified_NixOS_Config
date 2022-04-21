@@ -21,7 +21,7 @@ in
 
   # Use Systemd networking with networkmanager.
   networking = {
-    useDHCP = false;
+    useDHCP = true;
     networkmanager.enable = true;
     useNetworkd = true;
     firewall.enable = true;
