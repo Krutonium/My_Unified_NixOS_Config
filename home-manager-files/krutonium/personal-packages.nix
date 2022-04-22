@@ -59,7 +59,8 @@ in
       pkgs.gnomeExtensions.dash-to-panel
       #pkgs.arc-theme
       #pkgs.sweet
-      pkgs.ant-theme
+      pkgs.whitesur-gtk-theme
+      pkgs.whitesur-icon-theme
       pkgs.ubuntu_font_family
       pkgs.bibata-extra-cursors
       pkgs.gnomeExtensions.appindicator
