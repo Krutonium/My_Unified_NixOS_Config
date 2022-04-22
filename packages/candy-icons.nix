@@ -2,7 +2,7 @@
 let
   icon_file = builtins.fetchurl {
     url = "https://github.com/EliverLara/candy-icons/archive/dfef69fa4f5348372b69378e4caeb02c8b719be7.zip";
-    sha256 = "0bal0vz2qr7wsr3m0v2qh1f3hjb7fqxnw4h1dxx5r1fbjy6qm09a";
+    sha256 = "0i87rxrfqgqsldv45qppb9q720v1zd5mzclm7522srm5havbs4a5";
   };
 
   candy-icons = pkgs.stdenv.mkDerivation {
