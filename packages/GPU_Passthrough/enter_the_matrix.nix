@@ -31,6 +31,6 @@ in
     script = ''
       virsh start win10
     '';
-    enable = true;
+    enable = false;
   };
 }

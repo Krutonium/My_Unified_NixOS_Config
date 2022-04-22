@@ -3,12 +3,12 @@
 
 with lib.hm.gvariant;
 let
-  userTheme = "Sweet-Dark";      #Shell Theme
-  mainTheme = "Sweet-Dark"; #Application Theme
+  userTheme = "WhiteSur-dark-solid";      #Shell Theme
+  mainTheme = "WhiteSur-dark-solid"; #Application Theme
   mainFont = "Ubuntu 11";
   monoFont = "Ubuntu Mono 13";
   cursorTheme = "Bibata-Modern-DarkRed";
-  iconTheme = "candy-icons";
+  iconTheme = "WhiteSur-dark";
   soundTheme = "";
   superMenuLogo = "${./supermenu.png}";
 in
