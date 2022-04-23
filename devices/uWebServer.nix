@@ -30,7 +30,7 @@ in
       ../users/root.nix
       ../users/gameserver.nix
       ../services/synapse.nix
-      ../services/invidious.nix
+      #../services/invidious.nix
     ];
   #swapDevices = [{
   #  device = "/persist/swap";
