@@ -16,6 +16,7 @@
   fileSystems."/" =
     { device = "root";
       fsType = "tmpfs";
+      options = [ "defaults" "size=2G" "mode=775" ];
     };
 
   fileSystems."/persist" =
@@ -75,10 +76,23 @@
       fsType = "btrfs";
       options = [ "subvol=transmission" "nodatacow" ];
     };
-  filesystems."/etc/ssh" = 
+ 
+  fileSystems."/etc/ssh" = 
     { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=sshd" ];
+    };
+ 
+  fileSystems."/var/lib/acme" = 
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=acme" ];
+    };
+ 
+  fileSystems."/var/lib/plex" = 
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=plex" ];
     };
 
   swapDevices = [ ];
