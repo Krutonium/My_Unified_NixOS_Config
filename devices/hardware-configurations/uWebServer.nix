@@ -94,6 +94,12 @@
       fsType = "btrfs";
       options = [ "subvol=plex" ];
     };
+
+  fileSystems."/root" = 
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=root" ];
+    };
   
   fileSystems."/media" = 
     { device = "/dev/disk/by-id/ata-HGST_HDN726060ALE614_K1G6YP2B-part3";
