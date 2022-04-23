@@ -13,8 +13,9 @@
     "gitea.krutonium.ca".email = "PFCKrutonium@gmail.com";
     "nextcloud.krutonium.ca".email = "PFCKrutonium@gmail.com";
   };
+  security.acme.renewInterval = "200h";
   security.acme.email = "PFCKrutonium@gmail.com";
-  security.acme.acceptTerms = false;
+  security.acme.acceptTerms = true;
   services.nginx.virtualHosts = {
     "krutonium.ca" = {
       addSSL = true;
