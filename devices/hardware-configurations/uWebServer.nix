@@ -94,6 +94,11 @@
       fsType = "btrfs";
       options = [ "subvol=plex" ];
     };
+  
+  fileSystems."/media" = 
+    { device = "/dev/disk/by-id/ata-HGST_HDN726060ALE614_K1G6YP2B-part3";
+      fstype = "ext4";
+    };
 
   swapDevices = [ ];
 
