@@ -16,7 +16,7 @@
   fileSystems."/" =
     { device = "root";
       fsType = "tmpfs";
-      options = [ "defaults" "size=2G" "mode=775" ];
+      options = [ "defaults" "size=16G" "mode=775" ];
     };
 
   fileSystems."/persist" =
