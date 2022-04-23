@@ -52,13 +52,13 @@ in
 
   networking.tempAddresses = "disabled";
 
-  services.openssh = {
-    enable = true;
-    hostKeys = [{
-      path = "/persist/sshd/ssh_host_key";
-      type = "ed25519";
-    }];
-  };
+  #services.openssh = {
+  #  enable = true;
+  #  hostKeys = [{
+  #    path = "/persist/sshd/ssh_host_key";
+  #    type = "ed25519";
+  #  }];
+  #};
   services.xserver.videoDrivers = [ "nvidia" ];
   environment.systemPackages = [
     pkgs.wget
