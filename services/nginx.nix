@@ -14,7 +14,7 @@
     "nextcloud.krutonium.ca".email = "PFCKrutonium@gmail.com";
   };
   security.acme.email = "PFCKrutonium@gmail.com";
-  security.acme.acceptTerms = true;
+  security.acme.acceptTerms = false;
   services.nginx.virtualHosts = {
     "krutonium.ca" = {
       addSSL = true;
