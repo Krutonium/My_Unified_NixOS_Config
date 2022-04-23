@@ -164,6 +164,7 @@
         ] ++ (with nixos-hardware.nixosModules; [
           common-pc
           common-cpu-intel
+          common-pc-ssd
         ]);
       };
     };

@@ -5,38 +5,79 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ata_piix" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "wl" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/b66fa9a2-3de1-4fd2-a1f0-3de7aa92a6f0";
-      fsType = "ext4";
+    { device = "root";
+      fsType = "tmpfs";
     };
 
-  fileSystems."/media" =
-    {
-      device = "/dev/disk/by-uuid/464eda6e-effe-4950-affc-918dd1dbfe2d";
-      fsType = "ext4";
+  fileSystems."/persist" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/D63A-DFE8";
+    { device = "/dev/disk/by-uuid/2604-D641";
       fsType = "vfat";
     };
-  fileSystems."/srv/Satisfactory" =
-    {
-       fsType = "tmpfs";
-       options = [ "defaults" "size=7g" "uid=1002" ];
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
     };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+  fileSystems."/etc/nixos" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=configuration" ];
+    };
+  
+  fileSystems."/var/lib/postgresql" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=postgres" "nodatacow" ];
+    };
+  
+  fileSystems."/var/lib/matrix-synapse" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=matrix-synapse" ];
+    };
+
+  fileSystems."/var/lib/gitea" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=gitea" ];
+    };
+
+  fileSystems."/var/lib/nextcloud" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=nextcloud" ];
+    };
+
+  fileSystems."/transmission" =
+    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=transmission" "nodatacow" ];
+    };
+
   swapDevices = [ ];
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

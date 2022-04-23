@@ -64,6 +64,7 @@ in
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+  users.mutableUsers = false;
   nix.trustedUsers = [ "@wheel" ];
   system.stateVersion = "21.11";
 }
