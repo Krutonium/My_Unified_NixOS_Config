@@ -2,6 +2,7 @@
 {
   services.matrix-synapse = {
     enable = true;
+    dataDir = "/persist/matrix-data"
     settings.database_name = "psycopg2";
     settings.server_name = "krutonium.ca";
     settings.enable_registration = false;
