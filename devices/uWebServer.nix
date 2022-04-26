@@ -40,8 +40,8 @@ in
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
 
   hardware.opengl.extraPackages = [
-    rocm-opencl-icd
-    rocm-runtime-ext
+    pkgs.rocm-opencl-icd
+    pkgs.rocm-runtime-ext
   ];
 
   #Headless Stuff
