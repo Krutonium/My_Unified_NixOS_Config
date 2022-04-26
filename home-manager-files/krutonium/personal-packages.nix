@@ -113,6 +113,7 @@ in
       unstable.mangohud
       unstable.goverlay
       unstable.dolphin-emu-beta
+      pkgs.openhmd
       #nur.repos.dukzcry.gamescope
       #gamescope
 
