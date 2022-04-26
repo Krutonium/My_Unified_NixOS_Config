@@ -31,6 +31,7 @@ in
       ../users/gameserver.nix
       ../services/synapse.nix
       #../services/invidious.nix
+      ../tweaks/r9_390.nix
     ];
   #swapDevices = [{
   #  device = "/persist/swap";
