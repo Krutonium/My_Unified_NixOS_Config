@@ -19,7 +19,7 @@ in
     ../desktops/gnome.nix
     #../desktops/kde.nix
     ../services/drwhowifi.nix
-    #../tweaks/VL805.nix
+    ../tweaks/VL805.nix
     ../tweaks/mitigations.nix
     ../tweaks/zfs.nix
     ../tweaks/zenpower.nix
@@ -32,11 +32,11 @@ in
     ../packages/KeyboardStuff/openrgb.nix
     #../packages/KeyboardStuff/qmk.nix
     ../packages/KeyboardStuff/flasher.nix
-    ../packages/virtual_machines.nix
+    #../packages/virtual_machines.nix
     ../packages/candy-icons.nix
     #../tweaks/nvidia_nodriver.nix
     ../packages/compiler.nix
-    ../packages/GPU_Passthrough/enter_the_matrix.nix
+    #../packages/GPU_Passthrough/enter_the_matrix.nix
   ];
    # We always want 8 GB of Swap.
    swapDevices = [{
