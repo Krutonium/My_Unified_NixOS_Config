@@ -6,5 +6,5 @@
 
   # Update: Just fucking disable it
   boot.kernelModules = ["vfio-pci"];
-  boot.kernelParams = "vfio-pci.ids=1106:3483";
+  boot.kernelParams = ["vfio-pci.ids=1106:3483"];
 }
