@@ -3,7 +3,7 @@
   # My PCIe Expansion card which features a VL805 crashes if native iommu groups are used.
   # Software IOMMU fixes this.
 
-  boot.kernelParams = [ "iommu=soft" "fastboot" ];
+  boot.kernelParams = [ "iommu=soft" "udev.event-timeout=5" ];
 
   # Update: Just fucking disable it
   #boot.kernelModules = ["vfio-pci"];
