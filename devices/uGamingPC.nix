@@ -32,7 +32,7 @@ in
     ../packages/KeyboardStuff/openrgb.nix
     #../packages/KeyboardStuff/qmk.nix
     ../packages/KeyboardStuff/flasher.nix
-    #../packages/virtual_machines.nix
+    ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
     #../tweaks/nvidia_nodriver.nix
     ../packages/compiler.nix
