@@ -53,6 +53,7 @@ in
     pkgs.pinentry-gnome
     pkgs.ripgrep
     pkgs.bpytop
+    pkgs.nix-index
   ];
 
   programs.gnupg.agent = {
