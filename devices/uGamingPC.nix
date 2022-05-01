@@ -46,7 +46,7 @@ in
    }];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
 
-  environment.systemPackages = [ pkgs.openhmd ];
+  #environment.systemPackages = [ pkgs.openhmd ];
 
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
