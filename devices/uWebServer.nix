@@ -46,7 +46,7 @@ in
   ];
 
   #Headless Stuff
-  hardware.nvidia.nvidiaPersistenced = true;
+  #hardware.nvidia.nvidiaPersistenced = true;
   boot.vesa = false;
   #systemd.services."serial-getty@ttyS0".enable = false;
   #systemd.services."serial-getty@hvc0".enable = false;
