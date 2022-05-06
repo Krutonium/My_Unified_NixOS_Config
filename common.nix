@@ -56,6 +56,9 @@ in
     pkgs.nix-index
   ];
 
+  nixpkgs.config.permittedInsecurePackages = ["nodejs-12.22.12"];
+
+
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "gnome3";
