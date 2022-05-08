@@ -20,7 +20,7 @@ in
     ../desktops/gnome.nix
     #../desktops/kde.nix
     ../services/drwhowifi.nix
-    ../tweaks/VL805.nix
+    #../tweaks/VL805.nix
     ../tweaks/mitigations.nix
     ../tweaks/zfs.nix
     ../tweaks/zenpower.nix
