@@ -2,16 +2,17 @@
   "Devices": [
     {
       "Name": "uMsiLaptop",
-      "IP": "192.168.0.20",
+      "Ip": "192.168.0.20",
       "User": "root",
-      "Comment": "This is my Laptop."
+      "Comment": "My Laptop"
     }
   ],
   "BuildHost": {
     "Name": "localhost",
-    "IP": "127.0.0.1",
+    "Ip": "127.0.0.1",
     "User": "root",
     "Comment": "This is the build host. It is not a target device, but it does need Nix to be running, with SSH enabled. If this is disabled, the local PC is used."
   },
-  "BuildHostEnabled": false
+  "BuildHostEnabled": false,
+  "ParallelDeploy": true
 }
