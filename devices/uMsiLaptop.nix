@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, nixpkgs-unstable, ... }:
 let
   kernel = pkgs.linuxPackages_zen;
   Hostname = "uMsiLaptop";

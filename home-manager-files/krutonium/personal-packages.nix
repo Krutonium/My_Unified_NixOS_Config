@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
+{ config, pkgs, nixpkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
   unstable = pkgs;
   properly_unstable = pkgs-unstable;

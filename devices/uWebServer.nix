@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, nixpkgs-unstable, ... }:
 let
   unstable = pkgs-unstable;
   kernel = pkgs.linuxPackages;

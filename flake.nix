@@ -9,7 +9,7 @@
     betterfancontroller.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller }: {
-    nixosConfigurations.uMsiLaptop = nixpkgs.lib.nioxosSystem {
+    nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./common.nix
@@ -17,13 +17,18 @@
         ./devices/hardware-configurations/uMsiLaptop.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = false;
-          home-manager.useUserPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
         }
       ] ++ (with nixos-hardware.nixosModules; [
         common-pc
         common-pc-ssd
         common-cpu-intel
-        common-gpu-intel
         common-gpu-nvidia
       ]);
     };

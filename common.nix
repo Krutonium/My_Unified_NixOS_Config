@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, nixpkgs-unstable, ... }:
 let
 
 in
@@ -64,7 +64,7 @@ in
     pinentryFlavor = "gnome3";
   };
 
-  nix.package = pkgs-unstable.nixUnstable;
+  nix.package = nixpkgs-unstable.nixUnstable;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
