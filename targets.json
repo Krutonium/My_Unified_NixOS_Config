@@ -3,9 +3,9 @@
     {
       "Name": "uMsiLaptop",
       "IP": "192.168.0.20",
-      "User": "root",
+      "User": "krutonium",
       "ShouldUseRemoteSudo": true,
-      "Comment": "My Laptop"
+      "Comment": "This is an example device. This comment field isn't actually used in the program, but is included for your convenience."
     }
   ],
   "BuildHost": {
@@ -14,5 +14,6 @@
     "User": "root",
     "ShouldUseRemoteSudo": false,
     "Comment": "This is the build host. It is not a target device, but it does need Nix to be running, with SSH enabled."
-  }
+  },
+  "BuildHostEnabled": false
 }
