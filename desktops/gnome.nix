@@ -1,4 +1,4 @@
-{ config, pkgs, nixpkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   services.xserver.enable = true;
   hardware.nvidia.modesetting.enable = false;

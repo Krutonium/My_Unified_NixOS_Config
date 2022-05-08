@@ -1,7 +1,5 @@
-{ config, pkgs, nixpkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
+{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
-  unstable = pkgs;
-  properly_unstable = nixpkgs-unstable;
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
@@ -17,7 +15,7 @@ in
   home.packages =
     let
       openjdk8-low = pkgs.openjdk8.overrideAttrs (oldAttrs: { meta.priority = 10; });
-      obs = (unstable.wrapOBS {
+      obs = (pkgs.wrapOBS {
         plugins = [
           pkgs.obs-studio-plugins.obs-ndi
           pkgs.obs-studio-plugins.obs-websocket
@@ -42,11 +40,11 @@ in
         '';
       });
       gamescope = gamescope1.override {
-        meson = nixpkgs-unstable.meson;
-        wlroots = nixpkgs-unstable.wlroots;
-        wayland = nixpkgs-unstable.wayland;
-        libdrm = nixpkgs-unstable.libdrm;
-        wayland-protocols = nixpkgs-unstable.wayland-protocols;
+        meson = pkgs-unstable.meson;
+        wlroots = pkgs-unstable.wlroots;
+        wayland = pkgs-unstable.wayland;
+        libdrm = pkgs-unstable.libdrm;
+        wayland-protocols = pkgs-unstable.wayland-protocols;
       };
 
     in
@@ -107,12 +105,12 @@ in
 
       # Gaming
       # Steam is already installed at the system level because it has special requirements
-      unstable.openrct2
+      pkgs.openrct2
       pkgs.jstest-gtk
-      properly_unstable.polymc
-      unstable.mangohud
-      unstable.goverlay
-      unstable.dolphin-emu-beta
+      pkgs-unstable.polymc
+      pkgs-unstable.mangohud
+      pkgs-unstable.goverlay
+      pkgs-unstable.dolphin-emu-beta
       #nur.repos.dukzcry.gamescope
       #gamescope
 
@@ -122,10 +120,10 @@ in
       pkgs.transmission-remote-gtk
 
       # Communications
-      unstable.tdesktop
-      #unstable.discord
+      pkgs-unstable.tdesktop
+      #nixpkgs-unstable.discord
       # Installed Elsewhere - Fucks up Desktop Capture
-      unstable.element-desktop
+      pkgs-unstable.element-desktop
       pkgs.nheko
     ];
   home.file.".jdk/17/".source = pkgs.openjdk17;

@@ -29,10 +29,9 @@
         common-pc
         common-pc-ssd
         common-cpu-intel
-        common-gpu-nvidia
       ]);
       specialArgs = {
-        nixpkgs-unstable = import nixpkgs-unstable {
+        pkgs-unstable = import nixpkgs-unstable {
           system = "x86_64-linux";
           config.allowUnfree = true;
         };

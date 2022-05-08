@@ -1,0 +1,7 @@
+{
+  "Name": "Example Device",
+  "IP": "192.168.0.1",
+  "Port": 22,
+  "User": "root",
+  "Comment": "This is an example device. This comment field isn't actually used in the program, but is included for your convenience."
+}
