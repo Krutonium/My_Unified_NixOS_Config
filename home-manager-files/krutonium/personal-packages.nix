@@ -1,7 +1,7 @@
 { config, pkgs, nixpkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
   unstable = pkgs;
-  properly_unstable = pkgs-unstable;
+  properly_unstable = nixpkgs-unstable;
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
@@ -24,7 +24,7 @@ in
           ndi
         ];
       });
-      #openrgb = pkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
+      #openrgb = nixpkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
       #3.11.27
       gamescope-src = pkgs.fetchFromGitHub {
         owner = "Plagman";
@@ -42,11 +42,11 @@ in
         '';
       });
       gamescope = gamescope1.override {
-        meson = pkgs-unstable.meson;
-        wlroots = pkgs-unstable.wlroots;
-        wayland = pkgs-unstable.wayland;
-        libdrm = pkgs-unstable.libdrm;
-        wayland-protocols = pkgs-unstable.wayland-protocols;
+        meson = nixpkgs-unstable.meson;
+        wlroots = nixpkgs-unstable.wlroots;
+        wayland = nixpkgs-unstable.wayland;
+        libdrm = nixpkgs-unstable.libdrm;
+        wayland-protocols = nixpkgs-unstable.wayland-protocols;
       };
 
     in
