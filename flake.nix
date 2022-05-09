@@ -10,7 +10,7 @@
     deploy-cs.url = "github:Krutonium/deploy-cs";
     deploy-cs.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller }: {
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs }: {
     nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
