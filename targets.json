@@ -1,23 +1,11 @@
 {
   "Devices": [
     {
-      "Name": "uMsiLaptop",
-      "Ip": "192.168.0.20",
+      "Name": "Example Device",
+      "Ip": "192.168.0.1",
       "User": "root",
-      "Comment": "My Laptop"
-    },
-    {
-      "Name": "uWebServer",
-      "Ip": "192.168.0.10",
-      "User": "root",
-      "Comment": "My WebServer"
-   },
-   {
-     "Name": "uGamingPC",
-     "Ip": "192.168.0.40",
-     "User": "root",
-     "Comment": "My Gaming Computer"
-   }
+      "Comment": "This is an example device. This comment field isn't actually used in the program, but is included for your convenience."
+    }
   ],
   "BuildHost": {
     "Name": "localhost",
