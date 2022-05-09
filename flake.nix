@@ -7,6 +7,8 @@
     home-manager.url = "github:nix-community/home-manager";
     betterfancontroller.url = "github:Krutonium/BetterFanController";
     betterfancontroller.inputs.nixpkgs.follows = "nixpkgs";
+    deploy-cs.url = "github:Krutonium/deploy-cs";
+    deploy-cs.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller }: {
     nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
@@ -36,6 +38,11 @@
           config.allowUnfree = true;
         };
       };
+      nixpkgs.overlays = [
+        (self: super: {
+          deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
+        })
+      ];
     };
   };
 }
