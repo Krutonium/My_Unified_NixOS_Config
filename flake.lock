@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "deploy-cs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1652055734,
+        "narHash": "sha256-p6cNL+RmoXHKCF53MigoEX571ahIdJWq4LlkOmuM6is=",
+        "owner": "Krutonium",
+        "repo": "deploy-cs",
+        "rev": "882fbd30d977ff79542b2ddf8d1f32330fd27d76",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Krutonium",
+        "repo": "deploy-cs",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -103,6 +123,7 @@
     "root": {
       "inputs": {
         "betterfancontroller": "betterfancontroller",
+        "deploy-cs": "deploy-cs",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
