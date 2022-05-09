@@ -62,8 +62,8 @@
       system = "x86_64-linux";
       modules = [
         ./common.nix
-        ./devices/uGamingPC.nix
-        ./devices/hardware-configurations/uGamingPC.nix
+        ./devices/uWebServer.nix
+        ./devices/hardware-configurations/uWebServer.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
