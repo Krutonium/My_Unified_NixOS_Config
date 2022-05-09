@@ -31,7 +31,7 @@ in
     size = 1024 * 16; #16GB
   }];
   #services.onedrive.enable = true;
-  #hardware.bumblebee.enable = true;
+  hardware.bumblebee.enable = true;
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   networking.hostName = Hostname;
 }
