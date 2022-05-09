@@ -5,7 +5,19 @@
       "Ip": "192.168.0.20",
       "User": "root",
       "Comment": "My Laptop"
-    }
+    },
+    {
+      "Name": "uWebServer",
+      "Ip": "192.168.0.10",
+      "User": "root",
+      "Comment": "My WebServer"
+   },
+   {
+     "Name": "uGamingPC",
+     "Ip": "192.168.0.40",
+     "User": "root",
+     "Comment": "My Gaming Computer"
+   }
   ],
   "BuildHost": {
     "Name": "localhost",

@@ -11,6 +11,94 @@
     deploy-cs.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs }: {
+
+    ################################################################################
+    # uGamingPC
+    ################################################################################
+
+    nixosConfigurations.uGamingPC = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./common.nix
+        ./devices/uGamingPC.nix
+        ./devices/hardware-configurations/uGamingPC.nix
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = false;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+        }
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [
+            (self: super: {
+              deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
+              BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
+            })
+          ];
+        })
+      ] ++ (with nixos-hardware.nixosModules; [
+        common-pc
+        common-pc-ssd
+        common-cpu-amd
+        common-gpu-amd
+      ]);
+      specialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      };
+    };
+
+    ################################################################################
+    # uWebServer
+    ################################################################################
+
+    nixosConfigurations.uWebServer = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./common.nix
+        ./devices/uGamingPC.nix
+        ./devices/hardware-configurations/uGamingPC.nix
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = false;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+        }
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [
+            (self: super: {
+              deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
+            })
+          ];
+        })
+      ] ++ (with nixos-hardware.nixosModules; [
+        common-pc
+        common-pc-ssd
+        common-cpu-intel
+        common-gpu-intel
+      ]);
+      specialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      };
+    };
+
+    ################################################################################
+    # uMsiLaptop
+    ################################################################################
+
     nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -27,6 +115,13 @@
             };
           };
         }
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [
+            (self: super: {
+              deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
+            })
+          ];
+        })
       ] ++ (with nixos-hardware.nixosModules; [
         common-pc
         common-pc-ssd
@@ -38,11 +133,6 @@
           config.allowUnfree = true;
         };
       };
-      nixpkgs.overlays = [
-        (self: super: {
-          deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
-        })
-      ];
     };
   };
 }
