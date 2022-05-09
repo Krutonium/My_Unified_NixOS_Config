@@ -85,7 +85,6 @@
         common-pc
         common-pc-ssd
         common-cpu-intel
-        common-gpu-intel
       ]);
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
