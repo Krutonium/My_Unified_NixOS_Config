@@ -26,5 +26,5 @@
     "Comment": "This is the build host. It is not a target device, but it does need Nix to be running, with SSH enabled. If this is disabled, the local PC is used."
   },
   "BuildHostEnabled": false,
-  "ParallelDeploy": false
+  "ParallelDeploy": true
 }
