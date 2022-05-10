@@ -1,10 +1,22 @@
 {
   "Devices": [
     {
-      "Name": "Example Device",
-      "Ip": "192.168.0.1",
+      "Name": "uWebServer",
+      "Ip": "192.168.0.10",
       "User": "root",
-      "Comment": "This is an example device. This comment field isn't actually used in the program, but is included for your convenience."
+      "Comment": "This is my Web Server. It hosts many things."
+    },
+    {
+      "Name": "uGamingPC",
+      "Ip": "192.168.0.40",
+      "User": "root",
+      "Comment": "Gaming PC - For Gaming and software development"
+    },
+    {
+      "Name": "uMsiLaptop",
+      "Ip": "192.168.0.20",
+      "User": "root",
+      "Comment": "My Laptop - For bedside entertainment!"
     }
   ],
   "BuildHost": {
@@ -14,5 +26,5 @@
     "Comment": "This is the build host. It is not a target device, but it does need Nix to be running, with SSH enabled. If this is disabled, the local PC is used."
   },
   "BuildHostEnabled": false,
-  "ParallelDeploy": false
+  "ParallelDeploy": true
 }
