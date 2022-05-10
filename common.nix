@@ -55,6 +55,7 @@ in
     pkgs.bpytop
     pkgs.nix-index
     pkgs.deploy-cs
+    pkgs.appimage-run
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["nodejs-12.22.12"];
