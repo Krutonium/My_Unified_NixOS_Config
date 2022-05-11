@@ -40,10 +40,10 @@ in
     #../packages/GPU_Passthrough/enter_the_matrix.nix
   ];
    # We always want 8 GB of Swap.
-   swapDevices = [{
-     device = "/swap";
-     size = 1024 * 1; #1GB
-   }];
+   #swapDevices = [{
+   #  device = "/swap";
+   #  size = 1024 * 1; #1GB
+   #}];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
 
   #environment.systemPackages = [ pkgs.openhmd ];
