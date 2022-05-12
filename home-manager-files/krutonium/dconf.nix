@@ -6,8 +6,43 @@ let
 in
 {
   dconf.settings = {
+    "ca/desrt/dconf-editor" = {
+      saved-pathbar-path = "/";
+      saved-view = "/";
+      window-height = 500;
+      window-is-maximized = true;
+      window-width = 540;
+    };
+
+    "org/gnome/control-center" = {
+      last-panel = "datetime";
+      window-state = mkTuple [ 980 640 ];
+    };
+
+    "org/gnome/desktop/app-folders" = {
+      folder-children = [ "Utilities" "YaST" ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/Utilities" = {
+      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.eog.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
+      categories = [ "X-GNOME-Utilities" ];
+      name = "X-GNOME-Utilities.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/app-folders/folders/YaST" = {
+      categories = [ "X-SuSE-YaST" ];
+      name = "suse-yast.directory";
+      translate = true;
+    };
+
     "org/gnome/desktop/calendar" = {
       show-weekdate = false;
+    };
+
+    "org/gnome/desktop/input-sources" = {
+      sources = [ (mkTuple [ "xkb" "us" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" ];
     };
 
     "org/gnome/desktop/interface" = {
@@ -35,6 +70,17 @@ in
       ask-for-default = false;
     };
 
+    "org/gnome/epiphany/state" = {
+      is-maximized = true;
+      window-position = mkTuple [ (-1) (-1) ];
+      window-size = mkTuple [ 1024 768 ];
+    };
+
+    "org/gnome/evolution-data-server" = {
+      migrated = true;
+      network-monitor-gio-name = "";
+    };
+
     "org/gnome/mutter" = {
       attach-modal-dialogs = true;
       dynamic-workspaces = true;
@@ -44,10 +90,20 @@ in
       workspaces-only-on-primary = true;
     };
 
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "icon-view";
+      search-filter-time-type = "last_modified";
+    };
+
+    "org/gnome/nautilus/window-state" = {
+      maximized = true;
+    };
+
     "org/gnome/shell" = {
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "arcmenu@arcmenu.com" "dash-to-panel@jderose9.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
       favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "org.gnome.Console.desktop" ];
+      welcome-dialog-last-shown-version = "42.1";
     };
 
     "org/gnome/shell/extensions/arcmenu" = {
@@ -67,6 +123,7 @@ in
       group-apps-use-launchers = true;
       hotkeys-overlay-combo = "TEMPORARILY";
       leftbox-padding = -1;
+      panel-anchors = "'{"0":"MIDDLE","1":"MIDDLE","2":"MIDDLE"}'";
       panel-element-positions = "'{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"2":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'";
       panel-lengths = "'{"0":100,"1":100,"2":100}'";
       panel-sizes = "'{"0":48,"1":48,"2":48}'";
@@ -78,6 +135,14 @@ in
 
     "org/gnome/shell/extensions/user-theme" = {
       name = "WhiteSur-dark-solid";
+    };
+
+    "org/gnome/shell/world-clocks" = {
+      locations = "@av []";
+    };
+
+    "org/gnome/tweaks" = {
+      show-extensions-notice = false;
     };
 
     "org/gtk/settings/file-chooser" = {
