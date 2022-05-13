@@ -10,7 +10,7 @@
     deploy-cs.url = "github:Krutonium/deploy-cs";
     deploy-cs.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs }: {
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs, pkgs }: {
 
     ################################################################################
     # uGamingPC
@@ -133,6 +133,13 @@
         };
       };
     };
-    
+    #######
+    # Build everything
+    #######
+    pkgs = import nixpkgs;
+    build-it-all = pkgs.buildEnv {
+      name= "build-it-all";
+      paths = [ self.uGamingPC self.uWebServer self.uMsiLaptop ];
+    };
   };
 }

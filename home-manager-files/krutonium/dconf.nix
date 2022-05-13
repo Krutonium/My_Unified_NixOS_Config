@@ -1,45 +1,19 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
 { lib, ... }:
 
+with lib.hm.gvariant;
 let
-  mkTuple = lib.hm.gvariant.mkTuple;
+  userTheme = "WhiteSur-dark-solid";      #Shell Theme
+  mainTheme = "WhiteSur-dark-solid"; #Application Theme
+  mainFont = "Ubuntu 11";
+  monoFont = "Ubuntu Mono 13";
+  cursorTheme = "Bibata-Modern-DarkRed";
+  iconTheme = "WhiteSur-dark";
+  soundTheme = "";
+  superMenuLogo = "${./supermenu.png}";
 in
 {
   dconf.settings = {
-    "ca/desrt/dconf-editor" = {
-      saved-pathbar-path = "/";
-      saved-view = "/";
-      window-height = 500;
-      window-is-maximized = true;
-      window-width = 540;
-    };
-
-    "org/gnome/control-center" = {
-      last-panel = "datetime";
-      window-state = mkTuple [ 980 640 ];
-    };
-
-    "org/gnome/desktop/app-folders" = {
-      folder-children = [ "Utilities" "YaST" ];
-    };
-
-    "org/gnome/desktop/app-folders/folders/Utilities" = {
-      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.eog.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
-      categories = [ "X-GNOME-Utilities" ];
-      name = "X-GNOME-Utilities.directory";
-      translate = true;
-    };
-
-    "org/gnome/desktop/app-folders/folders/YaST" = {
-      categories = [ "X-SuSE-YaST" ];
-      name = "suse-yast.directory";
-      translate = true;
-    };
-
-    "org/gnome/desktop/calendar" = {
-      show-weekdate = false;
-    };
-
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "us" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" ];
@@ -47,94 +21,120 @@ in
 
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
-      cursor-theme = "Bibata-Modern-DarkRed";
-      document-font-name = "Ubuntu 11";
+      cursor-theme = cursorTheme;
+      document-font-name = mainFont;
       font-antialiasing = "rgba";
       font-hinting = "full";
-      font-name = "Ubuntu 11";
-      gtk-theme = "WhiteSur-dark-solid";
-      icon-theme = "WhiteSur-dark";
-      monospace-font-name = "Ubuntu Mono 10";
+      font-name = mainFont;
+      gtk-im-module = "gtk-im-context-simple";
+      gtk-theme = userTheme;
+      icon-theme = iconTheme;
+      monospace-font-name = monoFont;
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      two-finger-scrolling-enabled = true;
+    };
+
+    "org/gnome/desktop/privacy" = {
+      disable-microphone = false;
     };
 
     "org/gnome/desktop/sound" = {
-      allow-volume-above-100-percent = true;
+      theme-name = soundTheme;
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      num-workspaces = 2;
+      visual-bell = false;
+      visual-bell-type = "frame-flash";
+      audible-bell = false;
     };
 
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
-      titlebar-font = "Ubuntu 11";
+      titlebar-font = mainFont;
     };
 
-    "org/gnome/epiphany" = {
-      ask-for-default = false;
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "resources";
+      maximized = false;
+      network-in-bits = true;
+      network-total-in-bits = true;
+      show-dependencies = false;
+      show-whose-processes = "user";
+      window-state = mkTuple [ 700 551 ];
     };
 
-    "org/gnome/epiphany/state" = {
-      is-maximized = true;
-      window-position = mkTuple [ (-1) (-1) ];
-      window-size = mkTuple [ 1024 768 ];
-    };
 
-    "org/gnome/evolution-data-server" = {
-      migrated = true;
-      network-monitor-gio-name = "";
+    "org/gnome/gnome-system-monitor/proctree" = {
+      columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
+      sort-col = 8;
+      sort-order = 0;
     };
 
     "org/gnome/mutter" = {
       attach-modal-dialogs = true;
-      dynamic-workspaces = true;
+      dynamic-workspaces = false;
       edge-tiling = true;
       focus-change-on-pointer-rest = true;
       overlay-key = "Super_L";
       workspaces-only-on-primary = true;
     };
 
-    "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "icon-view";
-      search-filter-time-type = "last_modified";
-    };
-
-    "org/gnome/nautilus/window-state" = {
-      maximized = true;
-    };
-
     "org/gnome/shell" = {
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "arcmenu@arcmenu.com" "dash-to-panel@jderose9.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "org.gnome.Console.desktop" ];
-      welcome-dialog-last-shown-version = "42.1";
+      enabled-extensions = [ "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+      favorite-apps = [ "org.gnome.Nautilus.desktop" "firefox.desktop" "element-desktop.desktop" "discord.desktop" "telegramdesktop.desktop" "org.polymc.PolyMC.desktop" "com.obsproject.Studio.desktop" "idea-ultimate.desktop" "rider.desktop" ];
+      remember-mount-password = true;
     };
 
     "org/gnome/shell/extensions/arcmenu" = {
-      menu-button-appearance = "Icon";
-      pinned-app-list = [ "Firefox (Wayland)" "" "firefox.desktop" "Files" "" "org.gnome.Nautilus.desktop" "Terminal" "" "org.gnome.Terminal.desktop" "ArcMenu Settings" "ArcMenu_ArcMenuIcon" "gnome-extensions prefs arcmenu@arcmenu.com" ];
-      prefs-visible-page = 0;
+      arc-menu-placement = "DTP";
+      available-placement = [ false true false ];
+      custom-hot-corner-cmd = "sh -c 'notify-send \"$(date)\"'";
+      custom-menu-button-icon-size = 35;
+      custom-menu-button-icon = superMenuLogo;
+      menu-button-icon = "Custom_Icon";
+      hot-corners = "Disabled";
+      menu-hotkey = "Super_L";
+      override-hot-corners = true;
+      pinned-app-list = [ "Firefox" "" "firefox.desktop" "Terminal" "" "org.gnome.Terminal.desktop" "ArcMenu Settings" "ArcMenu_ArcMenuIcon" "gnome-extensions prefs arcmenu@arcmenu.com" ];
     };
 
     "org/gnome/shell/extensions/dash-to-panel" = {
       animate-appicon-hover-animation-extent = "{'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}";
-      appicon-margin = 8;
-      appicon-padding = 4;
-      available-monitors = [ 0 1 2 ];
+      appicon-margin = 4;
+      appicon-padding = 6;
       group-apps = false;
       group-apps-label-font-size = 14;
       group-apps-label-max-width = 0;
-      group-apps-use-launchers = true;
       hotkeys-overlay-combo = "TEMPORARILY";
       leftbox-padding = -1;
-      panel-anchors = "'{"0":"MIDDLE","1":"MIDDLE","2":"MIDDLE"}'";
-      panel-element-positions = "'{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"2":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'";
-      panel-lengths = "'{"0":100,"1":100,"2":100}'";
-      panel-sizes = "'{"0":48,"1":48,"2":48}'";
-      show-appmenu = false;
+      panel-anchors = ''
+        {"0":"MIDDLE","1":"MIDDLE","2":"MIDDLE"}
+      '';
+      panel-element-positions = ''
+        {"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"2":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
+      '';
+      panel-lengths = ''
+        {"0":100,"1":100,"2":100}
+      '';
+      panel-sizes = ''
+        {"0":48,"1":48,"2":48}
+      '';
       status-icon-padding = -1;
       tray-padding = -1;
       window-preview-title-position = "TOP";
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "WhiteSur-dark-solid";
+      name = userTheme;
+    };
+
+    "org/gnome/shell/weather" = {
+      automatic-location = true;
+      locations = "@av []";
     };
 
     "org/gnome/shell/world-clocks" = {
@@ -145,9 +145,11 @@ in
       show-extensions-notice = false;
     };
 
-    "org/gtk/settings/file-chooser" = {
-      clock-format = "12h";
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-opacity = 100;
+      picture-options = "zoom";
+      picture-uri = "file://${./wallpaper_steam.png}";
     };
-
   };
 }
