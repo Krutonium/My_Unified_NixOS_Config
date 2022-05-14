@@ -97,7 +97,8 @@ in
       pkgs.babelfish
       pkgs.powerline-fonts
       pkgs.unzip
-      pkgs.youtube-dl
+      pkgs.ytdlp
+      pkgs.matrix-synapse-tools.synadm
 
       # Wine/Windows Shit
       pkgs.lutris
