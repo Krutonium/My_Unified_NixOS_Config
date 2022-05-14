@@ -6,15 +6,8 @@
   services.nginx.recommendedOptimisation = true;
   services.nginx.recommendedGzipSettings = true;
   services.nginx.recommendedProxySettings = true;
-  security.acme.certs = {
-    "krutonium.ca".email = "PFCKrutonium@gmail.com";
-    "dynmap.krutonium.ca".email = "PFCKrutonium@gmail.com";
-    "plex.krutonium.ca".email = "PFCKrutonium@gmail.com";
-    "gitea.krutonium.ca".email = "PFCKrutonium@gmail.com";
-    "nextcloud.krutonium.ca".email = "PFCKrutonium@gmail.com";
-  };
   security.acme.renewInterval = "200h";
-  security.acme.email = "PFCKrutonium@gmail.com";
+  security.acme.defaults.email = "PFCKrutonium@gmail.com";
   security.acme.acceptTerms = true;
   services.nginx.virtualHosts = {
     "krutonium.ca" = {
