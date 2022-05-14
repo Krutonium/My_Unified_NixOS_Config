@@ -31,11 +31,11 @@ in
     size = 1024 * 16; #16GB
   }];
   nix.settings.system-features = [ "gccarch-haswell" ];  
-  #nixpkgs.localSystem = {
-  #  gcc.arch = "haswell";
-  #  gcc.tune = "haswell";
-  #  system = "x86_64-linux";
-  #};
+  nixpkgs.localSystem = {
+    gcc.arch = "haswell";
+    gcc.tune = "haswell";
+    system = "x86_64-linux";
+  };
 
   #services.onedrive.enable = true;
   hardware.bumblebee.enable = true;
