@@ -97,7 +97,7 @@ in
       pkgs.babelfish
       pkgs.powerline-fonts
       pkgs.unzip
-      pkgs.ytdlp
+      pkgs.yt-dlp
       pkgs.matrix-synapse-tools.synadm
 
       # Wine/Windows Shit
