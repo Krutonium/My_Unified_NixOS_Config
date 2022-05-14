@@ -20,11 +20,11 @@
     }
   ],
   "BuildHost": {
-    "Name": "localhost",
-    "Ip": "127.0.0.1",
+    "Name": "Build Server",
+    "Ip": "192.168.0.10",
     "User": "root",
     "Comment": "This is the build host. It is not a target device, but it does need Nix to be running, with SSH enabled. If this is disabled, the local PC is used."
   },
-  "BuildHostEnabled": false,
+  "BuildHostEnabled": true,
   "ParallelDeploy": false
 }
