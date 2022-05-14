@@ -39,7 +39,7 @@ in
   #}];
   nixpkgs.config.allowUnfree = true;
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-  nix.systemFeatures = [ "gccarch-haswell" ];
+  nix.settings.system-features = [ "gccarch-haswell" ];
   hardware.opengl.extraPackages = [
     pkgs.rocm-opencl-icd
     pkgs.rocm-runtime-ext
