@@ -30,7 +30,7 @@ in
     device = "/swap";
     size = 1024 * 16; #16GB
   }];
-  
+  nix.settings.system-features = [ "gccarch-haswell" ];  
   nixpkgs.localSystem = {
     gcc.arch = "haswell";
     gcc.tune = "haswell";
