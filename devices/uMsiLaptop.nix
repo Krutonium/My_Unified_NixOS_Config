@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ lib, config, pkgs, pkgs-unstable, ... }:
 let
   kernel = pkgs.linuxPackages_zen;
   Hostname = "uMsiLaptop";
@@ -30,6 +30,13 @@ in
     device = "/swap";
     size = 1024 * 16; #16GB
   }];
+  
+  nixpkgs.localSystem = {
+    gcc.arch = "haswell";
+    gcc.tune = "haswell";
+    system = "x86_64-linux";
+  };
+
   #services.onedrive.enable = true;
   hardware.bumblebee.enable = true;
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
