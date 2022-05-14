@@ -6,7 +6,7 @@
   services.nginx.recommendedOptimisation = true;
   services.nginx.recommendedGzipSettings = true;
   services.nginx.recommendedProxySettings = true;
-  security.acme.renewInterval = "200h";
+  security.acme.defaults.renewInterval = "200h";
   security.acme.defaults.email = "PFCKrutonium@gmail.com";
   security.acme.acceptTerms = true;
   services.nginx.virtualHosts = {
