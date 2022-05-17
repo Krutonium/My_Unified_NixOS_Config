@@ -76,11 +76,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1652632955,
-        "narHash": "sha256-cSxiAaS8ozw63rLJHdN6RPwhA4lY2XeC/J+uggodYXw=",
+        "lastModified": 1652719971,
+        "narHash": "sha256-h3ktlGveTw7ygxVfLpLLaFiL6kSbv69KZRdcP1RDoDg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "34e4df55664c24df350f59adba8c7a042dece61e",
+        "rev": "7c035dbb7544ae2a9adc2320e7d84c7b7d9477ed",
         "type": "github"
       },
       "original": {
@@ -90,11 +90,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1652572281,
-        "narHash": "sha256-UEsrB5XBOj0blVe2ldc0lHvlhLYZJDHroELMHlg7XxA=",
+        "lastModified": 1652659998,
+        "narHash": "sha256-FqNrXC1EE6U2RACwXBlsAvg1lqQGLYpuYb6+W3DL9vA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "43ff6cb1c027d13dc938b88eb099462210fea52f",
+        "rev": "1d7db1b9e4cf1ee075a9f52e5c36f7b9f4207502",
         "type": "github"
       },
       "original": {
@@ -106,11 +106,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1652572281,
-        "narHash": "sha256-UEsrB5XBOj0blVe2ldc0lHvlhLYZJDHroELMHlg7XxA=",
+        "lastModified": 1652659998,
+        "narHash": "sha256-FqNrXC1EE6U2RACwXBlsAvg1lqQGLYpuYb6+W3DL9vA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "43ff6cb1c027d13dc938b88eb099462210fea52f",
+        "rev": "1d7db1b9e4cf1ee075a9f52e5c36f7b9f4207502",
         "type": "github"
       },
       "original": {
@@ -138,11 +138,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652765422,
-        "narHash": "sha256-qsoNDtScXM57975MOTJeNiagk92t4X+dS56B4KuBo/8=",
+        "lastModified": 1652766508,
+        "narHash": "sha256-zhGYFjtq1Zf7CEaSVFTaT/ftSzFfLQ1dc0TcqTdwUVk=",
         "ref": "refs/heads/master",
-        "rev": "e4aed908880d94e067a10c50bf78068def42dde7",
-        "revCount": 2,
+        "rev": "6ddf6ed2e547c17a2a82eadf0a8b569b9c8a7646",
+        "revCount": 4,
         "type": "git",
         "url": "https://gitea.krutonium.ca/Krutonium/Twitch2YouTube.git"
       },
