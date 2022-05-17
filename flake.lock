@@ -127,7 +127,28 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "twitch2youtube": "twitch2youtube"
+      }
+    },
+    "twitch2youtube": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1652765422,
+        "narHash": "sha256-qsoNDtScXM57975MOTJeNiagk92t4X+dS56B4KuBo/8=",
+        "ref": "refs/heads/master",
+        "rev": "e4aed908880d94e067a10c50bf78068def42dde7",
+        "revCount": 2,
+        "type": "git",
+        "url": "https://gitea.krutonium.ca/Krutonium/Twitch2YouTube.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitea.krutonium.ca/Krutonium/Twitch2YouTube.git"
       }
     }
   },

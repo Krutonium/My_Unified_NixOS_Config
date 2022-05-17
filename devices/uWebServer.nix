@@ -76,6 +76,8 @@ in
     pkgs.steamcmd
     unstable.plex
     pkgs.ldgallery
+    pkgs.twitch2youtube
+    pkgs.yt-dlp
   ];
   system.stateVersion = "21.11";
 }
