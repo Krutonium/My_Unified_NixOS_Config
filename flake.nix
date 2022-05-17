@@ -9,8 +9,10 @@
     betterfancontroller.inputs.nixpkgs.follows = "nixpkgs";
     deploy-cs.url = "github:Krutonium/deploy-cs";
     deploy-cs.inputs.nixpkgs.follows = "nixpkgs";
+    twitch2youtube = "https://gitea.krutonium.ca/Krutonium/Twitch2YouTube.git";
+    twitch2youtube.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs }: {
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs, twitch2youtube }: {
 
     ################################################################################
     # uGamingPC
@@ -78,6 +80,7 @@
           nixpkgs.overlays = [
             (self: super: {
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
+              Twitch2Youtube = twitch2youtube.defaultPackage.x86_64-linux;
             })
           ];
         })
