@@ -7,6 +7,8 @@ in
   # Set our Kernel
   boot.kernelPackages = kernel;
   networking.hostName = "uWebServer";
+  networking.interfaces."enp3s0".ipv6.addresses = [{ address = "2607:fea8:7a43:7600::523"; prefixLength = 48; }];
+  networking.interfaces."enp3s0".ipv4.addresses = [{ address = "192.168.0.10"; prefixLength = 24; }];
   networking.firewall.allowedTCPPorts = [ 25565 26666 ]; #Somtimes Minecraft Servers are run without being explicitly enabled for testing purposes.
   imports =
     [
@@ -32,7 +34,8 @@ in
       ../users/gameserver.nix
       ../services/synapse.nix
       #../services/invidious.nix
-      ../tweaks/r9_390.nix
+      #../tweaks/r9_390.nix
+      ../packages/virtual_machines.nix
     ];
   #swapDevices = [{
   #  device = "/persist/swap";
