@@ -24,6 +24,7 @@ in
     useDHCP = false;
     networkmanager.enable = true;
     useNetworkd = true;
+    tempAddresses = "disabled";
     firewall.enable = true;
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
   #  #nameservers = [ "127.0.0.1:8053" ];
