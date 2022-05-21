@@ -1,10 +1,17 @@
-{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, nur, ... }:
+{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
   };
   ndi = pkgs.ndi.override { requireFile = lib.const (ndi_file); };
+  #nur = import (builtins.fetchTarball
+  #{
+  #  url = "https://github.com/nix-community/NUR/archive/768c7d968dc9b90b6fa6f85374669de3e57d70ca.tar.gz";
+  #  sha256="sha256:1ac9fgalrra3ys38qpbi6rkr0dhadxrjjbn5z184rhl1cc8bp47l";
+  #}
+  #NUR is only available in Home Manager, because I don't want to have it available system wide.
+  #It also doesn't have a pinned version because I want it to update, and it will be updated with the rest of the system anyway.
 in
 {
   home.packages =
@@ -17,30 +24,6 @@ in
           ndi
         ];
       });
-      #openrgb = nixpkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
-      #3.11.27
-      gamescope-src = pkgs.fetchFromGitHub {
-        owner = "Plagman";
-        repo = "gamescope";
-        rev = "3.11.27";
-        sha256="sha256-aFcyLubAbr3ihskFYHIx6o6SlBksYLrqvhJsXchns1k=";
-        fetchSubmodules = true;
-      };
-      gamescope1 = nur.repos.dukzcry.gamescope.overrideAttrs (oldAttrs: {
-        src = gamescope-src;
-        preConfigure =  ''
-           substituteInPlace meson.build --replace \
-           "'examples=false'" \
-           "'examples=false', 'logind-provider=systemd'"
-        '';
-      });
-      gamescope = gamescope1.override {
-        meson = pkgs-unstable.meson;
-        wlroots = pkgs-unstable.wlroots;
-        wayland = pkgs-unstable.wayland;
-        libdrm = pkgs-unstable.libdrm;
-        wayland-protocols = pkgs-unstable.wayland-protocols;
-      };
 
     in
     [
@@ -107,7 +90,7 @@ in
       pkgs-unstable.mangohud
       pkgs-unstable.goverlay
       pkgs-unstable.dolphin-emu-beta
-      pkgs.nur.repos.iagocq.parsec
+      #nur.repos.iagocq.parsec
       #nur.repos.dukzcry.gamescope
       #gamescope
 

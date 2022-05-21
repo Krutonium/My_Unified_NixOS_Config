@@ -41,7 +41,6 @@
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
               BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
             })
-            nur.overlay
           ];
         })
       ] ++ (with nixos-hardware.nixosModules; [
@@ -84,7 +83,6 @@
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
               twitch2youtube = twitch2youtube.defaultPackage.x86_64-linux;
             })
-            nur.overlay
           ];
         })
       ] ++ (with nixos-hardware.nixosModules; [
@@ -125,7 +123,6 @@
             (self: super: {
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
             })
-            nur.overlay
           ];
         })
       ] ++ (with nixos-hardware.nixosModules; [
