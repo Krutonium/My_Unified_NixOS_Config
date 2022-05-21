@@ -24,7 +24,7 @@ in
     ../services/avahi.nix
     ../packages/discord.nix
     ../packages/candy-icons.nix
-    #../packages/virtual_machines.nix
+    ../packages/virtual_machines.nix
   ];
   swapDevices = [{
     device = "/swap";
