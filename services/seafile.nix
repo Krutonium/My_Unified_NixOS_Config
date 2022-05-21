@@ -9,6 +9,6 @@
     };
     adminEmail = "PFCKrutonium@gmail.com";
     initialAdminPassword = "badPassword";
-    ccnetSettings.General.SERVICE_URL = "seafile.krutonium.ca";
+    ccnetSettings.General.SERVICE_URL = "https://seafile.krutonium.ca";
   };
 }
