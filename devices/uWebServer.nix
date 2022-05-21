@@ -24,7 +24,8 @@ in
       #../services/stoneblock.nix
       ../services/satisfactory_server.nix
       #../services/project_ozone_3.nix
-      ../services/nextcloud.nix
+      #../services/nextcloud.nix
+      ../services/seafile.nix
       ../users/krutonium.nix
       ../users/resin.nix
       ../users/root.nix

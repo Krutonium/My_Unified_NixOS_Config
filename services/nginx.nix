@@ -118,9 +118,14 @@
       forceSSL = true; # Force SSL
       locations."/".proxyPass = "http://127.0.0.1:3001/"; # Proxy Gitea
     };
-    "nextcloud.krutonium.ca" = {
+    #"nextcloud.krutonium.ca" = {
+    #  forceSSL = true;
+    #  enableACME = true;
+    #};
+    "seafile.krutonium.ca" = {
       forceSSL = true;
       enableACME = true;
+      locations."/".proxyPass = "http://127.0.0.1:8082";
     };
     "synapse.krutonium.ca" = {
       forceSSL = true;

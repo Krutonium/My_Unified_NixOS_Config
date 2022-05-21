@@ -117,8 +117,9 @@ in
 
       # File Sync
       pkgs.dropbox
-      pkgs.nextcloud-client
+      #pkgs.nextcloud-client
       pkgs.transmission-remote-gtk
+      pkgs.seafile-client
 
       # Communications
       pkgs-unstable.tdesktop
