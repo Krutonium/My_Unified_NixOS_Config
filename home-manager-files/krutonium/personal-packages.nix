@@ -1,15 +1,10 @@
-{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
+{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, nur, ... }:
 let
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
     sha256 = "181ypfj1bl0kljzrfr6037i14ykg2y4plkzdhym6m3z7kcrnm1fl";
   };
   ndi = pkgs.ndi.override { requireFile = lib.const (ndi_file); };
-  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-    inherit pkgs;
-  };
-  #NUR is only available in Home Manager, because I don't want to have it available system wide.
-  #It also doesn't have a pinned version because I want it to update, and it will be updated with the rest of the system anyway.
 in
 {
   home.packages =
