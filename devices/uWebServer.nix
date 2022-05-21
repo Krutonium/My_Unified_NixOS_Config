@@ -25,7 +25,7 @@ in
       ../services/satisfactory_server.nix
       #../services/project_ozone_3.nix
       #../services/nextcloud.nix
-      ../services/seafile.nix
+      #../services/seafile.nix
       ../users/krutonium.nix
       ../users/resin.nix
       ../users/root.nix
@@ -52,7 +52,7 @@ in
   #systemd.services."serial-getty@hvc0".enable = false;
   #systemd.services."getty@tty1".enable = false;
   #systemd.services."autovt@".enable = false;
-  boot.kernelParams = [ "panic=1" "boot.panic_on_fail" ];
+  boot.kernelParams = [ "panic=1" "boot.panic_on_fail" "intel_iommu=on" ];
   systemd.enableEmergencyMode = false;
   boot.loader.grub.splashImage = null;
 

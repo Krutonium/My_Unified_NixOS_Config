@@ -21,9 +21,9 @@ in
 
   # Use Systemd networking with networkmanager.
   networking = {
-    useDHCP = false;
+    #useDHCP = true;
     networkmanager.enable = true;
-    useNetworkd = true;
+    #useNetworkd = true;
     tempAddresses = "disabled";
     firewall.enable = true;
     nameservers = [ "8.8.8.8" "1.1.1.1" ];
