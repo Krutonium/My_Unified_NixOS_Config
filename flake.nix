@@ -4,6 +4,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
     home-manager.url = "github:nix-community/home-manager";
     betterfancontroller.url = "github:Krutonium/BetterFanController";
     betterfancontroller.inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +13,7 @@
     twitch2youtube.url = "git+https://gitea.krutonium.ca/Krutonium/Twitch2YouTube.git";
     twitch2youtube.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, home-manager, betterfancontroller, deploy-cs, twitch2youtube }: {
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, nur, home-manager, betterfancontroller, deploy-cs, twitch2youtube }: {
   #outputs = { inputs }: {
     ################################################################################
     # uGamingPC
@@ -40,6 +41,7 @@
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
               BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
             })
+            nur.overlay
           ];
         })
       ] ++ (with nixos-hardware.nixosModules; [
@@ -82,6 +84,7 @@
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
               twitch2youtube = twitch2youtube.defaultPackage.x86_64-linux;
             })
+            nur.overlay
           ];
         })
       ] ++ (with nixos-hardware.nixosModules; [
@@ -122,6 +125,7 @@
             (self: super: {
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
             })
+            nur.overlay
           ];
         })
       ] ++ (with nixos-hardware.nixosModules; [
