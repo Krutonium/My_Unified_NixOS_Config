@@ -48,7 +48,7 @@ in
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
 
   #environment.systemPackages = [ pkgs.openhmd ];
-
+  services.xserver.videoDrivers = [ "nvidia" ];
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
