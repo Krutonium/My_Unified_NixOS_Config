@@ -6,5 +6,6 @@
     permitRootLogin = "prohibit-password";
     passwordAuthentication = false;
     ports = [ 22 55 ];
+    forwardX11 = true;
   };
 }
