@@ -35,8 +35,9 @@ in
       ../users/gameserver.nix
       ../services/synapse.nix
       #../services/invidious.nix
-      #../tweaks/r9_390.nix
       ../packages/virtual_machines.nix
+      #../tweaks/r9_390.nix
+      ../packages/GPU_Passthrough/enter_the_matrix.nix
     ];
   #swapDevices = [{
   #  device = "/persist/swap";

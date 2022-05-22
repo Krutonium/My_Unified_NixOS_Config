@@ -2,11 +2,11 @@
 let
   # I'm going to put all the configurables in here
   # This is the device ID's of my GTX 750 Ti with it's audio device as well.
-  toPassToVM_kernelcmd = [ "vfio-pci.ids=10de:1380,10de:0fbc" ];
+  toPassToVM_kernelcmd = [ "vfio-pci.ids=8086:1901,1002:1478,1002:1479,1002:731f,1002:ab38" ];
 in
 {
     #Disable the nouveau driver if the card is nVidia. Not sure how to handle it if there is more than one card, or one is AMD.
-    boot.blacklistedKernelModules = ["nouveau"];
+    boot.blacklistedKernelModules = ["amdgpu"];
     # If you're on Intel, you need
     # boot.kernelParams = ["intel_iommu=on"];
     # If you're on AMD, you don't need anything, it will just work.
@@ -14,7 +14,7 @@ in
     # Add our nVidia GPU to passthrough
     boot.kernelParams = toPassToVM_kernelcmd;
     environment.systemPackages = [
-      pkgs-unstable.looking-glass-client
+      #pkgs-unstable.looking-glass-client
     ];
 
   systemd.services.windows = {
