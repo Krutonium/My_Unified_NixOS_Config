@@ -68,6 +68,7 @@ in
       pkgs.openrgb
       #pkgs.calibre
       pkgs.primus
+      pkgs.nixpkgs-review
 
       # Terminal
       pkgs.fish
