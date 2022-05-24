@@ -102,6 +102,8 @@ in
 
       # Communications
       pkgs-unstable.tdesktop
+      pkgs.betterdiscord-installer
+      pkgs.betterdiscordctl
       #nixpkgs-unstable.discord
       # Installed Elsewhere - Fucks up Desktop Capture
       pkgs-unstable.element-desktop
