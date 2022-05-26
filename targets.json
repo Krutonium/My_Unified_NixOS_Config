@@ -4,28 +4,25 @@
       "Name": "uWebServer",
       "Ip": "192.168.0.10",
       "User": "root",
+      "isBuildHost": true,
       "Comment": "This is my Web Server. It hosts many things."
     },
     {
       "Name": "uGamingPC",
       "Ip": "192.168.0.40",
       "User": "root",
+      "isBuildHost": true,
       "Comment": "Gaming PC - For Gaming and software development"
     },
     {
       "Name": "uMsiLaptop",
       "Ip": "192.168.0.20",
+      "isBuildHost": true,
       "User": "root",
       "Comment": "My Laptop - For bedside entertainment!"
     }
   ],
-  "BuildHost": {
-    "Name": "Build Server",
-    "Ip": "192.168.0.10",
-    "User": "root",
-    "Comment": "This is the build host. It is not a target device, but it does need Nix to be running, with SSH enabled. If this is disabled, the local PC is used."
-  },
   "BuildHostEnabled": true,
-  "ParallelDeploy": false,
+  "ParallelDeploy": true,
   "AddRoot": false
 }
