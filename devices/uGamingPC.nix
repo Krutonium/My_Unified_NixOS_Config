@@ -46,6 +46,7 @@ in
    #  size = 1024 * 1; #1GB
    #}];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+  home-manager.users.root = import ../home-manager-files/root/root.nix;
   #environment.systemPackages = [ pkgs.teamviewer ];
   #environment.systemPackages = [ pkgs.openhmd ];
   #services.xserver.videoDrivers = [ "nvidia" ];

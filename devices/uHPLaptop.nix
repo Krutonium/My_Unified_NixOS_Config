@@ -30,6 +30,7 @@ in
     size = 1024 * 16; #16GB
   }];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+  home-manager.users.root = import ../home-manager-files/root/root.nix;
   networking.hostName = Hostname;
   # One could argue this should be a tweak, but honestly it's very hardware specific.
   services.xserver.videoDrivers = [ "modesetting" ];
