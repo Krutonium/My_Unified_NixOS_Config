@@ -87,5 +87,6 @@ in
   ];
 
   home-manager.users.krutonium = import ../home-manager-files/krutonium/server.nix;
+  home-manager.users.root = import ../home-manager-files/root/home.nix;
   system.stateVersion = "21.11";
 }
