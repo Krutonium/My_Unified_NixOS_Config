@@ -139,5 +139,7 @@
         bpytop $argv;
       end
     '';
+    ".ssh/known_hosts".file = "./known_hosts";
+
   };
 }
