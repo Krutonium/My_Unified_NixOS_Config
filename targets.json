@@ -5,6 +5,7 @@
       "Ip": "192.168.0.10",
       "User": "root",
       "isBuildHost": true,
+      "isDeployTarget": true,
       "Comment": "This is my Web Server. It hosts many things."
     },
     {
@@ -12,17 +13,18 @@
       "Ip": "192.168.0.40",
       "User": "root",
       "isBuildHost": true,
+      "isDeployTarget": true,
       "Comment": "Gaming PC - For Gaming and software development"
     },
     {
       "Name": "uMsiLaptop",
       "Ip": "192.168.0.20",
       "isBuildHost": true,
+      "isDeployTarget": true,
       "User": "root",
       "Comment": "My Laptop - For bedside entertainment!"
     }
   ],
   "BuildHostEnabled": true,
   "ParallelDeploy": true,
-  "AddRoot": false
 }
