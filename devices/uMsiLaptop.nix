@@ -20,7 +20,7 @@ in
     ../packages/wine.nix
     ../packages/ccache.nix
     ../packages/waydroid.nix
-    ../packages/plymouth.nix
+    #../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix
     ../packages/candy-icons.nix

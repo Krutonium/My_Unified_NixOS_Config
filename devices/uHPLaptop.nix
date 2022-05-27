@@ -18,7 +18,7 @@ in
     ../packages/dotnet.nix
     ../packages/steam.nix
     ../packages/wine.nix
-    ../packages/plymouth.nix
+    #../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix
     ../packages/virtual_machines.nix
