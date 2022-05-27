@@ -85,5 +85,7 @@ in
     pkgs.twitch2youtube
     pkgs.yt-dlp
   ];
+
+  home-manager.users.krutonium = import ../home-manager-files/krutonium/server.nix;
   system.stateVersion = "21.11";
 }
