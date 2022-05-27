@@ -80,7 +80,7 @@
       bar_color_total="distro"
       memory_display="on"
       image_backend="catimg"
-      image_source="${./supermenu.png}" #LINK TO IMAGE
+      image_source="" #LINK TO IMAGE
       catimg_size="2"
       image_size="auto"
     '';
