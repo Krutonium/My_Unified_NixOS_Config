@@ -54,7 +54,7 @@ in
       # Media
       pkgs.vlc
       pkgs.spotify
-      pkgs.obs
+      pkgs.obs-studio
       pkgs.plexamp
 
       # Random Stuff
