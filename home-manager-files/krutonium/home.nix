@@ -2,10 +2,9 @@
 {
   imports = [
     ./dconf.nix
-    ./git.nix
-    ./config.nix
+    ../general/git.nix
+    ../general/config.nix
     ./personal-packages.nix
-    #../../packages/godot-mono.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

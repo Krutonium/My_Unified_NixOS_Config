@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ../krutonium/git.nix
-    ../krutonium/config.nix
+    ../general/git.nix
+    ../general/config.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
