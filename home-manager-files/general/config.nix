@@ -139,11 +139,5 @@
         bpytop $argv;
       end
     '';
-    #".ssh/known_hosts".source = "${./known_hosts}";
-    ".ssh/config".text = ''
-    Host *
-        StrictHostKeyChecking no
-    '';
-
   };
 }
