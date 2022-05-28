@@ -63,7 +63,6 @@ in
 
   services = {
     fwupd.enable = true;
-    tlp.enable = true;
   };
 
 
