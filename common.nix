@@ -8,29 +8,49 @@ in
     [
       ./packages/scripts.nix
     ];
-  #boot.tmpOnTmpfs = true;
-  boot.cleanTmpDir = true;
-  # Misc Settings - Optimize for Size, Compatible with Windows time, Enable unfree packages.
-  nix.autoOptimiseStore = true;
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 3d";
-  time.hardwareClockInLocalTime = true;
-  nixpkgs.config.allowUnfree = true;
 
-  time.timeZone = "America/Toronto";
-
-  # Use Systemd networking with networkmanager.
-  networking = {
-    #useDHCP = true;
-    networkmanager.enable = true;
-    #useNetworkd = true;
-    tempAddresses = "disabled";
-    firewall.enable = true;
-    nameservers = [ "8.8.8.8" "1.1.1.1" "2001:4860:4860::8888" "2606:4700:4700::1111" ];
-  #  #nameservers = [ "127.0.0.1:8053" ];
+  boot = {
+    cleanTmpDir = true;
+  };
+  nix = {
+    autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 3d";
+    };
+    trustedUsers = [ "@wheel" ];
+  };
+  time = {
+    #Enables Windows Compatability.
+    hardwareClockInLocalTime = true;
+    timeZone = "America/Toronto";
+  };
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = ["nodejs-12.22.12"];
+    };
   };
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  networking = {
+    networkmanager = {
+      enable = true;
+    };
+    tempAddresses = "disabled";
+    firewall = {
+      enable = true;
+    };
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+      "2001:4860:4860::8888"
+      "2606:4700:4700::1111"
+    ];
+  };
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+  };
   console = {
     keyMap = "us";
   };
@@ -38,7 +58,9 @@ in
   # Let me tell you a story about a bad switch that dropped me to an
   # emergency console instead of letting me see what went wrong...
   # https://github.com/NixOS/nixpkgs/issues/147783
-  systemd.enableEmergencyMode = false;
+  systemd = {
+    enableEmergencyMode = false;
+  };
 
   #Install the Base Packages that all systems should have.
   environment.systemPackages = [
@@ -59,23 +81,27 @@ in
     pkgs.appimage-run
   ];
 
-  nixpkgs.config.permittedInsecurePackages = ["nodejs-12.22.12"];
-
   services = {
     fwupd.enable = true;
   };
-
 
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "gnome3";
   };
 
-  nix.package = pkgs-unstable.nixUnstable;
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
-  users.mutableUsers = false;
-  nix.trustedUsers = [ "@wheel" ];
-  system.stateVersion = "21.11";
+  nix = {
+    package = pkgs-unstable.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
+  users = {
+    mutableUsers = false;
+  };
+  
+  system = {
+    stateVersion = "21.11";
+  };
 }
