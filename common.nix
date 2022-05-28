@@ -61,6 +61,11 @@ in
 
   nixpkgs.config.permittedInsecurePackages = ["nodejs-12.22.12"];
 
+  services = {
+    fwupd.enable = true;
+    tlp.enable = true;
+  };
+
 
   programs.gnupg.agent = {
     enable = true;
