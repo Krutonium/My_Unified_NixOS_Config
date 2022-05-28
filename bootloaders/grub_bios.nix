@@ -1,11 +1,20 @@
 { config, pkgs, ... }:
+let
+  installTarget = "/dev/sda";
+  devices = "nodev";
+  default = "saved";
+in
 {
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub = {
-    devices = [ "nodev" ];
-    efiSupport = false;
-    enable = true;
-    useOSProber = true;
-    default = "saved";
+  boot = {
+    loader = {
+      grub = {
+        device = installTarget;
+        devices = devices;
+        efiSupport = false;
+        useOSProber = true;
+        default = default;
+        enable = true;
+      };
+    };
   };
 }
