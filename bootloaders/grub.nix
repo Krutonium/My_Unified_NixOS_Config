@@ -1,12 +1,23 @@
 { config, pkgs, ... }:
+let
+  mountPoint = "/boot";
+  devices = "nodev";
+  default = "saved";
+in
 {
-  boot.loader.efi.efiSysMountPoint = "/boot";
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    devices = [ "nodev" ];
-    efiSupport = true;
-    enable = true;
-    useOSProber = true;
-    default = "saved";
+  boot = {
+    loader = {
+      efi = {
+        efiSysMountPoint = mountPoint;
+        canTouchEfiVariable = true;
+      };
+      grub = {
+        devices = [ devices ];
+        efiSupport = true;
+        useOSProber = true;
+        default = default;
+        enabled = true;
+      };
+    };
   };
 }
