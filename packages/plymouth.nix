@@ -21,12 +21,12 @@ let
 in
 {
   environment.systemPackages = [
-    pkgs-unstable.plymouth
+    pkgs.plymouth
   ];
 
   boot.plymouth.enable = true;
-  boot.plymouth.theme = "aperture";
-  boot.plymouth.themePackages = [
-    aperture-plymouth
-  ];
+  boot.plymouth.theme = "spinner";
+  #boot.plymouth.themePackages = [
+  #  aperture-plymouth
+  #];
 }
