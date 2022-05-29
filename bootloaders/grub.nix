@@ -9,14 +9,14 @@ in
     loader = {
       efi = {
         efiSysMountPoint = mountPoint;
-        canTouchEfiVariable = true;
+        canTouchEfiVariables = true;
       };
       grub = {
         devices = [ devices ];
         efiSupport = true;
         useOSProber = true;
         default = default;
-        enabled = true;
+        enable = true;
       };
     };
   };
