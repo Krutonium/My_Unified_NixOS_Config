@@ -69,6 +69,7 @@ in
       #pkgs.calibre
       pkgs.primus
       pkgs.nixpkgs-review
+      pkgs.libreoffice
 
       # Terminal
       pkgs.fish
