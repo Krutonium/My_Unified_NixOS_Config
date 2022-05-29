@@ -12,7 +12,6 @@ in
   boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/grub.nix
-    ../bootloaders/netboot.nix
     ../users/krutonium.nix
     ../users/root.nix
     ../users/notkea.nix
