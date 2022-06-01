@@ -70,6 +70,7 @@ in
       pkgs.primus
       pkgs.nixpkgs-review
       pkgs.libreoffice
+      pkgs.mate.engrampa
 
       # Terminal
       pkgs.fish
