@@ -47,10 +47,6 @@ in
   #}];
   nixpkgs.config.allowUnfree = true;
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-  hardware.opengl.extraPackages = [
-    pkgs.rocm-opencl-icd
-    pkgs.rocm-runtime-ext
-  ];
 
   #Headless Stuff
   #hardware.nvidia.nvidiaPersistenced = true;
