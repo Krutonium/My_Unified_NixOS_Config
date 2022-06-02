@@ -9,7 +9,7 @@ let
 
   buildISO = pkgs.writeShellScriptBin "buildISO" ''
     cd ${RepoPath}
-    nix build .#nixosConfigurations.isoimage.config.system.build.isoImage
+    nix build .#nixosConfigurations.isoImage.config.system.build.isoImage
   '';
 
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
