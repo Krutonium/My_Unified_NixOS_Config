@@ -18,26 +18,19 @@ in
     ../services/fancontroller.nix
     ../services/ssh.nix
     ../desktops/gnome.nix
-    #../desktops/kde.nix
-    ../services/drwhowifi.nix
-    #../tweaks/VL805.nix
     ../tweaks/mitigations.nix
-    #../tweaks/zfs.nix
     ../tweaks/zenpower.nix
     ../packages/dotnet.nix
     ../packages/steam.nix
     ../packages/wine.nix
-    #../packages/plymouth.nix
+    ../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix
     ../packages/KeyboardStuff/openrgb.nix
-    #../packages/KeyboardStuff/qmk.nix
     ../packages/KeyboardStuff/flasher.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix
-    #../tweaks/nvidia_nodriver.nix
     ../packages/compiler.nix
-    #../packages/GPU_Passthrough/enter_the_matrix.nix
   ];
    # We always want 8 GB of Swap.
    #swapDevices = [{
