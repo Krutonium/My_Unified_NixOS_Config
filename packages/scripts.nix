@@ -7,6 +7,11 @@ let
     deploy-cs
   '';
 
+  buildISO = pkgs.writeShellScriptBin "buildISO" ''
+    cd ${RepoPath}
+    nix build .#nixosConfigurations.isoimage.config.system.build.isoImage
+  '';
+
   resetConfig = pkgs.writeShellScriptBin "resetConfig" ''
     cd ~
     rm -rf ${RepoPath}
