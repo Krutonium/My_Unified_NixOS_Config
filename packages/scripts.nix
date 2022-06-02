@@ -51,5 +51,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ resetConfig linkRepo setUpstream pushConfig comma dualcomma ];
+  environment.systemPackages = [ resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO ];
 }
