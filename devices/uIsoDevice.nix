@@ -10,7 +10,6 @@ in
     ../users/krutonium.nix
     ../users/root.nix
     ../services/ssh.nix
-    ../desktops/gnome.nix
     ../tweaks/mitigations.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
