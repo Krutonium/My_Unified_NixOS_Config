@@ -9,7 +9,6 @@ in
   imports = [
     ../users/krutonium.nix
     ../users/root.nix
-    ../services/ssh.nix
     ../tweaks/mitigations.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
