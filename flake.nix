@@ -137,13 +137,41 @@
         };
       };
     };
-    #######
-    # Build everything
-    #######
-    #pkgs = import nixpkgs;
-    #build-it-all = pkgs.buildEnv {
-    #  name= "build-it-all";
-    #  paths = [ self.uGamingPC self.uWebServer self.uMsiLaptop ];
-    #};
+
+    #####
+    # Build an ISO with Gnome and Flakes and other custom stuff
+    #####
+
+    nixosConfigurations."isoImage" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./common.nix
+        ./devices/uIsoDevice.nix
+        "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = false;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
+        }
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [
+            (self: super: {
+              deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
+            })
+          ];
+        })
+      ];
+      specialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      };
+    };
   };
 }
