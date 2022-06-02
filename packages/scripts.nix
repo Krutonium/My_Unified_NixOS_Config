@@ -4,6 +4,7 @@ let
   RepoURL = "gitea@gitea.krutonium.ca:Krutonium/My_Unified_NixOS_Config.git";
 
   update = pkgs.writeShellScriptBin "update" ''
+    cd "${RepoPath}"
     deploy-cs
   '';
 
@@ -51,5 +52,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO ];
+  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO ];
 }
