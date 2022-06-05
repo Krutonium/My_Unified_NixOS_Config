@@ -79,6 +79,7 @@ in
     pkgs.nix-index
     pkgs.deploy-cs
     pkgs.appimage-run
+    pkgs.unison
   ];
 
   services = {

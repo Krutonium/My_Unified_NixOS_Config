@@ -3,12 +3,10 @@
 let
   syncronize = pkgs.writeShellScriptBin "syncronize" ''
     # Run unison and sync to server
-
   '';
-
 in
 {
-  environment.systemPackages = [ pkgs.unison syncronize ];
+  environment.systemPackages = [ syncronize ];
   systemd = {
     services.syncronize-devices = {
       serviceConfig.Type = "oneshot";
