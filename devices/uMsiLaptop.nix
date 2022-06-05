@@ -54,6 +54,11 @@ in
     nvidiaBusId = "PCI:1:0:0";
     intelBusId = "PCI:0:2:0";
   };
+  services.xserver.screenSection = ''
+    Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+  '';
 
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   home-manager.users.root = import ../home-manager-files/root/root.nix;
