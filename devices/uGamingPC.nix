@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
-#This is the configuration specific to my Gaming Desktop PC.
-
-#Run sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 let
-  #kernel = pkgs.linuxPackages_zen;
-  kernel = pkgs.linuxPackages_latest;
+  kernel = pkgs.linuxPackages_zen;
   Hostname = "uGamingPC";
 in
 {
@@ -32,16 +28,8 @@ in
     ../packages/candy-icons.nix
     ../packages/compiler.nix
   ];
-   # We always want 8 GB of Swap.
-   #swapDevices = [{
-   #  device = "/swap";
-   #  size = 1024 * 1; #1GB
-   #}];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   home-manager.users.root = import ../home-manager-files/root/root.nix;
-  #environment.systemPackages = [ pkgs.teamviewer ];
-  #environment.systemPackages = [ pkgs.openhmd ];
-  #services.xserver.videoDrivers = [ "nvidia" ];
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
