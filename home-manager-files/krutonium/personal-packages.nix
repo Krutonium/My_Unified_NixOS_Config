@@ -67,7 +67,6 @@ in
       pkgs.ffmpeg-full
       pkgs.openrgb
       #pkgs.calibre
-      pkgs.primus
       pkgs.nixpkgs-review
       pkgs.libreoffice
       pkgs.mate.engrampa
