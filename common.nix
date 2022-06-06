@@ -7,7 +7,7 @@ in
   imports =
     [
       ./packages/scripts.nix
-      ./packages/remote-builders.nix
+      #./packages/remote-builders.nix
     ];
 
   boot = {
