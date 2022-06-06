@@ -75,10 +75,8 @@
           separateDebugInfo = true;
         });
       });
-      mesa = prev.mesa.overrideScope' (gfinal: gprev: {
-        galliumDrivers = [ "auto" "r600" "swrast" "zink" ];
-      });
+      mesa = mesa.override { galliumDrivers = [ "auto" "zink" "r600" "swrast" ];
       #mesa.override { galliumDrivers = [ "zink" "r600" "swrast" ]; }
-    })
-  ];
+    };
+  })];
 }
