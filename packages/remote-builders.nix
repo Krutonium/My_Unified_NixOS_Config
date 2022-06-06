@@ -6,7 +6,7 @@
       hostName = "192.168.0.10";
       system = "x86_64-linux";
       maxJobs = 8;
-      speedFactor = 2;
+      speedFactor = 1;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       mandatoryFeatures = [];
     }
@@ -14,8 +14,8 @@
       #uGamingPC
       hostName = "192.168.0.40";
       system = "x86_64-linux";
-      maxJobs = 16;
-      speedFactor = 2;
+      maxJobs = 8;
+      speedFactor = 1;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       mandatoryFeatures = [];
     }
