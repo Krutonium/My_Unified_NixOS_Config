@@ -29,4 +29,5 @@
       mandatoryFeatures = [];
     }
   ];
+  nix.distributedBuilds = true;
 }
