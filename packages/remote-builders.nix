@@ -30,4 +30,5 @@
     }
   ];
   nix.distributedBuilds = true;
+  nix.settings.cores = 0;
 }
