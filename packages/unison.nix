@@ -12,8 +12,8 @@ in
       serviceConfig.Type = "oneshot";
       path = with pkgs; [ unison bash ];
       script = ''
-        unison /home/krutonium ssh://192.168.0.20
-        unison /home/krutonium ssh://192.168.0.40
+        unison /home/krutonium ssh://192.168.0.20//home/krutonium
+        unison /home/krutonium ssh://192.168.0.40//home/krutonium
       '';
       enable = false;
     };
