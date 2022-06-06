@@ -99,6 +99,8 @@ in
     '';
   };
 
+  nix.settings.system-features = [ "i686-linux" ];
+
   users = {
     mutableUsers = false;
   };
