@@ -23,7 +23,7 @@
       #uMsiLaptop
       hostName = "192.168.0.20";
       system = "x86_64-linux";
-      maxJobs = 4;
+      maxJobs = 8;
       speedFactor = 1;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
       mandatoryFeatures = [];
