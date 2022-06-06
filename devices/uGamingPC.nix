@@ -28,6 +28,8 @@ in
     ../packages/candy-icons.nix
     ../packages/compiler.nix
   ];
+
+  nixpkgs.overlays = [ (self: super: {mesa = super.mesa.override { galliumDrivers  = [ "auto" "zink" "r600" "swrast" ]; }; } ) ];
   home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
   home-manager.users.root = import ../home-manager-files/root/root.nix;
   networking.hostName = Hostname;

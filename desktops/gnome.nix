@@ -75,8 +75,6 @@
           separateDebugInfo = true;
         });
       });
-      pkgs.mesa = mesa.override { galliumDrivers = [ "auto" "zink" "r600" "swrast" ];
-      #mesa.override { galliumDrivers = [ "zink" "r600" "swrast" ]; }
-    };
-  })];
+    })
+  ];
 }
