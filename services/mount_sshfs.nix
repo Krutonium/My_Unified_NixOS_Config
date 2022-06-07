@@ -4,6 +4,6 @@
     {
       device = "192.168.0.10:/home/krutonium/share";
       fsType = "sshfs";
-      options =  [ "-o allow_other -o IdentityFile=/home/krutonium/.ssh/id_ed25519" ];
+      options =  [ "allow_other" "IdentityFile=/home/krutonium/.ssh/id_ed25519" ];
     };
 }
