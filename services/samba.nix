@@ -12,7 +12,7 @@
         "read only" = "no";
       };
       home = {
-        path = "/home/krutonium";
+        path = "/home/krutonium/share";
         browseable = true;
         "read only" = "no";
       };
