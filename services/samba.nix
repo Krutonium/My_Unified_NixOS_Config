@@ -11,7 +11,7 @@
         browseable = true;
         "read only" = "no";
       };
-      home = {
+      share = {
         path = "/home/krutonium/share";
         browseable = true;
         "read only" = "no";
