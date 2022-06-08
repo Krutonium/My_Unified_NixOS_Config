@@ -81,6 +81,7 @@ in
     pkgs.deploy-cs
     pkgs.appimage-run
     pkgs.unison
+    pkgs.p7zip
   ];
 
   services = {
