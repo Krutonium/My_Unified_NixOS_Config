@@ -32,6 +32,7 @@ in
     ../packages/discord.nix
     ../packages/candy-icons.nix
     ../packages/virtual_machines.nix
+    ../packages/badlion.nix
   ];
   swapDevices = [{
     device = "/swap";
