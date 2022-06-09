@@ -28,6 +28,7 @@ in
     ../packages/candy-icons.nix
     ../packages/compiler.nix
     ../services/mount_sshfs.nix
+    ../packages/badlion.nix
   ];
 
   #nixpkgs.overlays = [ (self: super: {mesa = super.mesa.override { galliumDrivers  = [ "auto" "zink" "r600" "swrast" ]; }; } ) ];
