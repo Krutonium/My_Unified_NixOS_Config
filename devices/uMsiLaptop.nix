@@ -33,6 +33,7 @@ in
     ../packages/candy-icons.nix
     ../packages/virtual_machines.nix
     ../packages/badlion.nix
+    ../services/mount_sshfs.nix
   ];
   swapDevices = [{
     device = "/swap";
