@@ -55,26 +55,26 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    gdb
-    gnome.gnome-session
-    gnome.mutter
-    gnome.gnome-shell
-  ];
-  environment.enableDebugInfo = true;
-  nixpkgs.overlays = [
-    (final: prev: {
-      gnome = prev.gnome.overrideScope' (gfinal: gprev: {
-        gnome-session = gprev.gnome-session.overrideAttrs (attrs: {
-          separateDebugInfo = true;
-        });
-        gnome-shell = gprev.gnome-shell.overrideAttrs (attrs: {
-          separateDebugInfo = true;
-        });
-        mutter = gprev.mutter.overrideAttrs (attrs: {
-          separateDebugInfo = true;
-        });
-      });
-    })
-  ];
+  #environment.systemPackages = with pkgs; [
+  #  gdb
+  #  gnome.gnome-session
+  #  gnome.mutter
+  #  gnome.gnome-shell
+  #];
+  #environment.enableDebugInfo = true;
+  #nixpkgs.overlays = [
+  #  (final: prev: {
+  #    gnome = prev.gnome.overrideScope' (gfinal: gprev: {
+  #      gnome-session = gprev.gnome-session.overrideAttrs (attrs: {
+  #        separateDebugInfo = true;
+  #      });
+  #      gnome-shell = gprev.gnome-shell.overrideAttrs (attrs: {
+  #        separateDebugInfo = true;
+  #      });
+  #      mutter = gprev.mutter.overrideAttrs (attrs: {
+  #        separateDebugInfo = true;
+  #      });
+  #    });
+  #  })
+  #];
 }
