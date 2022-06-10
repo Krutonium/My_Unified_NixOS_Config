@@ -109,7 +109,7 @@ in
       #nixpkgs-unstable.discord
       # Installed Elsewhere - Fucks up Desktop Capture
       pkgs-unstable.element-desktop
-      pkgs.nheko
+      #pkgs.nheko
     ];
   home.file.".jdk/17/".source = pkgs.openjdk17;
   home.file.".jdk/8/".source = pkgs.openjdk8;
