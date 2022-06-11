@@ -19,7 +19,7 @@ in
     ../users/root.nix
     ../services/ssh.nix
     ../services/fail2ban.nix
-    ../desktops/gnome.nix
+    ../desktops/kde.nix
     #../desktops/xfce.nix
     ../tweaks/mitigations.nix
     ../packages/dotnet.nix

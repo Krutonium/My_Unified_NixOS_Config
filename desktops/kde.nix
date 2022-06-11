@@ -9,10 +9,8 @@
         };
       };
       desktopManager = {
-        desktopManager = {
-          plasma5 = {
-            enable = true;
-          };
+        plasma5 = {
+          enable = true;
         };
       };
     };
@@ -44,7 +42,7 @@
   services = {
     pipewire = {
       enable = true;
-      alse = {
+      alsa = {
         enable = true;
         support32Bit = true;
       };
