@@ -93,6 +93,7 @@ in
       pkgs-unstable.mangohud
       pkgs-unstable.goverlay
       pkgs-unstable.dolphin-emu-beta
+      pkgs.heroic
       #nur.repos.iagocq.parsec
       #nur.repos.dukzcry.gamescope
       #gamescope
