@@ -50,6 +50,7 @@ in
       pkgs.mono
       pkgs.jetbrains.rider
       pkgs.jetbrains.idea-ultimate
+      pkgs.gitkraken
 
       # Media
       pkgs.vlc

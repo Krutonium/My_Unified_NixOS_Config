@@ -44,7 +44,7 @@ let
   '';
   comma = pkgs.writeShellScriptBin "," ''
     echo "Loading..."
-    nix shell nixpkgs#$@
+    NIXPKGS_ALLOW_UNFREE=1 nix shell nixpkgs#$@ --impure
   '';
   dualcomma = pkgs.writeShellScriptBin ",," ''
     echo "Loading..."
