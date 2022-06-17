@@ -50,7 +50,12 @@ let
     echo "Loading..."
     nix-shell -p $@
   '';
+
+  # For generating stickers for Telegram
+  mkSticker = pkgs.writeShellScriptBin "mkSticker" ''
+    ffmpeg -i $1 -vf 'scale=if(gte(a\,512/512)\,min(512\,iw)\,-2):if(gte(a\,512/512)\,-2\,min(512\,ih))' $2
+  '';
 in
 {
-  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO ];
+  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker ];
 }
