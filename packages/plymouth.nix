@@ -25,8 +25,8 @@ in
   ];
 
   boot.plymouth.enable = true;
-  boot.plymouth.theme = "spinner";
-  #boot.plymouth.themePackages = [
-  #  aperture-plymouth
-  #];
+  boot.plymouth.theme = "aperture";
+  boot.plymouth.themePackages = [
+    aperture-plymouth
+  ];
 }
