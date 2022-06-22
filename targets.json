@@ -25,6 +25,6 @@
       "Comment": "My Laptop - For bedside entertainment!"
     }
   ],
-  "BuildHostEnabled": false,
+  "BuildHostEnabled": true,
   "ParallelDeploy": false
 }
