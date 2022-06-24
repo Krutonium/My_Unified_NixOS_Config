@@ -4,7 +4,7 @@
     services.updateSystems = {
       serviceConfig.Type = "oneshot";
       serviceConfig.user = "krutonium";
-      path = with pkgs; [ pkgs.deploy-cs ];
+      path = with pkgs; [ pkgs.deploy-cs pkgs.nix pkgs.git ];
       script = ''
         cd /home/krutonium/NixOS/
         deploy-cs
