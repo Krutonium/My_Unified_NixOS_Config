@@ -26,7 +26,7 @@ in
     ../packages/steam.nix
     ../packages/wine.nix
     ../packages/ccache.nix
-    ../packages/waydroid.nix
+    #../packages/waydroid.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix
