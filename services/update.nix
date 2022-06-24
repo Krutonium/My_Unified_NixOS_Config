@@ -9,7 +9,7 @@
       '';
       enable = true;
     };
-    timers.syncronize-devices = {
+    timers.updateSystems = {
       wantedBy = [ "timers.target" ];
       partOf = [ "updateSystems.service" ];
       timerConfig = {
