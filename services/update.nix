@@ -1,10 +1,10 @@
-{ config, pkgs, ...}:
+{ config, pkgs, pkgs-unstable, ...}:
 {
   systemd = {
     services.updateSystems = {
       serviceConfig.Type = "oneshot";
       serviceConfig.User = "krutonium";
-      path = with pkgs; [ pkgs.deploy-cs pkgs.nix pkgs.git ];
+      path = with pkgs; [ pkgs.deploy-cs pkgs-unstable.nixUnstable pkgs.git ];
       script = ''
         cd /home/krutonium/NixOS/
         deploy-cs
