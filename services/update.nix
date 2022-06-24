@@ -3,12 +3,12 @@
   systemd = {
     services.updateSystems = {
       serviceConfig.Type = "oneshot";
+      serviceConfig.user = "krutonium";
       path = with pkgs; [ pkgs.deploy-cs ];
       script = ''
         cd /home/krutonium/NixOS/
         deploy-cs
       '';
-      user = "krutonium";
       enable = true;
     };
     timers.updateSystems = {
