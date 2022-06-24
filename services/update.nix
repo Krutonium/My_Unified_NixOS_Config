@@ -3,7 +3,7 @@
   systemd = {
     services.updateSystems = {
       serviceConfig.Type = "oneshot";
-      serviceConfig.user = "krutonium";
+      serviceConfig.User = "krutonium";
       path = with pkgs; [ pkgs.deploy-cs pkgs.nix pkgs.git ];
       script = ''
         cd /home/krutonium/NixOS/

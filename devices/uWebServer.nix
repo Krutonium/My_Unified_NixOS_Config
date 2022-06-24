@@ -84,7 +84,7 @@ in
     pkgs.yt-dlp
   ];
 
-  home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
-  home-manager.users.root = import ../home-manager-files/root/root.nix;
+  #home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
+  #home-manager.users.root = import ../home-manager-files/root/root.nix;
   system.stateVersion = "21.11";
 }
