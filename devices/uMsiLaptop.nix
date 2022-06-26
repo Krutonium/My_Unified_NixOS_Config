@@ -34,6 +34,7 @@ in
     ../packages/virtual_machines.nix
     ../packages/badlion.nix
     ../services/mount_sshfs.nix
+    ../tweaks/mesa.nix
   ];
   swapDevices = [{
     device = "/swap";
