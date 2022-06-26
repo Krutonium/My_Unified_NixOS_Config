@@ -26,5 +26,5 @@
     }
   ],
   "BuildHostEnabled": true,
-  "ParallelDeploy": false
+  "ParallelDeploy": true
 }
