@@ -82,6 +82,7 @@ in
     pkgs.appimage-run
     pkgs.unison
     pkgs.p7zip
+    pkgs.doas
   ];
 
   services = {
