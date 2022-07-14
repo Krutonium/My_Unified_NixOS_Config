@@ -94,6 +94,7 @@ in
       pkgs-unstable.goverlay
       pkgs-unstable.dolphin-emu-beta
       pkgs.heroic
+      pkgs.ppsspp
       #nur.repos.iagocq.parsec
       #nur.repos.dukzcry.gamescope
       #gamescope
