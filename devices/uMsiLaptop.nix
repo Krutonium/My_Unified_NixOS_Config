@@ -47,9 +47,9 @@ in
   #  system = "x86_64-linux";
   #};
 
-  environment.systemPackages = [ nvidia-offload ];
+  #environment.systemPackages = [ nvidia-offload ];
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  #services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
   #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   #hardware.nvidia.modesetting.enable = true;
