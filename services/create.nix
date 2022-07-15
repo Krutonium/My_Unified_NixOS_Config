@@ -18,7 +18,7 @@ in
     after = [ "networking.target" ];
     path = [ pkgs.openjdk8 pkgs.steam-run-native pkgs.screen ];
     script = ''
-      steam-run screen -DmS ozone ${workingdir}/LaunchServer.sh
+      steam-run screen -DmS ozone ${workingdir}/run.sh
     '';
     enable = true;
   };
