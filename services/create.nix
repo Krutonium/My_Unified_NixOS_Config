@@ -19,8 +19,8 @@ in
     path = [ pkgs.openjdk17 pkgs.steam-run-native pkgs.screen ];
     script = ''
       cd ${workingdir}
-      # steam-run screen -DmS ozone ${workingdir}/run.sh
-      ./run.sh
+      steam-run screen -DmS ozone ${workingdir}/run.sh
+      #./run.sh
     '';
     enable = true;
   };
