@@ -11,15 +11,17 @@ in
       Type = "simple";
       WorkingDirectory = workingdir;
       User = user;
-      Restart = "on-failure";
+      Restart = "always";
       KillSignal = "SIGINT";
     };
     wantedBy = [ "multi-user.target" ];
     after = [ "networking.target" ];
-    path = [ pkgs.openjdk8 pkgs.steam-run-native pkgs.screen ];
+    path = [ pkgs.openjdk17 pkgs.steam-run-native pkgs.screen ];
     script = ''
-      steam-run screen -DmS ozone ${workingdir}/run.sh
+      cd ${workingdir}
+      # steam-run screen -DmS ozone ${workingdir}/run.sh
+      ./run.sh
     '';
-    enable = false;
+    enable = true;
   };
 }
