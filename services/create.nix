@@ -20,6 +20,6 @@ in
     script = ''
       steam-run screen -DmS ozone ${workingdir}/run.sh
     '';
-    enable = true;
+    enable = false;
   };
 }
