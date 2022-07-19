@@ -43,6 +43,13 @@ in
 
 
   boot.kernelParams = [ "mem_sleep_default=deep" ];
+
+  services.auto-cpufreq = {
+    enable = true;
+  };
+  powerManagement.cpufreq = {
+    min = 500000
+  };
   
   #nix.settings.system-features = [ "gccarch-haswell" ];  
   #nixpkgs.localSystem = {
