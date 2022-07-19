@@ -40,6 +40,10 @@ in
     device = "/swap";
     size = 1024 * 16; #16GB
   }];
+
+
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
+  
   #nix.settings.system-features = [ "gccarch-haswell" ];  
   #nixpkgs.localSystem = {
   #  gcc.arch = "haswell";
