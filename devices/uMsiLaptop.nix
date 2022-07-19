@@ -43,8 +43,6 @@ in
 
 
   boot.kernelParams = [ "mem_sleep_default=deep" ];
-
-  services.tlp.enable = true;
   
   #nix.settings.system-features = [ "gccarch-haswell" ];  
   #nixpkgs.localSystem = {
