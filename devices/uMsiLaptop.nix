@@ -48,7 +48,7 @@ in
     enable = true;
   };
   powerManagement.cpufreq = {
-    min = 500000
+    min = 50000;
   };
   
   #nix.settings.system-features = [ "gccarch-haswell" ];  
