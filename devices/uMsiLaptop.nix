@@ -9,7 +9,7 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
-  parsec = pkgs.callPackage ../packages/parsec.nix {};
+  #parsec = pkgs.callPackage ../packages/parsec.nix {};
 in
 {
   # Set our Kernel
@@ -43,7 +43,7 @@ in
   }];
 
 
-  environment.systemPackages = [ parsec ];
+  #environment.systemPackages = [ parsec ];
 
   boot.kernelParams = [ "mem_sleep_default=deep" ];
   
