@@ -1,7 +1,7 @@
 { lib, stdenv, fetchurl, alsaLib, dbus, libGL, libpulseaudio, libva
 , openssl, udev, xorg }:
-let
-parsec = stdenv.mkDerivation {
+
+stdenv.mkDerivation {
   pname = "parsec";
   version = "2021-01-12";
 
@@ -78,8 +78,4 @@ parsec = stdenv.mkDerivation {
     license = licenses.unfree;
     maintainers = with maintainers; [ delroth ];
   };
-};
-in
-{
-  home.packages = [ parsec ];
 }
