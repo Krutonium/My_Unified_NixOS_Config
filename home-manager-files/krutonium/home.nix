@@ -5,6 +5,7 @@
     ../general/git.nix
     ../general/config.nix
     ./personal-packages.nix
+    ../../packages/parsec.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
