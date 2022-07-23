@@ -48,7 +48,7 @@ in
       "2606:4700:4700::1111"
     ];
     resolvconf = {
-      enable = true;
+      #enable = true;
     };
   };
 
