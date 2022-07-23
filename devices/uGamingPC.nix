@@ -36,5 +36,4 @@ in
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
-  system.stateVersion = "21.11";
 }

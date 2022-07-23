@@ -20,5 +20,5 @@
   home.sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
 
   #What version of Home Manager this config file was created at.
-  home.stateVersion = "21.11";
+  home.stateVersion = "22.05";
 }
