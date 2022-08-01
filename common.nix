@@ -10,9 +10,9 @@ in
       #./packages/remote-builders.nix
     ];
 
-#  boot = {
-#    cleanTmpDir = true;
-#  };
+  boot = {
+    cleanTmpDir = true;
+  };
   nix = {
     autoOptimiseStore = true;
     gc = {
