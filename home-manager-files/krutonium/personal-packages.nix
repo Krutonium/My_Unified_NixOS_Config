@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
+{ config, pkgs, fetchurl, lib, wrapOBS, fetchFromGitHub, ... }:
 let
   ndi_file = builtins.fetchurl {
     url = "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz";
