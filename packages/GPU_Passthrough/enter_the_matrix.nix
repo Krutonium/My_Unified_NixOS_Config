@@ -1,4 +1,4 @@
-{ config, pkgs-unstable, pkgs, ...}:
+{ config, pkgs, ...}:
 let
   # I'm going to put all the configurables in here
   # This is the device ID's of my GTX 750 Ti with it's audio device as well.
