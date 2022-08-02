@@ -16,12 +16,11 @@ in
   boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/systemd.nix
-    ../users/krutonium.nix
-    ../users/root.nix
+    ../users/krutonium/user.nix
+    ../users/root/user.nix
     ../services/ssh.nix
     ../services/fail2ban.nix
     ../desktops/gnome.nix
-    #../desktops/xfce.nix
     ../tweaks/mitigations.nix
     ../packages/dotnet.nix
     ../packages/steam.nix

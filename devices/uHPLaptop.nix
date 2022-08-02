@@ -8,8 +8,8 @@ in
   boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/grub_bios.nix
-    ../users/krutonium.nix
-    ../users/root.nix
+    ../users/krutonium/user.nix
+    ../users/root/user.nix
     ../services/ssh.nix
     ../services/fail2ban.nix
     ../services/fprintd.nix

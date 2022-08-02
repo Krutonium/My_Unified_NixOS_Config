@@ -7,7 +7,7 @@ in
   # Set our Kernel
   boot.kernelPackages = kernel;
   imports = [
-    ../users/krutonium.nix
+    ../users/krutonium/user.nix
     ../users/root.nix
     ../tweaks/mitigations.nix
     ../packages/plymouth.nix

@@ -8,9 +8,9 @@ in
   boot.kernelPackages = kernel;
   imports = [
     ../bootloaders/grub.nix
-    ../users/krutonium.nix
-    ../users/root.nix
-    ../users/notkea.nix
+    ../users/krutonium/user.nix
+    ../users/root/user.nix
+    ../users/kea/user.nix
     ../services/fancontroller.nix
     ../services/ssh.nix
     ../desktops/gnome.nix

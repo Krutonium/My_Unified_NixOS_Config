@@ -31,9 +31,10 @@ in
       ../services/create.nix
       #../services/nextcloud.nix
       #../services/seafile.nix
-      ../users/krutonium.nix
-      ../users/resin.nix
-      ../users/root.nix
+      ../users/krutonium/user.nix
+      ../users/resin/user.nix
+      ../users/root/user.nix
+      ../users/kea/user.nix
       ../users/gameserver.nix
       ../services/synapse.nix
       #../services/invidious.nix
