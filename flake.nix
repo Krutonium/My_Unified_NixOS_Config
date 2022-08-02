@@ -1,11 +1,12 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    home-manager.url = "github:nix-community/home-manager";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/release-22.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     betterfancontroller.url = "github:Krutonium/BetterFanController";
     betterfancontroller.inputs.nixpkgs.follows = "nixpkgs";
     deploy-cs.url = "github:Krutonium/deploy-cs";
