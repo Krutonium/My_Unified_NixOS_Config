@@ -3,6 +3,7 @@ let
 
 in
 {
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
   home.packages =
     let
       openjdk8-low = pkgs.openjdk8.overrideAttrs (oldAttrs: { meta.priority = 10; });

@@ -100,6 +100,7 @@ in
       experimental-features = nix-command flakes
     '';
   };
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   nix.settings.system-features = [ "i686-linux" ];
 

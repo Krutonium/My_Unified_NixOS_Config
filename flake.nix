@@ -43,7 +43,6 @@
               BetterFanController = betterfancontroller.defaultPackage.x86_64-linux;
             })
           ];
-          nixpkgs.config.allowUnfree = true;
         })
       ] ++ (with nixos-hardware.nixosModules; [
         common-pc
@@ -86,7 +85,6 @@
               twitch2youtube = twitch2youtube.defaultPackage.x86_64-linux;
             })
           ];
-          nixpkgs.config.allowUnfree = true;
         })
       ] ++ (with nixos-hardware.nixosModules; [
         common-pc
@@ -127,7 +125,6 @@
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
             })
           ];
-          nixpkgs.config.allowUnfree = true;
         })
       ] ++ (with nixos-hardware.nixosModules; [
         common-pc
@@ -168,7 +165,6 @@
               deploy-cs = deploy-cs.defaultPackage.x86_64-linux;
             })
           ];
-          nixpkgs.config.allowUnfree = true;
         })
       ];
       #specialArgs = {
