@@ -14,4 +14,6 @@
   home.homeDirectory = "/home/krutonium";
   home.sessionVariables.EDITOR = "nano";
   home.sessionVariables.VISUAL = "nano";
+
+  home.stateVersion = "22.05";
 }

@@ -31,7 +31,7 @@ in
       ../services/create.nix
       #../services/nextcloud.nix
       #../services/seafile.nix
-      ../users/krutonium/user.nix
+      ../users/krutonium/user_server.nix
       ../users/resin/user.nix
       ../users/root/user.nix
       ../users/kea/user.nix
