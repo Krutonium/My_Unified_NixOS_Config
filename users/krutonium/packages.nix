@@ -93,6 +93,7 @@ in
       pkgs.unzip
       pkgs.yt-dlp
       pkgs.matrix-synapse-tools.synadm
+      pkgs.trash-cli
 
       # Wine/Windows Shit
       pkgs.lutris
