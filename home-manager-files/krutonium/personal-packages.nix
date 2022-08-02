@@ -89,14 +89,14 @@ in
       # Steam is already installed at the system level because it has special requirements
       pkgs.openrct2
       pkgs.jstest-gtk
-      pkgs-unstable.polymc
-      pkgs-unstable.mangohud
-      pkgs-unstable.goverlay
-      pkgs-unstable.dolphin-emu-beta
+      pkgs.polymc
+      pkgs.mangohud
+      pkgs.goverlay
+      pkgs.dolphin-emu-beta
       pkgs.heroic
       pkgs.ppsspp
-      #nur.repos.iagocq.parsec
-      #nur.repos.dukzcry.gamescope
+      nur.repos.iagocq.parsec
+      nur.repos.dukzcry.gamescope
       #gamescope
 
       # File Sync
@@ -106,14 +106,12 @@ in
       pkgs.seafile-client
 
       # Communications
-      pkgs-unstable.tdesktop
+      pkgs.tdesktop
       pkgs.betterdiscord-installer
       pkgs.betterdiscordctl
       #nixpkgs-unstable.discord
       # Installed Elsewhere - Fucks up Desktop Capture
-      pkgs-unstable.element-desktop
+      pkgs.element-desktop
       #pkgs.nheko
     ];
-  home.file.".jdk/17/".source = pkgs.openjdk17;
-  home.file.".jdk/8/".source = pkgs.openjdk8;
 }

@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-22.05";
@@ -14,7 +14,7 @@
     twitch2youtube.url = "git+https://gitea.krutonium.ca/Krutonium/Twitch2YouTube.git";
     twitch2youtube.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-unstable, nur, home-manager, betterfancontroller, deploy-cs, twitch2youtube }: {
+  outputs = { self, nixpkgs, nixos-hardware, nur, home-manager, betterfancontroller, deploy-cs, twitch2youtube }: {
   #outputs = { inputs }: {
     ################################################################################
     # uGamingPC
@@ -29,12 +29,12 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
-          };
+          #home-manager.extraSpecialArgs = {
+          #  pkgs-unstable = import nixpkgs-unstable {
+          #    system = "x86_64-linux";
+          #    config.allowUnfree = true;
+          #  };
+          #};
         }
         ({ pkgs, ... }: {
           nixpkgs.overlays = [
@@ -50,12 +50,12 @@
         common-cpu-amd
         common-gpu-amd
       ]);
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      };
+      #specialArgs = {
+      #  pkgs-unstable = import nixpkgs-unstable {
+      #    system = "x86_64-linux";
+      #    config.allowUnfree = true;
+      #  };
+      #};
     };
 
     ################################################################################
@@ -71,12 +71,12 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
-          };
+          #home-manager.extraSpecialArgs = {
+          #  pkgs-unstable = import nixpkgs-unstable {
+          #    system = "x86_64-linux";
+          #    config.allowUnfree = true;
+          #  };
+          #};
         }
         ({ pkgs, ... }: {
           nixpkgs.overlays = [
@@ -91,12 +91,12 @@
         common-pc-ssd
         common-cpu-intel
       ]);
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      };
+      #specialArgs = {
+      #  pkgs-unstable = import nixpkgs-unstable {
+      #    system = "x86_64-linux";
+      #    config.allowUnfree = true;
+      #  };
+      #};
     };
 
     ################################################################################
@@ -112,12 +112,12 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
-          };
+          #home-manager.extraSpecialArgs = {
+          #  pkgs-unstable = import nixpkgs-unstable {
+          #    system = "x86_64-linux";
+          #    config.allowUnfree = true;
+          #  };
+          #};
         }
         ({ pkgs, ... }: {
           nixpkgs.overlays = [
@@ -131,12 +131,12 @@
         common-pc-ssd
         common-cpu-intel
       ]);
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      };
+      #specialArgs = {
+      #  pkgs-unstable = import nixpkgs-unstable {
+      #    system = "x86_64-linux";
+      #    config.allowUnfree = true;
+      #  };
+      #};
     };
 
     #####
@@ -152,12 +152,12 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            pkgs-unstable = import nixpkgs-unstable {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
-          };
+          #home-manager.extraSpecialArgs = {
+          #  pkgs-unstable = import nixpkgs-unstable {
+          #    system = "x86_64-linux";
+          #    config.allowUnfree = true;
+          #  };
+          #};
         }
         ({ pkgs, ... }: {
           nixpkgs.overlays = [
@@ -167,12 +167,12 @@
           ];
         })
       ];
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      };
+      #specialArgs = {
+      #  pkgs-unstable = import nixpkgs-unstable {
+      #    system = "x86_64-linux";
+      #    config.allowUnfree = true;
+      #  };
+      #};
     };
   };
 }
