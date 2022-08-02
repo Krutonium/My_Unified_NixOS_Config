@@ -1,4 +1,4 @@
-{ config, pkgs-unstable, pkgs, lib, fetchzip, ... }:
+{ config, pkgs, lib, fetchzip, ... }:
 let
   openrgb-src = pkgs.fetchFromGitLab {
     owner = "CalcProgrammer1";
@@ -7,7 +7,7 @@ let
     sha256 = "sha256-JPpFkpiqeh2unOGdjUSfgr/q/uC+fFDy2f6PetIHQFQ=";
   };
 
-  openrgb = pkgs-unstable.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
+  openrgb = pkgs.openrgb.override { fetchFromGitLab = lib.const (openrgb-src); };
 in
 {
   environment.systemPackages = [
