@@ -95,8 +95,8 @@ in
       pkgs.dolphin-emu-beta
       pkgs.heroic
       pkgs.ppsspp
-      nur.repos.iagocq.parsec
-      nur.repos.dukzcry.gamescope
+      #nur.repos.iagocq.parsec
+      #nur.repos.dukzcry.gamescope
       #gamescope
 
       # File Sync
