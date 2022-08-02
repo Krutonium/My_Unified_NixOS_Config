@@ -15,7 +15,5 @@ in
     ../packages/discord.nix
     ../packages/candy-icons.nix
   ];
-  home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
-  home-manager.users.root = import ../home-manager-files/root/root.nix;
   networking.hostName = Hostname;
 }

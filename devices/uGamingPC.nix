@@ -31,8 +31,6 @@ in
     ../packages/badlion.nix
     ../tweaks/mesa.nix
   ];
-  home-manager.users.krutonium = import ../home-manager-files/krutonium/home.nix;
-  home-manager.users.root = import ../home-manager-files/root/root.nix;
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
