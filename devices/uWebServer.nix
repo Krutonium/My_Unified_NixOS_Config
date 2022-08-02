@@ -35,7 +35,7 @@ in
       ../users/resin/user.nix
       ../users/root/user.nix
       ../users/kea/user.nix
-      ../users/gameserver.nix
+      ../users/gameserver/user.nix
       ../services/synapse.nix
       #../services/invidious.nix
       #../packages/virtual_machines.nix
