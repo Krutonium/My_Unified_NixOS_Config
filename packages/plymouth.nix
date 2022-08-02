@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 let
   aperture_files = builtins.fetchurl {
     url = "https://github.com/irth/plymouth-theme-aperture/archive/refs/heads/master.zip";

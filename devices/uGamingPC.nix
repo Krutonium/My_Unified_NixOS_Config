@@ -22,7 +22,7 @@ in
     ../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix
-    ../packages/KeyboardStuff/openrgb.nix
+    #../packages/KeyboardStuff/openrgb.nix
     ../packages/KeyboardStuff/flasher.nix
     ../packages/virtual_machines.nix
     ../packages/candy-icons.nix

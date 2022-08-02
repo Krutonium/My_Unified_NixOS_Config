@@ -1,6 +1,5 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 let
-  unstable = pkgs-unstable;
   kernel = pkgs.linuxPackages;
 in
 {
@@ -79,7 +78,7 @@ in
     pkgs.git
     pkgs.screen
     pkgs.steamcmd
-    unstable.plex
+    pkgs.plex
     pkgs.ldgallery
     pkgs.twitch2youtube
     pkgs.yt-dlp
