@@ -95,7 +95,7 @@ in
   };
 
   nix = {
-    package = pkgs-unstable.nixUnstable;
+    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
