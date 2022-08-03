@@ -30,6 +30,7 @@ in
     size = 1024 * 16; #16GB
   }];
   networking.hostName = Hostname;
+  networking.useNetworkd = true;
   # One could argue this should be a tweak, but honestly it's very hardware specific.
   services.xserver.videoDrivers = [ "modesetting" ];
   boot.kernelParams = [ "acpi_backlight=native" ];

@@ -37,7 +37,6 @@ in
     networkmanager = {
       enable = true;
     };
-    useNetworkd = true;
     tempAddresses = "disabled";
     firewall = {
       enable = true;

@@ -69,5 +69,6 @@ in
   #  Option         "AllowIndirectGLXProtocol" "off"
   #  Option         "TripleBuffer" "on"
   #'';
+  networking.useNetworkd = true;
   networking.hostName = Hostname;
 }

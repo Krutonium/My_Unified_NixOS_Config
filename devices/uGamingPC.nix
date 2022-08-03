@@ -32,6 +32,7 @@ in
     ../tweaks/mesa.nix
   ];
   networking.hostName = Hostname;
+  networking.useNetworkd = true;
   hardware.enableAllFirmware = true;
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
 }
