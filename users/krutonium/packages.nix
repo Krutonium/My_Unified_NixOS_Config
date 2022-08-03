@@ -20,6 +20,8 @@ in
         ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider
       '';
       rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
+
+
     in
     [
       # Browser
