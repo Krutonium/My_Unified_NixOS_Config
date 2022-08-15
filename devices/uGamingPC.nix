@@ -30,6 +30,7 @@ in
     ../services/mount_sshfs.nix
     ../packages/badlion.nix
     ../tweaks/mesa.nix
+    ../packages/VR.nix
   ];
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
