@@ -42,6 +42,7 @@ in
       #../tweaks/r9_390.nix
       #../packages/GPU_Passthrough/enter_the_matrix.nix
       ../services/update.nix
+      ../services/dns.nix
     ];
   #swapDevices = [{
   #  device = "/persist/swap";

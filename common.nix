@@ -36,6 +36,7 @@ in
   networking = {
     networkmanager = {
       enable = true;
+      insertNameservers = [ "192.168.0.10" ];
     };
     tempAddresses = "disabled";
     firewall = {
