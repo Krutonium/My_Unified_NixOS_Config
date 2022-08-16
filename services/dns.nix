@@ -1,4 +1,4 @@
-{ pkgs, config }:
+{ pkgs, config, ...}:
 {
 services.coredns.enable = true;
 services.coredns.config =
