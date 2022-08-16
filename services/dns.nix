@@ -8,11 +8,12 @@ services.coredns.config =
       forward . 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4
       cache
     }
-
-    local {
-      template IN A  {
-          answer "{{ .Name }} 0 IN A 127.0.0.1"
-      }
+    hosts {
+       192.168.0.10 uwebserver.local
+       192.168.0.20 umsilaptop.local
+       192.168.0.40 ugamingpc.local
+       fallthrough
+    }
     }
   '';
 networking.firewall.allowedTCPPorts = [ 53 ];
