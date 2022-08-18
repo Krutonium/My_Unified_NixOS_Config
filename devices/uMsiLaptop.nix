@@ -53,7 +53,7 @@ in
   #  system = "x86_64-linux";
   #};
 
-  #environment.systemPackages = [ nvidia-offload ];
+  environment.systemPackages = [ nvidia-offload ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
