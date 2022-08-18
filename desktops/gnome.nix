@@ -32,11 +32,6 @@
     };
   };
   hardware = {
-    nvidia = {
-      modesetting = {
-        enable = false;
-      };
-    };
     opengl = {
       enable = true;
     };
