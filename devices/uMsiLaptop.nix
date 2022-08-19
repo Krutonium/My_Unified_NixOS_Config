@@ -53,7 +53,7 @@ in
   #  system = "x86_64-linux";
   #};
 
-  environment.systemPackages = [ nvidia-offload teamviewer ];
+  environment.systemPackages = [ nvidia-offload pkgs.teamviewer ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
