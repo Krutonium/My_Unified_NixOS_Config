@@ -61,10 +61,10 @@ in
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.prime = {
-    #offload.enable = true;
+    offload.enable = true;
     nvidiaBusId = "PCI:1:0:0";
     intelBusId = "PCI:0:2:0";
-    sync.enable = true;
+    #sync.enable = true;
   };
   #services.xserver.screenSection = ''
   #  Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
