@@ -35,7 +35,6 @@ in
     ../packages/badlion.nix
     ../services/mount_sshfs.nix
     ../tweaks/mesa.nix
-    ../packages/apple-fonts.nix
   ];
   swapDevices = [{
     device = "/swap";
