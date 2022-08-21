@@ -41,6 +41,7 @@ in
     size = 1024 * 16; #16GB
   }];
 
+  services.xserver.videoDrivers = [ "zink" "nvidia" "modesetting" ];
 
   #environment.systemPackages = [ parsec ];
 
