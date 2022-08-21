@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
+let
+  mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "auto" ]; };
+in
 {
+  environment.systemPackages = [ mesa ];
   services = {
     xserver = {
       enable = true;
