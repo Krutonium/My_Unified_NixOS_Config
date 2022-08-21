@@ -1,6 +1,6 @@
 {config, pkgs, fetchzip, ...}:
 let
-  fontFiles = builtins.fetchzip {
+  fontFiles = pkgs.fetchzip {
     url = "https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/archive/refs/heads/master.zip";
     sha256 = "";
     stripRoot = false;
