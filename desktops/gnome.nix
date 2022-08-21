@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "auto" ]; };
+  mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" ]; };
 in
 {
   environment.systemPackages = [ mesa ];
