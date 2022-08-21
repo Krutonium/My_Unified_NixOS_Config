@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-
+  mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "auto" ]; };
 in
 {
   # First, everything that applies to all machines:
@@ -85,6 +85,7 @@ in
     pkgs.unison
     pkgs.p7zip
     pkgs.doas
+    mesa
   ];
 
   services = {
@@ -109,6 +110,8 @@ in
   users = {
     mutableUsers = false;
   };
+
+
 
   system = {
     stateVersion = "22.05";
