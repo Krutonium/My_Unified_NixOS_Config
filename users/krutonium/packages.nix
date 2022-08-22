@@ -111,6 +111,7 @@ in
       pkgs.dolphin-emu-beta
       pkgs.heroic
       pkgs.steam-run
+      pkgs.yuzu-ea
 
       # File Sync
       pkgs.dropbox
