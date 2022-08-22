@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
-  mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" ]; };
+  mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ]; };
+  mesa32 = pkgs.driversi686Linux.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ]; };
 in
 {
-  environment.systemPackages = [ mesa ];
   services = {
     xserver = {
       enable = true;
@@ -38,6 +38,8 @@ in
   hardware = {
     opengl = {
       enable = true;
+      #package = mesa;
+      #package32 = mesa32;
     };
     pulseaudio = {
       enable = false;
