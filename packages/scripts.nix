@@ -55,7 +55,11 @@ let
   mkSticker = pkgs.writeShellScriptBin "mkSticker" ''
     ffmpeg -i $1 -vf 'scale=if(gte(a\,512/512)\,min(512\,iw)\,-2):if(gte(a\,512/512)\,-2\,min(512\,ih))' $2
   '';
+
+  search = pkgs.writeShellScriptBin "search" ''
+    nix search nixpkgs $@
+  '';
 in
 {
-  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker ];
+  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker search];
 }
