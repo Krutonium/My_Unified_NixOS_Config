@@ -54,6 +54,7 @@ in
       pkgs.gitkraken
       dotnet
       pkgs.godot
+      pkgs.godot-export-templates
 
       # Keyboard Stuff
       pkgs.unzip
