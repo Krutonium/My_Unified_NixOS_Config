@@ -53,6 +53,7 @@ in
       #pkgs.jetbrains.idea-ultimate
       pkgs.gitkraken
       dotnet
+      pkgs.godot
 
       # Keyboard Stuff
       pkgs.unzip
