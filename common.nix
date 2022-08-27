@@ -63,6 +63,11 @@ in
   # https://github.com/NixOS/nixpkgs/issues/147783
   systemd = {
     enableEmergencyMode = false;
+    network = {
+      wait-online = {
+        anyInterface = true;
+      };
+    };
   };
 
   #Install the Base Packages that all systems should have.

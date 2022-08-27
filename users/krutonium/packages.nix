@@ -73,6 +73,10 @@ in
       pkgs.obs-studio
       pkgs.plexamp
 
+      # Audio Filtering
+      pkgs.easyeffects
+      pkgs.gnomeExtensions.easyeffects-preset-selector
+
       # Random Stuff
       pkgs.htop
       pkgs.gimp
