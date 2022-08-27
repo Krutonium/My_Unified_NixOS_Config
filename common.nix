@@ -43,6 +43,8 @@ in
     firewall = {
       enable = true;
     };
+    dhcpcd.wait = "background";
+    dhcpcd.extraConfig = "noarp";
     nameservers = [
       "8.8.8.8"
       "1.1.1.1"
