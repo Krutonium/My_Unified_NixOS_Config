@@ -70,6 +70,9 @@ in
         anyInterface = true;
       };
     };
+    services = {
+      systemd-udev-settle.enable = false;
+    };
   };
 
   #Install the Base Packages that all systems should have.
