@@ -11,7 +11,7 @@
   security.acme.acceptTerms = true;
   services.nginx.virtualHosts = {
     "krutonium.ca" = {
-      addSSL = true;
+      forceSSL = true;
       enableACME = true;
       root = "/var/www/home/";
       serverAliases = [ "www.krutonium.ca" ];
