@@ -3,6 +3,48 @@ let
 
 in
 {
+  nixpkgs.overlays = [
+  (self: super: {
+     godot-mono = with super;
+     let
+       arch = "64";
+       version = "3.5";
+       releaseName = "stable";
+       subdir = "";
+       pkg = stdenv.mkDerivation  {
+         name = "godot-mono-unwrapped";
+         buildInputs = [ unzip ];
+         unpackPhase = "unzip $src";
+         version = version;
+         src = fetchurl {
+           url = "https://downloads.tuxfamily.org/godotengine/${version}${subdir}/mono/Godot_v${version}-${releaseName}_mono_x11_${arch}.zip";
+           sha256 = "sha256-rQyhvfgiqa81Pxf4Nz2/0yhi5Vyp+CMNx1K3hAZWuJ4=";
+         };
+         installPhase = ''
+           cp -r . $out
+         '';
+       };
+     in buildFHSUserEnv {
+       name = "godot-mono";
+       targetPkgs = pkgs: (with pkgs;
+         [ alsaLib
+           dotnetCorePackages.sdk_5_0
+           libGL
+           libpulseaudio
+           udev
+           xorg.libX11
+           xorg.libXcursor
+           xorg.libXext
+           xorg.libXi
+           xorg.libXinerama
+           xorg.libXrandr
+           xorg.libXrender
+           zlib
+         ]);
+       runScript = "${pkg.outPath}/Godot_v${version}-${releaseName}_mono_x11_${arch}/Godot_v${version}-${releaseName}_mono_x11.${arch}";
+     };
+   })
+  ];
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
   home.packages =
     let
@@ -20,8 +62,6 @@ in
         ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider
       '';
       rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
-
-
     in
     [
       # Browser
@@ -53,7 +93,7 @@ in
       #pkgs.jetbrains.idea-ultimate
       pkgs.gitkraken
       dotnet
-      pkgs.godot
+      pkgs.godot-mono
       pkgs.godot-export-templates
 
       # Keyboard Stuff
