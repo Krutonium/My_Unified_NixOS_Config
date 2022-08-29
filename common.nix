@@ -88,7 +88,8 @@ in
     pkgs.usbutils
     pkgs.pinentry-gnome
     pkgs.ripgrep
-    pkgs.bpytop
+    pkgs.btop
+    pkgs.killall
     pkgs.nix-index
     pkgs.deploy-cs
     pkgs.appimage-run
