@@ -18,5 +18,5 @@
       keyutils
     ];
   };
-  environment.systemPackages = [ pkgs.gamescope pkgs.mangohud ];
+  environment.systemPackages = [ pkgs.cmake pkgs.gamescope pkgs.mangohud ];
 }
