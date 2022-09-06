@@ -18,7 +18,7 @@ let
     buildCommand =
     ''
        mkdir -p $out/share/fonts
-       cp -R $src/*.otf $out/share/fonts/opentype/
+       cp -R $src/*otf $out/share/fonts/opentype/
     '';
   };
   MinecraftFont2 = pkgs.stdenv.mkDerivation {
@@ -28,7 +28,7 @@ let
     buildCommand =
     ''
        mkdir -p $out/share/fonts
-       cp -R $src/*.otf $out/share/fonts/opentype/
+       cp -R $src/*otf $out/share/fonts/opentype/
     '';
   };
 in
