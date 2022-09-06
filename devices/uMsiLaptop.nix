@@ -35,6 +35,7 @@ in
     ../packages/badlion.nix
     ../services/mount_sshfs.nix
     ../tweaks/mesa.nix
+    ../packages/SoftEtherClient.nix
   ];
   swapDevices = [{
     device = "/swap";
