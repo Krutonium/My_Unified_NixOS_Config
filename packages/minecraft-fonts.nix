@@ -18,8 +18,8 @@ let
     buildCommand =
     ''
        mkdir -p $out/share/fonts
-       cp $src/Minecraft-Bold.otf $out/share/fonts/opentype/
-       cp $src/Minecraft.otf $out/share/fonts/opentype/
+       cp $src/Minecraft-Font-main/Minecraft-Bold.otf $out/share/fonts/opentype/
+       cp $src/Minecraft-Font-main/Minecraft.otf $out/share/fonts/opentype/
     '';
   };
   MinecraftFont2 = pkgs.stdenv.mkDerivation {
