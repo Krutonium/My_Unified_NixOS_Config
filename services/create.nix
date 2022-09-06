@@ -22,6 +22,6 @@ in
       steam-run screen -DmS ozone ${workingdir}/run.sh
       #./run.sh
     '';
-    enable = true;
+    enable = false;
   };
 }
