@@ -20,6 +20,3 @@ Go forth and Enjoy!
 `pushConfig` pushes the current config to the repo
 `rebootEverything` reboots all computers on the LAN, useful after big updates
 `rebootCancel` cancels reboots on all computers on the LAN.
-
-
-Questions? Comments? Open an Issue or contact me on Telegram [@Krutonium](t.me/Krutonium)!

@@ -8,6 +8,7 @@ in
     [
       ./packages/scripts.nix
       ./packages/apple-fonts.nix
+      ./packages/minecraft-fonts.nix
       #./packages/remote-builders.nix
     ];
 
