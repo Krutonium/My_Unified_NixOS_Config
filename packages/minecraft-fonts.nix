@@ -17,7 +17,7 @@ let
     buildInputs = [ ];
     buildCommand =
     ''
-       mkdir -p $out/share/fonts
+       mkdir -p $out/share/fonts/opentype/
        cp $src/Minecraft-Font-main/Minecraft-Bold.otf $out/share/fonts/opentype/
        cp $src/Minecraft-Font-main/Minecraft.otf $out/share/fonts/opentype/
     '';
