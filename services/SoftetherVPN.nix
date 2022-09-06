@@ -1,6 +1,6 @@
 { pkgs, config, ...}:
 {
- networking.firewall.allowedTCPPorts = [ 5555 ];
+ networking.firewall.allowedTCPPorts = [ 5555 1194 992 ];
  # SoftetherVPN Server, but Clients will use built in VPN solutions I think
  services.softether = {
    enable = true;
