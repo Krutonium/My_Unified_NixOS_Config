@@ -2,7 +2,7 @@
 let
   mcFont1 = pkgs.fetchzip {
     url = "https://github.com/IdreesInc/Minecraft-Font/archive/refs/heads/master.zip";
-    sha256 = "sha256-ZsDMSpMvl9m8dtUlQzDREe3IozC0j/iRLWoUWXfXfNo=";
+    sha256 = "sha256-R7QZHKlcbHSJf+YVXq/GWsroH870znKVKP5wYz+iRUs=";
     stripRoot = false;
   };
   mcFont2 = pkgs.fetchzip {
