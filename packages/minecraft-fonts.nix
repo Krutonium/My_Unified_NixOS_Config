@@ -11,7 +11,7 @@ let
     stripRoot = false;
   };
 
-  mcFont1 = pkgs.stdenv.mkDerivation {
+  MinecraftFont1 = pkgs.stdenv.mkDerivation {
     name = "Minecraft Font";
     src = mcFont1;
     buildInputs = [ ];
@@ -21,7 +21,7 @@ let
        cp -R $src/*.otf $out/share/fonts/opentype/
     '';
   };
-  mcFont2 = pkgs.stdenv.mkDerivation {
+  MinecraftFont2 = pkgs.stdenv.mkDerivation {
     name = "Minecraft Monospace Font";
     src = mcFont2;
     buildInputs = [ ];
@@ -33,5 +33,5 @@ let
   };
 in
 {
-  fonts.fonts = [ mcFont1 mcFont2 ];
+  fonts.fonts = [ MinecraftFont1 MinecraftFont2 ];
 }
