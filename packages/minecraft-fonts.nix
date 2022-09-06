@@ -29,7 +29,7 @@ let
     buildCommand =
     ''
        mkdir -p $out/share/fonts/opentype
-       cp $src/Minecraft-Monospace-Font-main/MinecraftMono.otf $out/share/fonts/opentype/
+       cp $src/Monocraft-main/MinecraftMono.otf $out/share/fonts/opentype/
     '';
   };
 in
