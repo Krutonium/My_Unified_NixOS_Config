@@ -43,6 +43,7 @@ in
       #../packages/GPU_Passthrough/enter_the_matrix.nix
       ../services/update.nix
       ../services/dns.nix
+      ../services/SoftetherVPN.nix
     ];
   #swapDevices = [{
   #  device = "/persist/swap";
