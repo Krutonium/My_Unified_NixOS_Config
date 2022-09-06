@@ -7,7 +7,7 @@ let
   };
   mcFont2 = pkgs.fetchzip {
     url = "https://github.com/IdreesInc/Monocraft/archive/refs/heads/master.zip";
-    sha256 = "sha256-ZsDMSpMvl9m8dtUlQzDREe3IozC0j/iRLWoUWXfXfNo=";
+    sha256 = "sha256-5nyLHx2P/jbXszWAwInClYhG/35OSEWRm+YJpRPgFgs=";
     stripRoot = false;
   };
 
@@ -28,8 +28,8 @@ let
     buildInputs = [ ];
     buildCommand =
     ''
-       mkdir -p $out/share/fonts
-       cp $src/MinecraftMono.otf $out/share/fonts/opentype/
+       mkdir -p $out/share/fonts/opentype
+       cp $src/Minecraft-Monospace-Font-main/MinecraftMono.otf $out/share/fonts/opentype/
     '';
   };
 in
