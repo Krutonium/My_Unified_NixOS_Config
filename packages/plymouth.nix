@@ -22,7 +22,7 @@ let
   # Windows 95 Boot Screen
   win95_files = builtins.fetchurl {
     url = "https://github.com/grassmunk/Chicago95/archive/refs/heads/master.zip";
-    sha256 = "";
+    sha256 = "07khmqq0rp8h23gx0adm8rlycvs7vydqml45ajjj8xak479p9pg7";
   };
 
     win95-plymouth = pkgs.stdenv.mkDerivation {
