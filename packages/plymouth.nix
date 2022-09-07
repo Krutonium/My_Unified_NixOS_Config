@@ -22,7 +22,7 @@ let
   # Windows 95 Boot Screen
   win95_files = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/Krutonium/FilesForNixOS/main/Chicago95.zip";
-    sha256 = "07khmqq0rp8h23gx0adm8rlycvs7vydqml45ajjj8xak479p9pg7";
+    sha256 = "095i1nrmc9ldvq869jl80p04njd52qvl0cbkgchi2sjlg27cdvrf";
   };
 
     win95-plymouth = pkgs.stdenv.mkDerivation {
@@ -30,8 +30,9 @@ let
         buildInputs = [ pkgs.unzip pkgs.moreutils ];
         src = win95_files;
         buildCommand = ''
-        outDir="$out/share/plymouth/themes/Chicago95"
-        mkdir -p $outDir
+        outDir="$out/share/plymouth/themes/"
+        mkdir -p $outDir/Chicago95
+        unzip $src -d $outDir/Chicago95
         sed "s%/usr/share/plymouth/themes/%$outDir%g" $outDir/Chicago95/Chicago95.plymouth | sponge $outDir/Chicago95/Chicago95.plymouth
         '';
     };
