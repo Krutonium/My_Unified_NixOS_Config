@@ -43,7 +43,7 @@ in
   }];
 
   services.xserver.videoDrivers = [ "zink" "nvidia" "modesetting" ];
-
+  boot.kernelModules = [ "rtsx_pci" ];
   #environment.systemPackages = [ parsec ];
 
   boot.kernelParams = [ "mem_sleep_default=deep" ];
