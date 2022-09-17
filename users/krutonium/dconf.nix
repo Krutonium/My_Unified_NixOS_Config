@@ -104,9 +104,13 @@ in
       pinned-app-list = [
         "Firefox" "" "firefox.desktop"
         "Terminal" "" "org.gnome.Terminal.desktop"
-        "Element" "" "element-desktop"
+        "Element" "" "element-desktop.desktop"
         "Telegram" "" "telegramdesktop.desktop"
         "Discord" "" "discord.desktop"
+        "PolyMC" "" "org.polymc.PolyMC.desktop"
+        "OBS Studio" "" "com.obsproject.Studio.desktop"
+        "IntelliJ IDEA" "" "idea-ultimate.desktop"
+        "IntelliJ Rider" "" "rider.desktop"
       ];
     };
 
