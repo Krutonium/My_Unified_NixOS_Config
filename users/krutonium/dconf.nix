@@ -101,7 +101,13 @@ in
       menu-hotkey = "Super_L";
       override-hot-corners = true;
       #pinned-app-list = [ "Firefox" "" "firefox.desktop" "Terminal" "" "org.gnome.Terminal.desktop" "ArcMenu Settings" "ArcMenu_ArcMenuIcon" "gnome-extensions prefs arcmenu@arcmenu.com" ];
-      pinned-app-list = [ "Firefox" "" "firefox.desktop" ];
+      pinned-app-list = [
+        "Firefox" "" "firefox.desktop"
+        "Terminal" "" "org.gnome.Terminal.desktop"
+        "Element" "" "element-desktop"
+        "Telegram" "" "telegramdesktop.desktop"
+        "Discord" "" "discord.desktop"
+      ];
     };
 
     "org/gnome/shell/extensions/dash-to-panel" = {
