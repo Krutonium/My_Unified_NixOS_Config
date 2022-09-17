@@ -113,7 +113,6 @@ in
       pkgs.vlc
       pkgs.spotify
       pkgs.obs-studio
-      pkgs.plexamp
 
       # Audio Filtering
       pkgs.easyeffects
