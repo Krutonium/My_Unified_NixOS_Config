@@ -103,6 +103,7 @@ in
       #pinned-app-list = [ "Firefox" "" "firefox.desktop" "Terminal" "" "org.gnome.Terminal.desktop" "ArcMenu Settings" "ArcMenu_ArcMenuIcon" "gnome-extensions prefs arcmenu@arcmenu.com" ];
       pinned-app-list = [
         "Firefox" "" "firefox.desktop"
+        "Steam" "" "steam.desktop"
         "Terminal" "" "org.gnome.Terminal.desktop"
         "Element" "" "element-desktop.desktop"
         "Telegram" "" "telegramdesktop.desktop"
