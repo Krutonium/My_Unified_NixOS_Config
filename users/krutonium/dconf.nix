@@ -164,5 +164,9 @@ in
       picture-options = "zoom";
       picture-uri = "file://${./wallpaper_steam.png}";
     };
+
+    "org/gnome/desktop/interface" = {
+      enable-hot-corners = false;
+    };
   };
 }
