@@ -31,6 +31,7 @@ in
     ../packages/badlion.nix
     ../tweaks/mesa.nix
     ../packages/VR.nix
+    ../tweaks/backlight.nix
   ];
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
