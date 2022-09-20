@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 let
 
 in
@@ -165,9 +165,7 @@ in
       pkgs.seafile-client
 
       # Communications
-      pkgs.tdesktop
-      pkgs.betterdiscord-installer
-      pkgs.betterdiscordctl
+      pkgs-unstable.tdesktop
       pkgs.element-desktop
     ];
 }
