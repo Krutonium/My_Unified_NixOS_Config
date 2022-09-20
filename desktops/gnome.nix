@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 let
   mesa = pkgs.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ]; };
   mesa32 = pkgs.driversi686Linux.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ]; };
@@ -56,12 +56,11 @@ in
     };
   };
 
-  #environment.systemPackages = with pkgs; [
-  #  gdb
-  #  gnome.gnome-session
-  #  gnome.mutter
-  #  gnome.gnome-shell
-  #];
+  environment.systemPackages = with pkgs-unstable; [
+    gnome.gnome-session
+    gnome.mutter
+    gnome.gnome-shell
+  ];
   #environment.enableDebugInfo = true;
   #nixpkgs.overlays = [
   #  (final: prev: {
