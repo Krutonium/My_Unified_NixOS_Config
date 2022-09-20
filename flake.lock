@@ -108,6 +108,22 @@
         "type": "github"
       }
     },
+    "pkgs-unstable": {
+      "locked": {
+        "lastModified": 1663494472,
+        "narHash": "sha256-fSowlaoXXWcAM8m9wA6u+eTJJtvruYHMA+Lb/tFi/qM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f677051b8dc0b5e2a9348941c99eea8c4b0ff28f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "betterfancontroller": "betterfancontroller",
@@ -116,6 +132,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
+        "pkgs-unstable": "pkgs-unstable",
         "twitch2youtube": "twitch2youtube"
       }
     },
