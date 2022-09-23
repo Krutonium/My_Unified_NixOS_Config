@@ -144,7 +144,6 @@
 
     nixosConfigurations."isoImage" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      isoImage.squashfsCompression = "gzip -Xcompression-level 1";
       modules = [
         ./common.nix
         ./devices/uIsoDevice.nix

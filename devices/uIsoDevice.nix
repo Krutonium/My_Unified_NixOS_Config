@@ -8,7 +8,7 @@ in
   boot.kernelPackages = kernel;
   imports = [
     ../users/krutonium/user.nix
-    ../users/root.nix
+    ../users/root/user.nix
     ../tweaks/mitigations.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
