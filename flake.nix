@@ -15,13 +15,13 @@
     twitch2youtube.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, nixpkgs, pkgs-unstable, nixos-hardware, nur, home-manager, betterfancontroller, deploy-cs, twitch2youtube }: {
-  #outputs = { inputs }: {
     ################################################################################
     # uGamingPC
     ################################################################################
 
     nixosConfigurations.uGamingPC = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      nix.registry.nixpkgs.flake = nixpkgs;
       modules = [
         ./common.nix
         ./devices/uGamingPC.nix
@@ -64,6 +64,7 @@
 
     nixosConfigurations.uWebServer = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      nix.registry.nixpkgs.flake = nixpkgs;
       modules = [
         ./common.nix
         ./devices/uWebServer.nix
@@ -105,6 +106,7 @@
 
     nixosConfigurations.uMsiLaptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      nix.registry.nixpkgs.flake = nixpkgs;
       modules = [
         ./common.nix
         ./devices/uMsiLaptop.nix
@@ -146,6 +148,7 @@
     nixosConfigurations."isoImage" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       isoImage.squashfsCompression = "gzip -Xcompression-level 1";
+      nix.registry.nixpkgs.flake = nixpkgs;
       modules = [
         ./common.nix
         ./devices/uIsoDevice.nix
