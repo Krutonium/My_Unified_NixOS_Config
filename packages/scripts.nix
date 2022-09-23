@@ -60,12 +60,12 @@ let
     nix search nixpkgs $@
   '';
 
-  buildISO = pkgs.writeShellScriptBin "buildISO" ''
+  buildIso = pkgs.writeShellScriptBin "buildIso" ''
     cd ${RepoPath}
     nix build .#nixosConfigurations.isoImage.config.system.build.isoImage
     echo $PWD/result
   '';
 in
 {
-  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker search];
+  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker search buildIso];
 }
