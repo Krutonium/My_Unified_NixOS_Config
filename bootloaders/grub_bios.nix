@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   installTarget = "/dev/sda";
-  devices = "nodev";
+  devices = [ "nodev" ];
   default = "saved";
 in
 {
