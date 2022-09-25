@@ -23,6 +23,14 @@
       "isDeployTarget": true,
       "User": "root",
       "Comment": "My Laptop - For bedside entertainment!"
+    },
+    {
+      "Name": "uHPLaptop",
+      "Ip": "192.168.0.30",
+      "isBuildHost": false,
+      "isDeployTarget": true,
+      "User": "root",
+      "Comment": "HP Laptop"
     }
   ],
   "BuildHostEnabled": false,
