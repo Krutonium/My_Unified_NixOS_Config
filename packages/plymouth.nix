@@ -21,7 +21,7 @@ let
 
   # Windows 95 Boot Screen
   win95_files = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/Krutonium/FilesForNixOS/main/Chicago95.zip";
+    url = "https://gitea.krutonium.ca/Krutonium/NixOS_Files/raw/branch/master/Chicago95.zip";
     sha256 = "095i1nrmc9ldvq869jl80p04njd52qvl0cbkgchi2sjlg27cdvrf";
   };
 

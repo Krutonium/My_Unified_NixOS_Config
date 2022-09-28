@@ -7,8 +7,9 @@ in
   imports =
     [
       ./packages/scripts.nix
-      ./packages/apple-fonts.nix
-      ./packages/minecraft-fonts.nix
+      ./packages/custom-fonts.nix
+      #./packages/apple-fonts.nix
+      #./packages/minecraft-fonts.nix
       #./packages/remote-builders.nix
     ];
 
