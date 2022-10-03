@@ -2,7 +2,7 @@
 let
   pkgSrc = builtins.fetchurl {
     url = "https://client-updates-cdn77.badlion.net/BadlionClient";
-    sha256 = "0ixngc740nxdlqhkykfqyk6b5ypmk0bhp601z5ycnf5xp9mrmccf";
+    sha256 = "1927kxza1zfyn6sh6amysm4p8zym35saf4wiblsa2ngw599m8g3k";
   };
   BadlionClient = pkgs.appimageTools.wrapType2 { # or wrapType1
     name = "BadlionClient";
