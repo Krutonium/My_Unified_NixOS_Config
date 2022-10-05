@@ -7,5 +7,5 @@
       "/home/krutonium/share" = {
         id = "homeshare";
     };
-  };
-};
+  }
+}
