@@ -162,7 +162,6 @@ in
       #pkgs.nextcloud-client
       pkgs.transmission-remote-gtk
       #pkgs.seafile-client
-      pkgs.syncthing
 
       # Communications
       pkgs-unstable.tdesktop
