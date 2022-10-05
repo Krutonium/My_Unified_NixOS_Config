@@ -29,8 +29,8 @@ in
       #../services/satisfactory_server.nix
       #../services/project_ozone_3.nix
       ../services/create.nix
-      ../services/nextcloud.nix
-      #../services/seafile.nix
+      #../services/nextcloud.nix
+      ../services/seafile.nix
       ../users/krutonium/user_server.nix
       ../users/resin/user.nix
       ../users/root/user.nix
