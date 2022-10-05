@@ -1,7 +1,7 @@
 { pkgs-unstable, config, ...}:
 {
   services.syncthing = {
-    enable = true
+    enable = true;
     user = "krutonium";     
     folders = {
       "/home/krutonium/share" = {
