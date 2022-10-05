@@ -161,7 +161,9 @@ in
       pkgs.dropbox
       #pkgs.nextcloud-client
       pkgs.transmission-remote-gtk
-      pkgs.seafile-client
+      #pkgs.seafile-client
+      pkgs.syncthing
+      pkgs.syncthing-gtk
 
       # Communications
       pkgs-unstable.tdesktop

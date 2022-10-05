@@ -98,8 +98,7 @@ in
     pkgs.unison
     pkgs.p7zip
     pkgs.pciutils
-    pkgs.android-tools
-    
+    pkgs.android-tools    
   ];
 
   services = {
