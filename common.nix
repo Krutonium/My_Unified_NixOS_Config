@@ -40,7 +40,7 @@ in
   networking = {
     networkmanager = {
       enable = true;
-      insertNameservers = [ "99.248.154.165" "2607:fea8:7a43:7600:428d:5cff:fe54:8996" ];
+      insertNameservers = [ "99.248.154.165" "2607:fea8:7a40:f10:428d:5cff:fe54:8996" ];
     };
     tempAddresses = "disabled";
     firewall = {
