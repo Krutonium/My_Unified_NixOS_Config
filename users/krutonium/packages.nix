@@ -163,7 +163,6 @@ in
       pkgs.transmission-remote-gtk
       #pkgs.seafile-client
       pkgs.syncthing
-      pkgs.syncthing-gtk
 
       # Communications
       pkgs-unstable.tdesktop
