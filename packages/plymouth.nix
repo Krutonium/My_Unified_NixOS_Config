@@ -25,17 +25,17 @@ let
     sha256 = "095i1nrmc9ldvq869jl80p04njd52qvl0cbkgchi2sjlg27cdvrf";
   };
 
-    win95-plymouth = pkgs.stdenv.mkDerivation {
-        name = "win95-plymouth";
-        buildInputs = [ pkgs.unzip pkgs.moreutils ];
-        src = win95_files;
-        buildCommand = ''
-        outDir="$out/share/plymouth/themes/"
-        mkdir -p $outDir/Chicago95
-        unzip $src -d $outDir/Chicago95
-        sed "s%/usr/share/plymouth/themes/%$outDir%g" $outDir/Chicago95/Chicago95.plymouth | sponge $outDir/Chicago95/Chicago95.plymouth
-        '';
-    };
+  win95-plymouth = pkgs.stdenv.mkDerivation {
+    name = "win95-plymouth";
+    buildInputs = [ pkgs.unzip pkgs.moreutils ];
+    src = win95_files;
+    buildCommand = ''
+      outDir="$out/share/plymouth/themes/"
+      mkdir -p $outDir/Chicago95
+      unzip $src -d $outDir/Chicago95
+      sed "s%/usr/share/plymouth/themes/%$outDir%g" $outDir/Chicago95/Chicago95.plymouth | sponge $outDir/Chicago95/Chicago95.plymouth
+    '';
+  };
 in
 {
   environment.systemPackages = [

@@ -25,7 +25,8 @@
         ./common.nix
         ./devices/uGamingPC.nix
         ./devices/hardware-configurations/uGamingPC.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
@@ -67,7 +68,8 @@
         ./common.nix
         ./devices/uWebServer.nix
         ./devices/hardware-configurations/uWebServer.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
@@ -108,7 +110,8 @@
         ./common.nix
         ./devices/uMsiLaptop.nix
         ./devices/hardware-configurations/uMsiLaptop.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
@@ -149,7 +152,8 @@
         ./common.nix
         ./devices/uHPLaptop.nix
         ./devices/hardware-configurations/uHPLaptop.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
@@ -190,7 +194,8 @@
         ./common.nix
         ./devices/uIsoDevice.nix
         "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {

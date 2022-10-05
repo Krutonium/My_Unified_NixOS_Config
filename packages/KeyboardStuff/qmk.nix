@@ -3,7 +3,7 @@
 { config, pkgs, ... }:
 let
   #Build redragon:k582 firmware
-  firmware-src = pkgs.fetchFromGitHub  {
+  firmware-src = pkgs.fetchFromGitHub {
     fetchSubmodules = true;
     owner = "SonixQMK";
     repo = "qmk_firmware";

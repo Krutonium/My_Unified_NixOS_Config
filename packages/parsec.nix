@@ -1,5 +1,15 @@
-{ lib, stdenv, fetchurl, alsaLib, dbus, libGL, libpulseaudio, libva
-, openssl, udev, xorg }:
+{ lib
+, stdenv
+, fetchurl
+, alsaLib
+, dbus
+, libGL
+, libpulseaudio
+, libva
+, openssl
+, udev
+, xorg
+}:
 
 stdenv.mkDerivation {
   pname = "parsec";
@@ -29,9 +39,19 @@ stdenv.mkDerivation {
   '';
 
   runtimeDependencies = [
-    alsaLib (lib.getLib dbus) libGL libpulseaudio libva.out
-    (lib.getLib openssl) (lib.getLib stdenv.cc.cc) (lib.getLib udev)
-    xorg.libX11 xorg.libXcursor xorg.libXi xorg.libXinerama xorg.libXrandr
+    alsaLib
+    (lib.getLib dbus)
+    libGL
+    libpulseaudio
+    libva.out
+    (lib.getLib openssl)
+    (lib.getLib stdenv.cc.cc)
+    (lib.getLib udev)
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXinerama
+    xorg.libXrandr
     xorg.libXScrnSaver
   ];
 

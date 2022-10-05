@@ -3,7 +3,7 @@
 
 with lib.hm.gvariant;
 let
-  userTheme = "WhiteSur-dark-solid";      #Shell Theme
+  userTheme = "WhiteSur-dark-solid"; #Shell Theme
   mainTheme = "WhiteSur-dark-solid"; #Application Theme
   mainFont = "SF Pro Text Regular 11";
   monoFont = "Ubuntu Mono 13";
@@ -102,16 +102,36 @@ in
       override-hot-corners = true;
       #pinned-app-list = [ "Firefox" "" "firefox.desktop" "Terminal" "" "org.gnome.Terminal.desktop" "ArcMenu Settings" "ArcMenu_ArcMenuIcon" "gnome-extensions prefs arcmenu@arcmenu.com" ];
       pinned-app-list = [
-        "Firefox" "" "firefox.desktop"
-        "Steam" "" "steam.desktop"
-        "Terminal" "" "org.gnome.Terminal.desktop"
-        "Element" "" "element-desktop.desktop"
-        "Telegram" "" "telegramdesktop.desktop"
-        "Discord" "" "discord.desktop"
-        "PolyMC" "" "org.polymc.PolyMC.desktop"
-        "OBS Studio" "" "com.obsproject.Studio.desktop"
-        "IntelliJ IDEA" "" "idea-ultimate.desktop"
-        "IntelliJ Rider" "" "rider.desktop"
+        "Firefox"
+        ""
+        "firefox.desktop"
+        "Steam"
+        ""
+        "steam.desktop"
+        "Terminal"
+        ""
+        "org.gnome.Terminal.desktop"
+        "Element"
+        ""
+        "element-desktop.desktop"
+        "Telegram"
+        ""
+        "telegramdesktop.desktop"
+        "Discord"
+        ""
+        "discord.desktop"
+        "PolyMC"
+        ""
+        "org.polymc.PolyMC.desktop"
+        "OBS Studio"
+        ""
+        "com.obsproject.Studio.desktop"
+        "IntelliJ IDEA"
+        ""
+        "idea-ultimate.desktop"
+        "IntelliJ Rider"
+        ""
+        "rider.desktop"
       ];
     };
 

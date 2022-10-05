@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
@@ -14,127 +15,148 @@
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    { device = "root";
+    {
+      device = "root";
       fsType = "tmpfs";
       options = [ "defaults" "size=16G" "mode=775" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2604-D641";
+    {
+      device = "/dev/disk/by-uuid/2604-D641";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=home" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
   fileSystems."/etc/nixos" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=configuration" ];
     };
-  
+
   fileSystems."/var/lib/postgresql" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=postgres" "nodatacow" ];
     };
-  
+
   fileSystems."/var/lib/matrix-synapse" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=matrix-synapse" ];
     };
 
   fileSystems."/var/lib/gitea" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=gitea" ];
     };
 
   fileSystems."/var/lib/nextcloud" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=nextcloud" ];
     };
 
   fileSystems."/transmission" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=transmission" "nodatacow" ];
     };
- 
-  fileSystems."/etc/ssh" = 
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+
+  fileSystems."/etc/ssh" =
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=sshd" ];
     };
- 
-  fileSystems."/var/lib/acme" = 
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+
+  fileSystems."/var/lib/acme" =
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=acme" ];
     };
- 
-  fileSystems."/var/lib/plex" = 
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+
+  fileSystems."/var/lib/plex" =
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=plex" ];
     };
 
-  fileSystems."/root" = 
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+  fileSystems."/root" =
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
-  fileSystems."/var/lib/transmission" = 
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+  fileSystems."/var/lib/transmission" =
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=transmission-db" ];
     };
   fileSystems."/var/lib/libvirt" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=libvirt" "nodatacow" ];
     };
 
-  
-  fileSystems."/media" = 
-    { device = "/dev/disk/by-id/ata-HGST_HDN726060ALE614_K1G6YP2B-part3";
+
+  fileSystems."/media" =
+    {
+      device = "/dev/disk/by-id/ata-HGST_HDN726060ALE614_K1G6YP2B-part3";
       fsType = "ext4";
     };
 
   fileSystems."/var/lib/jellyfin" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=jellyfin" ];
     };
 
   fileSystems."/var/www" =
-    { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
       fsType = "btrfs";
       options = [ "subvol=www" ];
     };
 
   fileSystems."/var/lib/softether" =
-     { device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
-       fsType = "btrfs";
-       options = [ "subvol=softether" ];
-     };
+    {
+      device = "/dev/disk/by-uuid/a018b12f-6567-4edb-8026-be9292738b4d";
+      fsType = "btrfs";
+      options = [ "subvol=softether" ];
+    };
 
   swapDevices = [ ];
 

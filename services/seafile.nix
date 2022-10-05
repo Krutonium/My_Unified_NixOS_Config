@@ -1,4 +1,4 @@
-{ pkgs-unstable, config, ...}:
+{ pkgs-unstable, config, ... }:
 {
   services.seafile = {
     enable = true;

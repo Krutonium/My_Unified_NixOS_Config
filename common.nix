@@ -33,7 +33,7 @@ in
   nixpkgs = {
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = ["nodejs-12.22.12"];
+      permittedInsecurePackages = [ "nodejs-12.22.12" ];
     };
   };
 
@@ -99,7 +99,7 @@ in
     pkgs.unison
     pkgs.p7zip
     pkgs.pciutils
-    pkgs.android-tools    
+    pkgs.android-tools
   ];
 
   services = {

@@ -67,5 +67,5 @@ let
   '';
 in
 {
-  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker search buildIso];
+  environment.systemPackages = [ update resetConfig linkRepo setUpstream pushConfig comma dualcomma buildISO mkSticker search buildIso ];
 }

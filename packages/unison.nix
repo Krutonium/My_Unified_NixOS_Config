@@ -1,4 +1,4 @@
-{ pkgs, config, ...}:
+{ pkgs, config, ... }:
 # Install Unison and create syncronization tasks using systemd tasks
 let
   syncronize = pkgs.writeShellScriptBin "syncronize" ''

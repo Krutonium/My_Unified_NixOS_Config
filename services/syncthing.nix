@@ -1,12 +1,12 @@
-{ pkgs, config, ...}:
+{ pkgs, config, ... }:
 {
   services.syncthing = {
     enable = true;
-    user = "krutonium";     
+    user = "krutonium";
     folders = {
       "/home/krutonium/share" = {
         id = "homeshare";
+      };
     };
   };
-};
 }

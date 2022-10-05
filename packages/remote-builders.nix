@@ -8,7 +8,7 @@
       maxJobs = 8;
       speedFactor = 2;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "i686-linux" ];
-      mandatoryFeatures = [];
+      mandatoryFeatures = [ ];
     }
     {
       #uGamingPC
@@ -17,7 +17,7 @@
       maxJobs = 8;
       speedFactor = 2;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "i686-linux" ];
-      mandatoryFeatures = [];
+      mandatoryFeatures = [ ];
     }
     {
       #uMsiLaptop
@@ -26,7 +26,7 @@
       maxJobs = 0;
       speedFactor = 1;
       supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "i686-linux" ];
-      mandatoryFeatures = [];
+      mandatoryFeatures = [ ];
     }
   ];
   nix.distributedBuilds = true;

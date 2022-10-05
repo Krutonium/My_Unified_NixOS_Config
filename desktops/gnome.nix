@@ -15,7 +15,7 @@ in
         };
       };
       desktopManager = {
-        gnome ={
+        gnome = {
           enable = true;
         };
       };

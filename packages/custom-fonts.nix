@@ -1,4 +1,4 @@
-{config, pkgs, fetchzip, ...}:
+{ config, pkgs, fetchzip, ... }:
 let
   fontFiles = pkgs.fetchzip {
     url = "https://gitea.krutonium.ca/Krutonium/NixOS_Files/raw/branch/master/Fonts.zip";
@@ -10,10 +10,10 @@ let
     src = fontFiles;
     buildInputs = [ ];
     buildCommand =
-    ''
-       mkdir -p $out/share/fonts
-       cp -R $src $out/share/fonts/opentype/
-    '';
+      ''
+        mkdir -p $out/share/fonts
+        cp -R $src $out/share/fonts/opentype/
+      '';
   };
 in
 {

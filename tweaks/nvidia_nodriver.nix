@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 let
   kernel = config.boot.kernelPackages;
 in

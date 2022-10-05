@@ -3,11 +3,11 @@
 
 { config, pkgs, ... }:
 let
-myproxy = {
-  type = "socks5";
-  host = "127.0.0.1";
-  port = 9050;
-};
+  myproxy = {
+    type = "socks5";
+    host = "127.0.0.1";
+    port = 9050;
+  };
 in
 {
   services = {

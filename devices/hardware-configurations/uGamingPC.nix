@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
@@ -14,22 +15,26 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b9baa5e1-7546-404a-a991-1c134de556e3";
+    {
+      device = "/dev/disk/by-uuid/b9baa5e1-7546-404a-a991-1c134de556e3";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C8A6-1867";
+    {
+      device = "/dev/disk/by-uuid/C8A6-1867";
       fsType = "vfat";
     };
 
   fileSystems."/games" =
-    { device = "/dev/disk/by-uuid/f206e3c5-e7ba-486d-ae46-2a946b7f7cc6";
+    {
+      device = "/dev/disk/by-uuid/f206e3c5-e7ba-486d-ae46-2a946b7f7cc6";
       fsType = "ext4";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/4d7814fd-4d37-4e0b-9449-4f98f2e18ee9";
+    {
+      device = "/dev/disk/by-uuid/4d7814fd-4d37-4e0b-9449-4f98f2e18ee9";
       fsType = "ext4";
     };
 

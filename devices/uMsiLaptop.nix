@@ -47,7 +47,7 @@ in
   #environment.systemPackages = [ parsec ];
 
   boot.kernelParams = [ "mem_sleep_default=deep" ];
-  
+
   #nix.settings.system-features = [ "gccarch-haswell" ];  
   #nixpkgs.localSystem = {
   #  gcc.arch = "haswell";
