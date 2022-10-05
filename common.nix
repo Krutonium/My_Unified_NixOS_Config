@@ -11,7 +11,7 @@ in
       #./packages/apple-fonts.nix
       #./packages/minecraft-fonts.nix
       #./packages/remote-builders.nix
-      ./services/syncthing.nix
+      #./services/syncthing.nix
     ];
 
   boot = {
