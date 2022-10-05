@@ -100,6 +100,7 @@ in
     pkgs.p7zip
     pkgs.pciutils
     pkgs.android-tools
+    pkgs.nixpkgs-fmt
   ];
 
   services = {
