@@ -1,4 +1,4 @@
-{ pkgs-unstable, config, ...}:
+{ pkgs, config, ...}:
 {
   services.syncthing = {
     enable = true;
@@ -7,5 +7,5 @@
       "/home/krutonium/share" = {
         id = "homeshare";
     };
-  }
+  };
 }
