@@ -40,11 +40,11 @@ in
       "speed-limit-down" = 1200;
       "speed-limit-down-enabled" = false;
       "speed-limit-up" = 2000;
-      "speed-limit-up-enabled" = true;
+      "speed-limit-up-enabled" = false;
 
       /* seeding limit */
       "ratio-limit" = 10;
-      "ratio-limit-enabled" = true;
+      "ratio-limit-enabled" = false;
     };
   };
 }
