@@ -25,6 +25,6 @@ It will then check which hosts are online, download the relevant packages, conne
 
 ## Useful Commands:
 
-`update` updates the local system, and all others if on LAN. Intended to be used on `uWebServer`
-`resetConfig` deletes the repo and then redownloads and configures it
+`update` updates the local system, and all others if on LAN. Intended to be used on `uWebServer`  
+`resetConfig` deletes the repo and then redownloads and configures it  
 `pushConfig` pushes the current config to the repo
