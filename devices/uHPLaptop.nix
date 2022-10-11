@@ -17,7 +17,7 @@ in
     ../tweaks/mitigations.nix
     ../packages/dotnet.nix
     ../packages/steam.nix
-    ../packages/wine.nix
+    #../packages/wine.nix
     ../packages/plymouth.nix
     ../services/avahi.nix
     ../packages/discord.nix

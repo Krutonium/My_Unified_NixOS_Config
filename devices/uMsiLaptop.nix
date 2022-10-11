@@ -24,8 +24,8 @@ in
     ../tweaks/mitigations.nix
     ../packages/dotnet.nix
     ../packages/steam.nix
-    ../packages/wine.nix
-    ../packages/ccache.nix
+    #../packages/wine.nix
+    #../packages/ccache.nix
     #../packages/waydroid.nix
     ../packages/plymouth.nix
     ../services/avahi.nix

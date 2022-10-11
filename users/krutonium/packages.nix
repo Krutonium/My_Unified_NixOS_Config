@@ -98,6 +98,13 @@ in
       pkgs.godot-mono
       pkgs.godot-export-templates
 
+
+      # Wine
+      pkgs-unstable.wineWowPackages.stable
+      pkgs-unstable.waylandFull
+      pkgs-unstable.winetricks
+      
+
       # Keyboard Stuff
       pkgs.unzip
       pkgs.qmk
