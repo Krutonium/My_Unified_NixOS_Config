@@ -162,7 +162,7 @@ in
       pkgs.mangohud
       pkgs.goverlay
       pkgs.dolphin-emu-beta
-      pkgs.heroic
+      pkgs-unstable.heroic
       pkgs.steam-run
       pkgs.yuzu-ea
 
