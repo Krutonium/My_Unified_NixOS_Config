@@ -103,7 +103,7 @@ in
       pkgs-unstable.wineWowPackages.stable
       pkgs-unstable.waylandFull
       pkgs-unstable.winetricks
-      
+
 
       # Keyboard Stuff
       pkgs.unzip
