@@ -101,7 +101,7 @@ in
 
       # Wine
       pkgs-unstable.wineWowPackages.stable
-      pkgs-unstable.waylandFull
+      pkgs-unstable.wine-wayland
       pkgs-unstable.winetricks
 
 
