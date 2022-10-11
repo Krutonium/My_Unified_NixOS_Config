@@ -1,7 +1,10 @@
 { config, pkgs-unstable, ... }:
 {
   environment.systemPackages = [
-    pkgs-unstable.wineWowPackages.stable
-    pkgs-unstable.winetricks
+    pkgs.wine
+    pkgs.wine64
+    pkgs.winePackages.stable
+    pkgs.wineWowPackages.stable
+    pkgs.winetricks
   ];
 }
