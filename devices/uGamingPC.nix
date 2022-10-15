@@ -39,6 +39,8 @@ in
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.powerManagement.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
 
   #boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
 }

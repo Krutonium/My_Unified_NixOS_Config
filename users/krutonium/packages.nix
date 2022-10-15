@@ -150,6 +150,8 @@ in
       pkgs.yt-dlp
       pkgs.matrix-synapse-tools.synadm
       pkgs.trash-cli
+      pkgs.nvtop
+      pkgs.
 
       # Wine/Windows Shit
       pkgs.lutris
