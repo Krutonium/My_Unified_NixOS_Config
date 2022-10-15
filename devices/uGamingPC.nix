@@ -11,7 +11,7 @@ in
     ../users/krutonium/user.nix
     ../users/root/user.nix
     ../users/kea/user.nix
-    ../services/fancontroller.nix
+    #../services/fancontroller.nix
     ../services/ssh.nix
     ../desktops/gnome.nix
     ../tweaks/mitigations.nix
