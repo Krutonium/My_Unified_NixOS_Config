@@ -1,5 +1,5 @@
 # Specifically to prevent Discord from accessing my Webcams, causing my screen to flash.
-{ pkgs-unstable, config, lib, ... }:
+{ pkgs, pkgs-unstable, config, lib, ... }:
 let
   discordProfile = pkgs.writeTextFile {
     name = "discordProfile";
