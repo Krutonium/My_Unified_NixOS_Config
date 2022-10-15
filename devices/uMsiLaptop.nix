@@ -59,15 +59,14 @@ in
   services.teamviewer.enable = true;
   #services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.powerManagement.enable = true;
-  hardware.nvidia.prime = {
-    offload.enable = true;
-    nvidiaBusId = "PCI:1:0:0";
-    intelBusId = "PCI:0:2:0";
-    #sync.enable = true;
-  };
+  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #hardware.nvidia.modesetting.enable = true;
+  #hardware.nvidia.powerManagement.enable = true;
+  #hardware.nvidia.prime = {
+  #  offload.enable = true;
+  #  nvidiaBusId = "PCI:1:0:0";
+  #  intelBusId = "PCI:0:2:0";
+  #};
   #services.xserver.screenSection = ''
   #  Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
   #  Option         "AllowIndirectGLXProtocol" "off"

@@ -35,5 +35,10 @@ in
   ];
   networking.hostName = Hostname;
   hardware.enableAllFirmware = true;
-  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
+
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.powerManagement.enable = true;
+
+  #boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
 }
