@@ -48,7 +48,6 @@
         common-pc
         common-pc-ssd
         common-cpu-amd
-        common-gpu-nvidia
       ]);
       specialArgs = {
         pkgs-unstable = import pkgs-unstable {
