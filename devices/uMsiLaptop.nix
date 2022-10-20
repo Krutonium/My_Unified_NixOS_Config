@@ -42,7 +42,7 @@ in
     size = 1024 * 16; #16GB
   }];
 
-  services.xserver.videoDrivers = [ "zink" "nvidia" "modesetting" ];
+  services.xserver.videoDrivers = [ "zink" "modesetting" ];
   boot.kernelModules = [ "rtsx_pci" ];
   #environment.systemPackages = [ parsec ];
 
@@ -55,7 +55,7 @@ in
   #  system = "x86_64-linux";
   #};
 
-  environment.systemPackages = [ nvidia-offload pkgs.teamviewer ];
+  #environment.systemPackages = [ nvidia-offload pkgs.teamviewer ];
   services.teamviewer.enable = true;
   #services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
