@@ -158,7 +158,7 @@ in
       # Steam is already installed at the system level because it has special requirements
       pkgs.openrct2
       pkgs.jstest-gtk
-      pkgs.prismlauncher
+      pkgs-unstable.prismlauncher
       pkgs.mangohud
       pkgs.goverlay
       pkgs.dolphin-emu-beta
