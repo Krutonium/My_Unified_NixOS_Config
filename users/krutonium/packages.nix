@@ -72,8 +72,8 @@ in
       # Gnome Stuff
       pkgs.gnome.gnome-tweaks
       pkgs.gnomeExtensions.dash-to-panel
-      #pkgs.arc-theme
-      #pkgs.sweet
+      pkgs.arc-theme
+      pkgs.sweet
       pkgs.whitesur-gtk-theme
       pkgs.whitesur-icon-theme
       pkgs.ubuntu_font_family
@@ -91,8 +91,6 @@ in
       ideaScript
       rider
       riderScript
-      #pkgs.jetbrains.rider
-      #pkgs.jetbrains.idea-ultimate
       pkgs.gitkraken
       dotnet
       pkgs.godot-mono
@@ -151,7 +149,8 @@ in
       pkgs.matrix-synapse-tools.synadm
       pkgs.trash-cli
       pkgs.nvtop
-      pkgs.# Wine/Windows Shit
+
+      # Wine/Windows Shit
       pkgs.lutris
       pkgs.bottles
       # Gaming
