@@ -40,7 +40,7 @@ in
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.powerManagement.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelPackages = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+  #boot.kernelPackages = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ]; Apparently this is not correct. How do I add to initramfs?
   hardware.opengl.enable = true;
 
   #boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
