@@ -119,7 +119,7 @@ in
       # Media
       pkgs.vlc
       pkgs.spotify
-      pkgs.obs-studio
+      pkgs-unstable.obs-studio
 
       # Audio Filtering
       pkgs.easyeffects
