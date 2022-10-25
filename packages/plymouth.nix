@@ -40,7 +40,7 @@ let
   # Windows XP Boot Screen
   xp_files = builtins.fetchurl {
     url = "https://gitea.krutonium.ca/Krutonium/NixOS_Files/raw/branch/master/WindozeXP.zip";
-    sha256 = "";
+    sha256 = "1q5flmra2zjq4ws3181jcn4ibsb47krsfy8mmr14f28xqw6f48r3";
   };
 
   xp-plymouth = pkgs.stdenv.mkDerivation {
