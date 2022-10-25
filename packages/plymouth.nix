@@ -36,6 +36,24 @@ let
       sed "s%/usr/share/plymouth/themes/%$outDir%g" $outDir/Chicago95/Chicago95.plymouth | sponge $outDir/Chicago95/Chicago95.plymouth
     '';
   };
+
+  # Windows XP Boot Screen
+  xp_files = builtins.fetchurl {
+    url = "https://gitea.krutonium.ca/Krutonium/NixOS_Files/raw/branch/master/WindozeXP.zip";
+    sha256 = "";
+  };
+
+  xp-plymouth = pkgs.stdenv.mkDerivation {
+    name = "xp-plymouth";
+    buildInputs = [ pkgs.unzip pkgs.moreutils ];
+    src = xp_files;
+    buildCommand = ''
+      outDir="$out/share/plymouth/themes/"
+      mkdir -p $outDir/WindozeXP
+      unzip $src -d $outDir/WindozeXP
+      sed "s%/usr/share/plymouth/themes/%$outDir%g" $outDir/WindozeXP/WindozeXP.plymouth | sponge $outDir/WindozeXP/WindozeXP.plymouth
+    '';
+  };
 in
 {
   environment.systemPackages = [
@@ -44,9 +62,11 @@ in
 
   boot.plymouth.enable = true;
   #boot.plymouth.theme = "aperture";
-  boot.plymouth.theme = "Chicago95";
+  #boot.plymouth.theme = "Chicago95";
+  boot.plymouth.theme = "WindozeXP";
   boot.plymouth.themePackages = [
-    aperture-plymouth
-    win95-plymouth
+    #aperture-plymouth
+    #win95-plymouth
+    xp-plymouth
   ];
 }
