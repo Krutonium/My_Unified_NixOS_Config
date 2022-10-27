@@ -28,8 +28,8 @@
 
   fileSystems."/home/krutonium/steam" =
     {
-      device = "/dev/disk/by-uuid/55328800-cc45-4768-b68a-b2a91c14677c";
-      fsType = "ext4";
+      device = "/dev/disk/by-uuid/f0adb94f-eb6b-41a2-80bd-49a30a9e4f7f";
+      fsType = "btrfs";
     };
 
   swapDevices = [ ];
