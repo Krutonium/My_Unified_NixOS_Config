@@ -101,6 +101,7 @@ in
     pkgs.pciutils
     pkgs.android-tools
     pkgs.nixpkgs-fmt
+    pkgs.btrfs-progs
   ];
 
   services = {
