@@ -29,7 +29,8 @@ in
       #../services/stoneblock.nix
       #../services/satisfactory_server.nix
       #../services/project_ozone_3.nix
-      ../services/create.nix
+      #../services/create.nix
+      ../services/cuboid_outpost.nix
       #../services/nextcloud.nix
       #../services/seafile.nix
       ../users/krutonium/user_server.nix
