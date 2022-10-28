@@ -175,5 +175,6 @@ in
       # Communications
       pkgs-unstable.tdesktop
       pkgs.element-desktop
+      pkgs.fractal
     ];
 }
