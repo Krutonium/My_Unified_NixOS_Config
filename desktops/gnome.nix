@@ -8,6 +8,13 @@ let
     enableOSMesa = true;
     enableOpenCL = true;
   }).overrideAttrs (old: {
+    src = pkgs.fetchFromGitLab {
+      domain = "gitlab.freedesktop.org";
+      owner = "lun";
+      repo = "mesa";
+      rev = "7641e3524319dd9272be822b6e70c801496d9d92";
+      sha256 = "sha256-NLuNND5dJnqVocxk7zZrCJs+WxktKeUbZQVrf/nZXaQ=";
+    };
     mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
       "-D vulkan-layers=device-select,overlay"
     ];
