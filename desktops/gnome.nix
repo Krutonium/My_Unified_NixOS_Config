@@ -79,7 +79,7 @@ in
     gnome.gnome-session
     gnome.mutter
     gnome.gnome-shell
-    gdm
+    gnome.gdm
   ];
   #environment.enableDebugInfo = true;
   #nixpkgs.overlays = [
