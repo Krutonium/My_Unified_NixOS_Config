@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, lib, ... }:
 let
 
-  mesa = (pkgs-unstable.mesa.override {
+  mesa = (pkgs.mesa.override {
     galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
     vulkanDrivers = [ "intel" "swrast" ];
     enableGalliumNine = false;
@@ -11,7 +11,7 @@ let
     mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
       "-D vulkan-layers=device-select,overlay"
     ];
-    #buildnputs = [ pkgs.glslang ];
+    buildnputs = old.buildInputs ++ [ pkgs.glslang ];
     postInstall = old.postInstall + ''
       ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
       mv -t $drivers/lib $out/lib/libVkLayer*
@@ -75,12 +75,12 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs-unstable; [
-    gnome.gnome-session
-    gnome.mutter
-    gnome.gnome-shell
-    gnome.gdm
-  ];
+  #environment.systemPackages = with pkgs-unstable; [
+  #  gnome.gnome-session
+  #  gnome.mutter
+  #  gnome.gnome-shell
+  #  gnome.gdm
+  #];
   #environment.enableDebugInfo = true;
   #nixpkgs.overlays = [
   #  (final: prev: {
