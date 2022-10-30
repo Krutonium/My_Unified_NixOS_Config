@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 let
-  mesa = pkgs.mesa.override {
-    galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ];
+  mesa = pkgs.mesa.overrideAttrs {
+    galliumDrivers = [ "zink" "swrast" "i915" "iris" "auto" ];
     postInstall = "ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*";
   };
   #mesa32 = pkgs.driversi686Linux.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ]; };
