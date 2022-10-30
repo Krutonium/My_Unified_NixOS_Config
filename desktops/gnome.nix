@@ -38,8 +38,8 @@ in
   hardware = {
     opengl = {
       enable = true;
-      #package = mesa;
-      #package32 = mesa32;
+      package = mesa;
+      package32 = mesa32;
     };
     pulseaudio = {
       enable = false;
@@ -56,11 +56,11 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs-unstable; [
-    gnome.gnome-session
-    gnome.mutter
-    gnome.gnome-shell
-  ];
+  #environment.systemPackages = with pkgs-unstable; [
+  #  gnome.gnome-session
+  #  gnome.mutter
+  #  gnome.gnome-shell
+  #];
   #environment.enableDebugInfo = true;
   #nixpkgs.overlays = [
   #  (final: prev: {
