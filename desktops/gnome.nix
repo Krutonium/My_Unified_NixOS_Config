@@ -75,11 +75,11 @@ in
     };
   };
 
-  #environment.systemPackages = with pkgs-unstable; [
-  #  gnome.gnome-session
-  #  gnome.mutter
-  #  gnome.gnome-shell
-  #];
+  environment.systemPackages = with pkgs-unstable; [
+    gnome.gnome-session
+    gnome.mutter
+    gnome.gnome-shell
+  ];
   #environment.enableDebugInfo = true;
   #nixpkgs.overlays = [
   #  (final: prev: {
