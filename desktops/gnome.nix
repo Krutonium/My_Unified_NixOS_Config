@@ -5,11 +5,14 @@ let
     galliumDrivers = [ "zink" "iris" "i915" "radeonsi" "swrast" ];
     vulkanDrivers = [ "amd" "intel" "swrast" ];
     enableGalliumNine = false;
-    #enableOSMesa = true;
-    #enableOpenCL = true;
+    enableOSMesa = true;
+    enableOpenCL = true;
   }).overrideAttrs (old: {
     mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
       "-D vulkan-layers=device-select,overlay"
+    ];
+    nativeBuiltInputs = [
+      pkgs.glslang
     ];
     postInstall = old.postInstall + ''
       ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
