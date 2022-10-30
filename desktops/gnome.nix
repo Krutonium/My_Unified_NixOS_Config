@@ -1,14 +1,25 @@
 { config, pkgs, pkgs-unstable, ... }:
 let
-  #mesa = pkgs.mesa.overrideAttrs {
-  #  galliumDrivers = [ "zink" "swrast" "i915" "iris" "auto" ];
-  #  postInstall = "ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*";
-  #};
-  #mesa32 = pkgs.driversi686Linux.mesa.override { galliumDrivers = [ "zink" "r600" "swrast" "nouveau" "i915" "iris" "auto" ]; };
-  mesa = (pkgs.override {
-    galliumDrivers = [ "zink" "swrast" "i915" "iris" "auto" ];
-    postInstall = "ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*";
-    ]});
+
+    mesa = (flake-args.nixpkgs-mesa-pr.legacyPackages.${pkgs.system}.mesa.override {
+      galliumDrivers = [ "zink" "iris" "i915" "radeonsi" "swrast" ];
+      vulkanDrivers = [ "amd" "intel" "swrast" ];
+      enableGalliumNine = false;
+      enableOSMesa = true;
+      enableOpenCL = true;
+    }).overrideAttrs (old: {
+      mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
+        "-D vulkan-layers=device-select,overlay"
+      ];
+      postInstall = old.postInstall + ''
+        ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
+        mv -t $drivers/lib $out/lib/libVkLayer*
+        for js in $drivers/share/vulkan/{im,ex}plicit_layer.d/*.json; do
+          substituteInPlace "$js" --replace '"libVkLayer_' '"'"$drivers/lib/libVkLayer_"
+        done
+      '';
+    });
+
     in
     {
     services = {
