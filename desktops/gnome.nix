@@ -2,8 +2,8 @@
 let
 
   mesa = (pkgs.mesa.override {
-    galliumDrivers = [ "zink" "iris" "i915" "radeonsi" "swrast" ];
-    vulkanDrivers = [ "amd" "intel" "swrast" ];
+    galliumDrivers = [ "zink" "iris" "i915" "swrast" ];
+    vulkanDrivers = [ "intel" "swrast" ];
     enableGalliumNine = false;
     enableOSMesa = true;
     enableOpenCL = true;
