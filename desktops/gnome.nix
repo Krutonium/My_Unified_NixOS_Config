@@ -2,7 +2,7 @@
 let
 
   mesa = (pkgs-unstable.mesa.override {
-    galliumDrivers = [ "zink" "iris" "i915" "swrast" ];
+    galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
     vulkanDrivers = [ "intel" "swrast" ];
     enableGalliumNine = false;
     enableOSMesa = true;
