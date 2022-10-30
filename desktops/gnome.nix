@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, lib,... }:
 let
 
   mesa = (pkgs.mesa.override {
