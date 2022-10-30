@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 let
 
-    mesa = (flake-args.nixpkgs-mesa-pr.legacyPackages.${pkgs.system}.mesa.override {
+    mesa = (pkgs.mesa.override {
       galliumDrivers = [ "zink" "iris" "i915" "radeonsi" "swrast" ];
       vulkanDrivers = [ "amd" "intel" "swrast" ];
       enableGalliumNine = false;
