@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, lib, ... }:
 let
 
-  mesa = (pkgs.mesa.override {
+  mesa = (pkgs-unstable.mesa.override {
     galliumDrivers = [ "zink" "iris" "i915" "swrast" ];
     vulkanDrivers = [ "intel" "swrast" ];
     enableGalliumNine = false;
@@ -11,7 +11,7 @@ let
     mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
       "-D vulkan-layers=device-select,overlay"
     ];
-    buildnputs = [ pkgs.glslang ];
+    #buildnputs = [ pkgs.glslang ];
     postInstall = old.postInstall + ''
       ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
       mv -t $drivers/lib $out/lib/libVkLayer*
