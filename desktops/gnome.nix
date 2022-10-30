@@ -4,9 +4,9 @@ let
   mesa = (pkgs.mesa.override {
     galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
     vulkanDrivers = [ "intel" "swrast" ];
-    enableGalliumNine = false;
-    enableOSMesa = true;
-    enableOpenCL = true;
+    #enableGalliumNine = false;
+    #enableOSMesa = true;
+    #enableOpenCL = true;
   }).overrideAttrs (old: {
     mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
       "-D vulkan-layers=device-select,overlay"
