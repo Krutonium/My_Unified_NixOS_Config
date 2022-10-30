@@ -11,7 +11,7 @@ let
     mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
       "-D vulkan-layers=device-select,overlay"
     ];
-    buildnputs = old.buildInputs ++ [ pkgs.glslang ];
+    buildInputs = old.buildInputs ++ [ pkgs.glslang ];
     postInstall = old.postInstall + ''
       ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
       mv -t $drivers/lib $out/lib/libVkLayer*
