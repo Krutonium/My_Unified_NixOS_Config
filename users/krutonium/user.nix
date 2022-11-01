@@ -10,8 +10,9 @@
   users.extraGroups.vboxusers.members = [ "krutonium" ];
   programs.fish.enable = true;
   programs.fish.useBabelfish = true;
-  home-manager.users.krutonium = if (config.networking.hostName == "uWebServer") then
-    { ... }: {}
-  else
-    import ./home-manager.nix;
+  home-manager.users.krutonium =
+    if (config.networking.hostName == "uWebServer") then
+      { ... }: { }
+    else
+      import ./home-manager.nix;
 }
