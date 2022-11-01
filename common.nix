@@ -121,7 +121,7 @@ in
   };
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
-  nix.settings.system-features = [ "i686-linux" ];
+  nix.settings.system-features = [ "i686-linux" "big-parallel" ];
 
   users = {
     mutableUsers = false;
