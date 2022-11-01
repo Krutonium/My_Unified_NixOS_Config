@@ -18,10 +18,10 @@ in
         buildInputs = old.buildInputs ++ [ pkgs.glslang ];
         postInstall = old.postInstall + ''
           ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
-          mv -t $drivers/lib $out/lib/libVkLayer*
-          for js in $drivers/share/vulkan/{im,ex}plicit_layer.d/*.json; do
-            substituteInPlace "$js" --replace '"libVkLayer_' '"'"$drivers/lib/libVkLayer_"
-          done
+          #mv -t $drivers/lib $out/lib/libVkLayer*
+          #for js in $drivers/share/vulkan/{im,ex}plicit_layer.d/*.json; do
+          #  substituteInPlace "$js" --replace '"libVkLayer_' '"'"$drivers/lib/libVkLayer_"
+          #done
         '';
       });
     })
