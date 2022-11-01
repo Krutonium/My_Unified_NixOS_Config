@@ -33,7 +33,7 @@ in
       ../services/cuboid_outpost.nix
       #../services/nextcloud.nix
       #../services/seafile.nix
-      ../users/krutonium/user_server.nix
+      ../users/krutonium/user.nix
       ../users/resin/user.nix
       ../users/root/user.nix
       ../users/kea/user.nix
