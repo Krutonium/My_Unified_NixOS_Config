@@ -1,35 +1,35 @@
 { config, pkgs, pkgs-unstable, lib, ... }:
 let
-      mesa = (pkgs.mesa.override {
-        galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
-        vulkanDrivers = [ "intel" "swrast" ];
-        enableGalliumNine = false;
-        enableOSMesa = true;
-        enableOpenCL = true;
-      }).overrideAttrs (old: {
-        mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
-          "-D vulkan-layers=device-select,overlay"
-        ];
-        buildInputs = old.buildInputs ++ [ pkgs.glslang ];
-        postInstall = old.postInstall + ''
-          ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
-        '';
-      });
-      mesa32 = (pkgs.driversi686Linux.mesa.override {
-        galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
-        vulkanDrivers = [ "intel" "swrast" ];
-        enableGalliumNine = false;
-        enableOSMesa = true;
-        enableOpenCL = true;
-      }).overrideAttrs (old: {
-        mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
-          "-D vulkan-layers=device-select,overlay"
-        ];
-        buildInputs = old.buildInputs ++ [ pkgs.glslang ];
-        postInstall = old.postInstall + ''
-          ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
-        '';
-      });
+  mesa = (pkgs.mesa.override {
+    galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
+    vulkanDrivers = [ "intel" "swrast" ];
+    enableGalliumNine = false;
+    enableOSMesa = true;
+    enableOpenCL = true;
+  }).overrideAttrs (old: {
+    mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
+      "-D vulkan-layers=device-select,overlay"
+    ];
+    buildInputs = old.buildInputs ++ [ pkgs.glslang ];
+    postInstall = old.postInstall + ''
+      ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
+    '';
+  });
+  mesa32 = (pkgs.driversi686Linux.mesa.override {
+    galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
+    vulkanDrivers = [ "intel" "swrast" ];
+    enableGalliumNine = false;
+    enableOSMesa = true;
+    enableOpenCL = true;
+  }).overrideAttrs (old: {
+    mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
+      "-D vulkan-layers=device-select,overlay"
+    ];
+    buildInputs = old.buildInputs ++ [ pkgs.glslang ];
+    postInstall = old.postInstall + ''
+      ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
+    '';
+  });
 in
 {
   nixpkgs.overlays = [
