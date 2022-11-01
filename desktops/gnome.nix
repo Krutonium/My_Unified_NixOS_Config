@@ -1,11 +1,6 @@
 { config, pkgs, pkgs-unstable, lib, ... }:
 let
-
-in
-{
-  nixpkgs.overlays = [
-    (final: prev: {
-      mesa = (prev.mesa.override {
+      mesa = (pkgs.mesa.override {
         galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
         vulkanDrivers = [ "intel" "swrast" ];
         enableGalliumNine = false;
@@ -18,13 +13,26 @@ in
         buildInputs = old.buildInputs ++ [ pkgs.glslang ];
         postInstall = old.postInstall + ''
           ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
-          #mv -t $drivers/lib $out/lib/libVkLayer*
-          #for js in $drivers/share/vulkan/{im,ex}plicit_layer.d/*.json; do
-          #  substituteInPlace "$js" --replace '"libVkLayer_' '"'"$drivers/lib/libVkLayer_"
-          #done
         '';
       });
-    })
+      mesa32 = (pkgs.driversi686Linux.mesa.override {
+        galliumDrivers = [ "zink" "iris" "i915" "swrast" "auto" ];
+        vulkanDrivers = [ "intel" "swrast" ];
+        enableGalliumNine = false;
+        enableOSMesa = true;
+        enableOpenCL = true;
+      }).overrideAttrs (old: {
+        mesonFlags = (lib.lists.remove "-Dxvmc-libs-path=${placeholder "drivers"}/lib" old.mesonFlags) ++ [
+          "-D vulkan-layers=device-select,overlay"
+        ];
+        buildInputs = old.buildInputs ++ [ pkgs.glslang ];
+        postInstall = old.postInstall + ''
+          ln -s -t $drivers/lib/ ${pkgs.vulkan-loader}/lib/lib*
+        '';
+      });
+in
+{
+  nixpkgs.overlays = [
   ];
   services = {
     xserver = {
@@ -60,8 +68,8 @@ in
   hardware = {
     opengl = {
       enable = true;
-      #package = mesa;
-      #package32 = mesa32;
+      package = mesa;
+      package32 = mesa32;
     };
     pulseaudio = {
       enable = false;
