@@ -87,7 +87,7 @@ in
   };
 
   environment.systemPackages = [
-    pkgs-unstable.libsecret
+    #pkgs-unstable.libsecret
   ];
   #environment.enableDebugInfo = true;
   #nixpkgs.overlays = [
