@@ -68,8 +68,8 @@ in
   hardware = {
     opengl = {
       enable = true;
-      package = mesa;
-      package32 = mesa32;
+      #package = mesa;
+      #package32 = mesa32;
     };
     pulseaudio = {
       enable = false;
